@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Josefin Sans' rel='stylesheet'>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+ /* background-image: url('/css/searchicon.png');*/
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+body {
+  width: 80%;
+  margin: 30px auto;
+  font-family: 'Josefin Sans';
+}
+    
+    
+#buttondiv {
+    position: absolute;
+    right: 10%;
+    width: 100px; 
+    }
+    
+.button {
+    background-color: white;
+    border: none;
+    color: #778899;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* or space-around */
+}
+
+.artefactcell {
+  display: inline-block;
+  margin-bottom: 8px;
+  width: calc(20% - 4px);
+  text-decoration: none;
+  color: black;
+}
+
+@media screen and (min-width: 50em) {
+ artefactcell {
+    width: calc(25% - 6px);
+  }
+}
+
+a:hover img {
+  transform: scale(1.1);
+}
+
+cell {
+  margin: 0;
+  overflow: hidden;
+}
+
+.info {
+  display: none;
+}
+    
+tag {
+  display: none;
+}
+    
+.thumbtitle {
+  font-size: 13px;
+  padding-bottom: 12px;
+    
+}
+
+
+img {
+  border: none;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  background: #ccc;
+  transition: transform .2s ease-in-out;
+}
+
+.p artefactcell {
+  display: inline;
+  font-size: 13px;
+  margin: 0;
+  text-decoration: underline;
+  color: blue;
+}
+
+.p {
+  text-align: center;
+  font-size: 13px;
+  padding-top: 100px;
+} 
+
+/* The Modal */
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+    
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    padding-bottom: 100px;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(255,255,255,255.1); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+    
+    
+.modaltitle {
+  font-weight: bold;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+.caption {
+    margin: auto;
+    display: inline-block;
+    width: 80%;
+    max-width: 700px;
+    text-align: left;
+    color: #000;
+}
+.captionTitle {
+    margin: auto;
+    display: inline-block;
+    width: 80%;
+    max-width: 700px;
+    text-align: left;
+    color: #000;
+    padding-bottom: 20px;
+    font-size: 50px;
+    font-weight: bold;
+    }
+
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)}
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #bbb;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+
+
+
+</style>
+
+<body onload="engFunction()">
+    
+<div id=buttondiv align="right">
+    <button class=button onclick="engFunction()">Eng</button>
+    <button class=button onclick="indFunction()">Ind</button>
+</div>    
+
+<h1 style="color:#4682B4">thingk!</h1>
+<h3 id="subtitle" style="color:#778899">a collection of things which influence our relationship with design</h3>
+
+<input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Search..." title="Type in a category">
+
+<div id="Table"></div>
+  
+  <!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- The Close Button -->
+<span class="close" onclick="document.getElementById('myModal')">&times;</span>
+
+  <!-- Modal Content -->
+    <div>
+    <p class="captionTitle" id="txt00"></p> 
+    <img class="modal-content" id="img01">
+    <table class="caption" style="width:100%">
+      <tr>
+        <td id="nametext" class=modaltitle></td>
+        <td id="txt01"></td> 
+      </tr>
+      <tr>
+        <td id="collectiontext" class=modaltitle></td>
+        <td id="txt02"></td> 
+      </tr>
+      <tr>
+        <td id="typetext" class=modaltitle></td>
+        <td id="txt03"></td> 
+      </tr>
+      <tr>
+        <td id="designertext" class=modaltitle></td>
+        <td id="txt04"></td> 
+      </tr>
+        <tr>
+        <td id="materialtext" class=modaltitle></td>
+        <td id="txt05"></td> 
+      </tr>
+      <tr>
+        <td id="descriptiontext" class=modaltitle></td>
+        <td id="txt06"></td> 
+      </tr>
+    </table>
+    </div>
+    
+</div>
+  
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery.js"></script>
+<script type="text/javascript" src="file.json"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+<script>
+    
+var spreadsheetIDEng = "1oPe03KrJAcRrYZ0Prg6_RJlUZFPb1ONz9LDk8rj4M00";
+var spreadsheetIDInd = "1SRZ2e6YDmam6UDORma-_U2eHZG-zJrksXogRMNHwBKM";
+
+var urlEng = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDEng + "/od6/public/values?alt=json";
+var urlInd = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDInd + "/od6/public/values?alt=json";
+
+var id = 0; 
+
+function engFunction() {
+$('#Table').empty()
+
+document.getElementById('subtitle').innerHTML = 'a collection of things which influence our relationship with design';
+
+$.getJSON(urlEng, function(data) {
+
+        var entry = data.feed.entry;
+        
+        entry.forEach(function(item) {
+            item.id = id++;
+            });
+        
+        entry.sort(function(a, b){return 0.5 - Math.random()});
+
+        $(entry).each(function() {
+        
+            cell = $('#Table');
+            cell.append("<a class='artefactcell' onClick='modalFunction(this.id)' id= '"+this.id+"'>" 
+                          + "<tag>" + " " +this.gsx$title.$t+ " " +this.gsx$collection.$t+ " " +this.gsx$designer.$t+ " " +this.gsx$material.$t+ " " +this.gsx$type.$t+ " " +this.gsx$tag.$t+ "</tag>"
+                          + "<img id='cellimg_"+this.id+"' src='" +this.gsx$imageitem.$t+ "'/>" 
+                          + "<p class='thumbtitle' id='username_"+this.id+"'>" +this.gsx$title.$t+ "</p>"
+                          + "<p class='info' id='collection_"+this.id+"'>" +this.gsx$collection.$t+ "</p>"
+                          + "<p class='info' id='type_"+this.id+"'>" +this.gsx$type.$t+ "</p>"
+                          + "<p class='info' id='designer_"+this.id+"'>" +this.gsx$designer.$t+ "</p>"
+                          + "<p class='info' id='material_"+this.id+"'>" +this.gsx$material.$t+ "</p>"
+                          + "<p class='info' id='description_"+this.id+"'>" +this.gsx$description.$t+ "</p>"
+                        + "<p class='info' id='nametext_"+this.id+"'>name:</p>"
+                        + "<p class='info' id='collectiontext_"+this.id+"'>collection:</p>"
+                        + "<p class='info' id='typetext_"+this.id+"'>type:</p>"
+                        + "<p class='info' id='designertext_"+this.id+"'>designer:</p>"
+                        + "<p class='info' id='materialtext_"+this.id+"'>material:</p>"
+                        + "<p class='info' id='descriptiontext_"+this.id+"'>description:</p>"
+                          + "</a>");
+            $('#Table').append(cell);
+        });
+
+    });
+}
+    
+function indFunction() {
+$('#Table').empty()
+    
+document.getElementById('subtitle').innerHTML = 'Kumpulan hal-hal yang mempengaruhi hubungan kita dengan desain';
+
+$.getJSON(urlInd, function(data) {
+
+        var entry = data.feed.entry;
+        
+        entry.forEach(function(item) {
+            item.id = id++;
+            });
+        
+        entry.sort(function(a, b){return 0.5 - Math.random()});
+
+        $(entry).each(function() {
+        
+            cell = $('#Table');
+            cell.append("<a class='artefactcell' onClick='modalFunction(this.id)' id= '"+this.id+"'>" 
+                          + "<tag>" + " " +this.gsx$title.$t+ " " +this.gsx$collection.$t+ " " +this.gsx$designer.$t+ " " +this.gsx$material.$t+ " " +this.gsx$type.$t+ " " +this.gsx$tag.$t+ "</tag>"
+                          + "<img id='cellimg_"+this.id+"' src='" +this.gsx$imageitem.$t+ "'/>" 
+                          + "<p class='thumbtitle' id='username_"+this.id+"'>" +this.gsx$title.$t+ "</p>"
+                          + "<p class='info' id='collection_"+this.id+"'>" +this.gsx$collection.$t+ "</p>"
+                          + "<p class='info' id='type_"+this.id+"'>" +this.gsx$type.$t+ "</p>"
+                          + "<p class='info' id='designer_"+this.id+"'>" +this.gsx$designer.$t+ "</p>"
+                          + "<p class='info' id='material_"+this.id+"'>" +this.gsx$material.$t+ "</p>"
+                          + "<p class='info' id='description_"+this.id+"'>" +this.gsx$description.$t+ "</p>"
+                        + "<p class='info' id='nametext_"+this.id+"'>nama</p>"
+                        + "<p class='info' id='collectiontext_"+this.id+"'>koleksi:</p>"
+                        + "<p class='info' id='typetext_"+this.id+"'>mengetik:</p>"
+                        + "<p class='info' id='designertext_"+this.id+"'>perancang:</p>"
+                        + "<p class='info' id='materialtext_"+this.id+"'>bahan:</p>"
+                        + "<p class='info' id='descriptiontext_"+this.id+"'>deskripsi:</p>"
+                          + "</a>");
+            $('#Table').append(cell);
+        });
+
+    });
+}
+    
+
+function modalFunction(clicked_id) {
+    var modal, image, i, span, modalImg, username, myTable;
+    
+    image = ($("#cellimg_"+clicked_id+"").attr('src'));
+    username = ($("#username_"+clicked_id+"").html());
+    collection = ($("#collection_"+clicked_id+"").html());
+    type = ($("#type_"+clicked_id+"").html());
+    designer = ($("#designer_"+clicked_id+"").html());
+    material = ($("#material_"+clicked_id+"").html());
+    description = ($("#description_"+clicked_id+"").html());
+    
+    nametext = ($("#nametext_"+clicked_id+"").html());
+    collectiontext = ($("#collectiontext_"+clicked_id+"").html());
+    typetext = ($("#typetext_"+clicked_id+"").html());
+    designertext = ($("#designertext_"+clicked_id+"").html());
+    materialtext = ($("#materialtext_"+clicked_id+"").html());
+    descriptiontext = ($("#descriptiontext_"+clicked_id+"").html());
+    
+    var modalImg = $("#img01")
+    modalImg.attr('src', image);
+    titlebox = document.getElementById('txt00').innerHTML = username
+    usernamebox = document.getElementById('txt01').innerHTML = username
+    collectionbox = document.getElementById('txt02').innerHTML = collection
+    typebox = document.getElementById('txt03').innerHTML = type
+    designerbox = document.getElementById('txt04').innerHTML = designer
+    materialbox = document.getElementById('txt05').innerHTML = material
+    descriptionbox = document.getElementById('txt06').innerHTML = description
+    
+    // Display modal
+    modal = document.getElementById('myModal');
+    modal.style.display = "block";
+    
+    namet = document.getElementById('nametext').innerHTML = nametext
+    collectt = document.getElementById('collectiontext').innerHTML = collectiontext
+    typet = document.getElementById('typetext').innerHTML = typetext
+    designert = document.getElementById('designertext').innerHTML = designertext
+    materialt = document.getElementById('materialtext').innerHTML = materialtext
+    descriptiont = document.getElementById('descriptiontext').innerHTML = descriptiontext
+    
+    // Get the <span> element that closes the modal
+    span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+    modal.style.display = "none";
+        }
+    };
+
+function searchFunction() {
+    var input, filter, allCell, cell, tag, i;
+  
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("Table");
+    cell = table.getElementsByClassName("artefactcell");
+ 
+    for (i = 0; i < cell.length; i++) {
+        tag = cell[i].getElementsByTagName("tag")[0];
+            if (tag) {
+                if (tag.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                cell[i].style.display = "";
+            } else {
+                cell[i].style.display = "none";
+                }
+            }       
+        }
+    }
+
+</script>
+
+
+</body>
+</html>
