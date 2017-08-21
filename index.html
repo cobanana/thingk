@@ -353,12 +353,12 @@ $.getJSON(urlEng, function(data) {
                           + "<p class='info' id='designer_"+this.id+"'>" +this.gsx$designer.$t+ "</p>"
                           + "<p class='info' id='dateroot_"+this.id+"'>" +this.gsx$dateroot.$t+ "</p>"
                           + "<p class='info' id='roothistory_"+this.id+"'>" +this.gsx$roothistory.$t+ "</p>"
-                          + "<p class='info' id='makerthis_"+this.id+"'>" +this.gsx$makerthis.$t+ "</p>"
-                          + "<p class='info' id='datethis_"+this.id+"'>" +this.gsx$datethis.$t+ "</p>"
-                          + "<p class='info' id='historythis_"+this.id+"'>" +this.gsx$historythis.$t+ "</p>"
+                          + "<p class='info' id='makerthing_"+this.id+"'>" +this.gsx$makerthing.$t+ "</p>"
+                          + "<p class='info' id='datething_"+this.id+"'>" +this.gsx$datething.$t+ "</p>"
+                          + "<p class='info' id='historything_"+this.id+"'>" +this.gsx$historything.$t+ "</p>"
                           + "<p class='info' id='userstory_"+this.id+"'>" +this.gsx$userstory.$t+ "</p>"
-                          + "<p class='info' id='beforethis_"+this.id+"'>" +this.gsx$beforethis.$t+ "</p>"
-                          + "<p class='info' id='afterthis_"+this.id+"'>" +this.gsx$afterthis.$t+ "</p>"
+                          + "<p class='info' id='beforething_"+this.id+"'>" +this.gsx$beforething.$t+ "</p>"
+                          + "<p class='info' id='afterthing_"+this.id+"'>" +this.gsx$afterthing.$t+ "</p>"
                         + "<p class='info' id='nametext_"+this.id+"'>name:</p>"
                         + "<p class='info' id='collectiontext_"+this.id+"'>collection:</p>"
                         + "<p class='info' id='locationtext_"+this.id+"'>location:</p>"
@@ -369,12 +369,12 @@ $.getJSON(urlEng, function(data) {
                         + "<p class='info' id='designertext_"+this.id+"'>designer of this type of thing:</p>"
                         + "<p class='info' id='dateroottext_"+this.id+"'>date of origin:</p>"
                         + "<p class='info' id='roothistorytext_"+this.id+"'>history of these types of things:</p>"
-                        + "<p class='info' id='makerthistext_"+this.id+"'>maker of this thing:</p>"
-                        + "<p class='info' id='datethistext_"+this.id+"'>date of this thing:</p>"
-                        + "<p class='info' id='historythistext_"+this.id+"'>history of this thing:</p>"
+                        + "<p class='info' id='makerthingtext_"+this.id+"'>maker of this thing:</p>"
+                        + "<p class='info' id='datethingtext_"+this.id+"'>date of this thing:</p>"
+                        + "<p class='info' id='historythingtext_"+this.id+"'>history of this thing:</p>"
                         + "<p class='info' id='userstorytext_"+this.id+"'>user story:</p>"
-                        + "<p class='info' id='beforethistext_"+this.id+"'>things that came before:</p>"
-                        + "<p class='info' id='afterthistext_"+this.id+"'>things that came after:</p>"
+                        + "<p class='info' id='beforethingtext_"+this.id+"'>things that came before:</p>"
+                        + "<p class='info' id='afterthingtext_"+this.id+"'>things that came after:</p>"
                           + "</a>");
             $('#Table').append(cell);
         });
@@ -437,12 +437,12 @@ function modalFunction(clicked_id) {
     designer = ($("#designer_"+clicked_id+"").html());
     roothistory = ($("#roothistory_"+clicked_id+"").html());
     dateroot = ($("#dateroot_"+clicked_id+"").html());
-    makerthis = ($("#makerthis_"+clicked_id+"").html());
-    datethis = ($("#datethis_"+clicked_id+"").html());
-    historythis = ($("#historythis_"+clicked_id+"").html());
+    makerthing = ($("#makerthing_"+clicked_id+"").html());
+    datething = ($("#datething_"+clicked_id+"").html());
+    historything = ($("#historything_"+clicked_id+"").html());
     userstory = ($("#userstory_"+clicked_id+"").html());
-    beforethis = ($("#beforethis_"+clicked_id+"").html());
-    afterthis = ($("#afterthis_"+clicked_id+"").html());
+    beforething = ($("#beforething_"+clicked_id+"").html());
+    afterthing = ($("#afterthing_"+clicked_id+"").html());
     
     nametext = ($("#nametext_"+clicked_id+"").html());
     collectiontext = ($("#collectiontext_"+clicked_id+"").html());
@@ -454,10 +454,10 @@ function modalFunction(clicked_id) {
     designertext = ($("#designertext_"+clicked_id+"").html());
     roothistorytext = ($("#roothistorytext_"+clicked_id+"").html());
     dateroottext = ($("#dateroottext_"+clicked_id+"").html());
-    makerthistext = ($("#makerthistext_"+clicked_id+"").html());
+    makerthingtext = ($("#makerthingtext_"+clicked_id+"").html());
     userstorytext = ($("#userstorytext_"+clicked_id+"").html());
-    datethistext = ($("#datethistext_"+clicked_id+"").html());
-    afterthistext = ($("#afterthistext_"+clicked_id+"").html());
+    datethingtext = ($("#datethingtext_"+clicked_id+"").html());
+    afterthingtext = ($("#afterthingtext_"+clicked_id+"").html());
     
     var modalImg = $("#img01")
     modalImg.attr('src', image);
@@ -472,12 +472,12 @@ function modalFunction(clicked_id) {
     designerbox = document.getElementById('txt08').innerHTML = designer
     roothistorybox = document.getElementById('txt09').innerHTML = roothistory
     daterootbox = document.getElementById('txt10').innerHTML = dateroot
-    makerthisbox = document.getElementById('txt11').innerHTML = makerthis
-    datethisbox = document.getElementById('txt12').innerHTML = datethis
-    historythisbox = document.getElementById('txt13').innerHTML = historythis
+    makerthingbox = document.getElementById('txt11').innerHTML = makerthing
+    datethingbox = document.getElementById('txt12').innerHTML = datethis
+    historythingbox = document.getElementById('txt13').innerHTML = historything
     userstorybox = document.getElementById('txt14').innerHTML = userstory
-    beforethisbox = document.getElementById('txt15').innerHTML = beforethis
-    afterthisbox = document.getElementById('txt16').innerHTML = afterthis
+    beforethingbox = document.getElementById('txt15').innerHTML = beforething
+    afterthingbox = document.getElementById('txt16').innerHTML = afterthing
     
     // Display modal
     modal = document.getElementById('myModal');
@@ -493,12 +493,12 @@ function modalFunction(clicked_id) {
     designert = document.getElementById('designertext').innerHTML = designertext
     roothistoryt = document.getElementById('roothistorytext').innerHTML = roothistorytext
     dateroott = document.getElementById('dateroottext').innerHTML = dateroottext
-    makerthist = document.getElementById('makerthistext').innerHTML = makerthistext
-    datethist = document.getElementById('datethistext').innerHTML = datethistext
-    historythist = document.getElementById('historythistext').innerHTML = historythistext
+    makerthingt = document.getElementById('makerthingtext').innerHTML = makerthingtext
+    datethingt = document.getElementById('datethingtext').innerHTML = datethingtext
+    historythingt = document.getElementById('historythingtext').innerHTML = historythingtext
     userstoryt = document.getElementById('userstorytext').innerHTML = userstorytext
-    beforethist = document.getElementById('beforethistext').innerHTML = beforethistext
-    afterthist = document.getElementById('afterthistext').innerHTML = afterthistext
+    beforethingt = document.getElementById('beforethingtext').innerHTML = beforethingtext
+    afterthingt = document.getElementById('afterthingtext').innerHTML = afterthingtext
     
     // Get the <span> element that closes the modal
     span = document.getElementsByClassName("close")[0];
