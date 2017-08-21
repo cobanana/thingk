@@ -305,6 +305,10 @@ th, td {
         <td id="afterthingtext" class=modaltitle></td>
         <td id="txt16" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
       </tr>
+      <tr>
+        <td id="referencestext" class=modaltitle></td>
+        <td id="txt17"></td>  
+      </tr>
     </table>
     </div>
     
@@ -362,6 +366,7 @@ $.getJSON(urlEng, function(data) {
                           + "<p class='info' id='userstory_"+this.id+"'>" +this.gsx$userstory.$t+ "</p>"
                           + "<p class='info' id='beforething_"+this.id+"'>" +this.gsx$beforething.$t+ "</p>"
                           + "<p class='info' id='afterthing_"+this.id+"'>" +this.gsx$afterthing.$t+ "</p>"
+                          + "<p class='info' id='references_"+this.id+"'>" +this.gsx$references.$t+ "</p>"
                         + "<p class='info' id='nametext_"+this.id+"'>name:</p>"
                         + "<p class='info' id='collectiontext_"+this.id+"'>collection:</p>"
                         + "<p class='info' id='locationtext_"+this.id+"'>location:</p>"
@@ -378,6 +383,7 @@ $.getJSON(urlEng, function(data) {
                         + "<p class='info' id='userstorytext_"+this.id+"'>user story:</p>"
                         + "<p class='info' id='beforethingtext_"+this.id+"'>things that came before:</p>"
                         + "<p class='info' id='afterthingtext_"+this.id+"'>things that came after:</p>"
+                        + "<p class='info' id='referencestext_"+this.id+"'>references:</p>"
                           + "</a>");
             $('#Table').append(cell);
         });
@@ -422,6 +428,7 @@ $.getJSON(urlInd, function(data) {
                           + "<p class='info' id='userstory_"+this.id+"'>" +this.gsx$userstory.$t+ "</p>"
                           + "<p class='info' id='beforething_"+this.id+"'>" +this.gsx$beforething.$t+ "</p>"
                           + "<p class='info' id='afterthing_"+this.id+"'>" +this.gsx$afterthing.$t+ "</p>"
+                          + "<p class='info' id='references_"+this.id+"'>" +this.gsx$references.$t+ "</p>"
                         + "<p class='info' id='nametext_"+this.id+"'>name:</p>"
                         + "<p class='info' id='collectiontext_"+this.id+"'>collection:</p>"
                         + "<p class='info' id='locationtext_"+this.id+"'>location:</p>"
@@ -438,6 +445,7 @@ $.getJSON(urlInd, function(data) {
                         + "<p class='info' id='userstorytext_"+this.id+"'>user story:</p>"
                         + "<p class='info' id='beforethingtext_"+this.id+"'>things that came before:</p>"
                         + "<p class='info' id='afterthingtext_"+this.id+"'>things that came after:</p>"
+                        + "<p class='info' id='referencestext_"+this.id+"'>references:</p>"
                           + "</a>");
             $('#Table').append(cell);
         });
@@ -466,6 +474,7 @@ function modalFunction(clicked_id) {
     userstory = ($("#userstory_"+clicked_id+"").html());
     beforething = ($("#beforething_"+clicked_id+"").html());
     afterthing = ($("#afterthing_"+clicked_id+"").html());
+    references = ($("#references_"+clicked_id+"").html());
     
     nametext = ($("#nametext_"+clicked_id+"").html());
     collectiontext = ($("#collectiontext_"+clicked_id+"").html());
@@ -483,6 +492,7 @@ function modalFunction(clicked_id) {
     userstorytext = ($("#userstorytext_"+clicked_id+"").html());
     beforethingtext = ($("#beforethingtext_"+clicked_id+"").html());
     afterthingtext = ($("#afterthingtext_"+clicked_id+"").html());
+    referencestext = ($("#referencestext_"+clicked_id+"").html());
     
     var modalImg = $("#img01")
     modalImg.attr('src', image);
@@ -503,6 +513,7 @@ function modalFunction(clicked_id) {
     userstorybox = document.getElementById('txt14').innerHTML = userstory
     beforethingbox = document.getElementById('txt15').innerHTML = beforething
     afterthingbox = document.getElementById('txt16').innerHTML = afterthing
+    referencesbox = document.getElementById('txt17').innerHTML = references
     
     // Display modal
     modal = document.getElementById('myModal');
@@ -524,6 +535,7 @@ function modalFunction(clicked_id) {
     userstoryt = document.getElementById('userstorytext').innerHTML = userstorytext
     beforethingt = document.getElementById('beforethingtext').innerHTML = beforethingtext
     afterthingt = document.getElementById('afterthingtext').innerHTML = afterthingtext
+    referencest = document.getElementById('referencestext').innerHTML = referencestext
     
     // Get the <span> element that closes the modal
     span = document.getElementsByClassName("close")[0];
