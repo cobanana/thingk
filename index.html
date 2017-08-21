@@ -325,7 +325,7 @@ var id = 0;
 function engFunction() {
 $('#Table').empty()
 
-document.getElementById('subtitle').innerHTML = 'a collection of things which influence our relationship with design';
+document.getElementById('subtitle').innerHTML = 'a collection of things which influence us';
 
 $.getJSON(urlEng, function(data) {
 
@@ -405,16 +405,36 @@ $.getJSON(urlInd, function(data) {
                           + "<img id='cellimg_"+this.id+"' src='" +this.gsx$imageitem.$t+ "'/>" 
                           + "<p class='thumbtitle' id='title_"+this.id+"'>" +this.gsx$title.$t+ "</p>"
                           + "<p class='info' id='collection_"+this.id+"'>" +this.gsx$collection.$t+ "</p>"
+                          + "<p class='info' id='loca_"+this.id+"'>" +this.gsx$loca.$t+ "</p>"
                           + "<p class='info' id='type_"+this.id+"'>" +this.gsx$type.$t+ "</p>"
-                          + "<p class='info' id='designer_"+this.id+"'>" +this.gsx$designer.$t+ "</p>"
+                          + "<p class='info' id='function_"+this.id+"'>" +this.gsx$function.$t+ "</p>"
                           + "<p class='info' id='material_"+this.id+"'>" +this.gsx$material.$t+ "</p>"
-                          + "<p class='info' id='description_"+this.id+"'>" +this.gsx$description.$t+ "</p>"
-                        + "<p class='info' id='nametext_"+this.id+"'>nama</p>"
-                        + "<p class='info' id='collectiontext_"+this.id+"'>koleksi:</p>"
-                        + "<p class='info' id='typetext_"+this.id+"'>mengetik:</p>"
-                        + "<p class='info' id='designertext_"+this.id+"'>perancang:</p>"
-                        + "<p class='info' id='materialtext_"+this.id+"'>bahan:</p>"
-                        + "<p class='info' id='descriptiontext_"+this.id+"'>deskripsi:</p>"
+                          + "<p class='info' id='dimension_"+this.id+"'>" +this.gsx$dimension.$t+ "</p>"
+                          + "<p class='info' id='designer_"+this.id+"'>" +this.gsx$designer.$t+ "</p>"
+                          + "<p class='info' id='dateroot_"+this.id+"'>" +this.gsx$dateroot.$t+ "</p>"
+                          + "<p class='info' id='roothistory_"+this.id+"'>" +this.gsx$roothistory.$t+ "</p>"
+                          + "<p class='info' id='makerthing_"+this.id+"'>" +this.gsx$makerthing.$t+ "</p>"
+                          + "<p class='info' id='datething_"+this.id+"'>" +this.gsx$datething.$t+ "</p>"
+                          + "<p class='info' id='historything_"+this.id+"'>" +this.gsx$historything.$t+ "</p>"
+                          + "<p class='info' id='userstory_"+this.id+"'>" +this.gsx$userstory.$t+ "</p>"
+                          + "<p class='info' id='beforething_"+this.id+"'>" +this.gsx$beforething.$t+ "</p>"
+                          + "<p class='info' id='afterthing_"+this.id+"'>" +this.gsx$afterthing.$t+ "</p>"
+                        + "<p class='info' id='nametext_"+this.id+"'>name:</p>"
+                        + "<p class='info' id='collectiontext_"+this.id+"'>collection:</p>"
+                        + "<p class='info' id='locationtext_"+this.id+"'>location:</p>"
+                        + "<p class='info' id='typetext_"+this.id+"'>type:</p>"
+                        + "<p class='info' id='functiontext_"+this.id+"'>function:</p>"
+                        + "<p class='info' id='materialtext_"+this.id+"'>material:</p>"
+                        + "<p class='info' id='dimensiontext_"+this.id+"'>dimensions:</p>"
+                        + "<p class='info' id='designertext_"+this.id+"'>designer of this type of thing:</p>"
+                        + "<p class='info' id='dateroottext_"+this.id+"'>date of origin:</p>"
+                        + "<p class='info' id='roothistorytext_"+this.id+"'>history of these types of things:</p>"
+                        + "<p class='info' id='makerthingtext_"+this.id+"'>maker of this thing:</p>"
+                        + "<p class='info' id='datethingtext_"+this.id+"'>date of this thing:</p>"
+                        + "<p class='info' id='historythingtext_"+this.id+"'>history of this thing:</p>"
+                        + "<p class='info' id='userstorytext_"+this.id+"'>user story:</p>"
+                        + "<p class='info' id='beforethingtext_"+this.id+"'>things that came before:</p>"
+                        + "<p class='info' id='afterthingtext_"+this.id+"'>things that came after:</p>"
                           + "</a>");
             $('#Table').append(cell);
         });
