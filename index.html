@@ -208,6 +208,9 @@ th, td {
         width: 100%;
     }
 }
+    
+.newsearch {cursor: pointer; 
+}
 
 
 
@@ -240,19 +243,19 @@ th, td {
     <table class="caption" style="width:100%">
       <tr>
         <td id="nametext" class=modaltitle></td>
-        <td id="txt01"></td> 
+        <td id="txt01" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
       </tr>
       <tr>
         <td id="collectiontext" class=modaltitle></td>
-        <td id="txt02"></td> 
+        <td id="txt02" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
       </tr>
       <tr>
         <td id="locationtext" class=modaltitle></td>
-        <td id="txt03"></td> 
+        <td id="txt03" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
       </tr>
       <tr>
         <td id="typetext" class=modaltitle></td>
-        <td id="txt04"></td> 
+        <td id="txt04" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
       </tr>
       <tr>
         <td id="functiontext" class=modaltitle></td>
@@ -260,7 +263,7 @@ th, td {
       </tr>
         <tr>
         <td id="materialtext" class=modaltitle></td>
-        <td id="txt06"></td> 
+        <td id="txt06" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
       </tr>
       <tr>
         <td id="dimensiontext" class=modaltitle></td>
@@ -268,11 +271,11 @@ th, td {
       </tr>
       <tr>
         <td id="designertext" class=modaltitle></td>
-        <td id="txt08"></td> 
+        <td id="txt08" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
       </tr>
         <tr>
         <td id="dateroottext" class=modaltitle></td>
-        <td id="txt09"></td> 
+        <td id="txt09" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
       </tr>
       <tr>
         <td id="roothistorytext" class=modaltitle></td>
@@ -280,11 +283,11 @@ th, td {
       </tr>
       <tr>
         <td id="makerthingtext" class=modaltitle></td>
-        <td id="txt11"></td> 
+        <td id="txt11" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
       </tr>
       <tr>
         <td id="datethingtext" class=modaltitle></td>
-        <td id="txt12"></td> 
+        <td id="txt12" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
       </tr>
       <tr>
         <td id="historythingtext" class=modaltitle></td>
@@ -296,11 +299,11 @@ th, td {
       </tr>
       <tr>
         <td id="beforethingtext" class=modaltitle></td>
-        <td id="txt15"></td> 
+        <td id="txt15" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
       </tr>
       <tr>
         <td id="afterthingtext" class=modaltitle></td>
-        <td id="txt16"></td> 
+        <td id="txt16" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
       </tr>
     </table>
     </div>
@@ -549,6 +552,29 @@ function searchFunction() {
                 }
             }       
         }
+    }
+    
+function puttextinsearchFunction(clicked_id) {
+    
+    inputtext = ($("#"+clicked_id+"").html());
+    
+    filter = inputtext.toUpperCase();
+    table = document.getElementById("Table");
+    cell = table.getElementsByClassName("artefactcell");
+ 
+    for (i = 0; i < cell.length; i++) {
+        tag = cell[i].getElementsByTagName("tag")[0];
+            if (tag) {
+                if (tag.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                cell[i].style.display = "";
+            } else {
+                cell[i].style.display = "none";
+                }
+            }       
+        }
+    modal = document.getElementById('myModal');
+    modal.style.display = "none";
+    
     }
 
 </script>
