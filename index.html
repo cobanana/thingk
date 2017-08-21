@@ -246,7 +246,7 @@ th, td {
         <td id="collectiontext" class=modaltitle></td>
         <td id="txt02"></td> 
       </tr>
-     <tr>
+      <tr>
         <td id="locationtext" class=modaltitle></td>
         <td id="txt03"></td> 
       </tr>
@@ -345,7 +345,7 @@ $.getJSON(urlEng, function(data) {
                           + "<img id='cellimg_"+this.id+"' src='" +this.gsx$imageitem.$t+ "'/>" 
                           + "<p class='thumbtitle' id='title_"+this.id+"'>" +this.gsx$title.$t+ "</p>"
                           + "<p class='info' id='collection_"+this.id+"'>" +this.gsx$collection.$t+ "</p>"
-                          + "<p class='info' id='location_"+this.id+"'>" +this.gsx$location.$t+ "</p>"
+                          + "<p class='info' id='loca_"+this.id+"'>" +this.gsx$loca.$t+ "</p>"
                           + "<p class='info' id='type_"+this.id+"'>" +this.gsx$type.$t+ "</p>"
                           + "<p class='info' id='function_"+this.id+"'>" +this.gsx$function.$t+ "</p>"
                           + "<p class='info' id='material_"+this.id+"'>" +this.gsx$material.$t+ "</p>"
@@ -429,7 +429,7 @@ function modalFunction(clicked_id) {
     image = ($("#cellimg_"+clicked_id+"").attr('src'));
     title = ($("#title_"+clicked_id+"").html());
     collection = ($("#collection_"+clicked_id+"").html());
-    location = ($("#location_"+clicked_id+"").html());
+    loca = ($("#loca_"+clicked_id+"").html());
     type = ($("#type_"+clicked_id+"").html());
     tfunction = ($("#function_"+clicked_id+"").html());
     material = ($("#material_"+clicked_id+"").html());
@@ -464,7 +464,7 @@ function modalFunction(clicked_id) {
     titlebox = document.getElementById('txt00').innerHTML = title
     titlenamebox = document.getElementById('txt01').innerHTML = title
     collectionbox = document.getElementById('txt02').innerHTML = collection
-    locationbox = document.getElementById('txt03').innerHTML = location
+    locationbox = document.getElementById('txt03').innerHTML = loca
     typebox = document.getElementById('txt04').innerHTML = type
     functionbox = document.getElementById('txt05').innerHTML = tfunction
     materialbox = document.getElementById('txt06').innerHTML = material
