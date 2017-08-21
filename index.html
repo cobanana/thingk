@@ -246,21 +246,61 @@ th, td {
         <td id="collectiontext" class=modaltitle></td>
         <td id="txt02"></td> 
       </tr>
-      <tr>
-        <td id="typetext" class=modaltitle></td>
+     <tr>
+        <td id="locationtext" class=modaltitle></td>
         <td id="txt03"></td> 
       </tr>
       <tr>
-        <td id="designertext" class=modaltitle></td>
+        <td id="typetext" class=modaltitle></td>
         <td id="txt04"></td> 
+      </tr>
+      <tr>
+        <td id="functiontext" class=modaltitle></td>
+        <td id="txt05"></td> 
       </tr>
         <tr>
         <td id="materialtext" class=modaltitle></td>
-        <td id="txt05"></td> 
+        <td id="txt06"></td> 
       </tr>
       <tr>
-        <td id="descriptiontext" class=modaltitle></td>
-        <td id="txt06"></td> 
+        <td id="dimensiontext" class=modaltitle></td>
+        <td id="txt07"></td> 
+      </tr>
+      <tr>
+        <td id="designertext" class=modaltitle></td>
+        <td id="txt08"></td> 
+      </tr>
+        <tr>
+        <td id="dateroottext" class=modaltitle></td>
+        <td id="txt09"></td> 
+      </tr>
+      <tr>
+        <td id="roothistorytext" class=modaltitle></td>
+        <td id="txt10"></td> 
+      </tr>
+      <tr>
+        <td id="makerthistext" class=modaltitle></td>
+        <td id="txt11"></td> 
+      </tr>
+      <tr>
+        <td id="datethistext" class=modaltitle></td>
+        <td id="txt12"></td> 
+      </tr>
+      <tr>
+        <td id="historythistext" class=modaltitle></td>
+        <td id="txt13"></td> 
+      </tr>
+      <tr>
+        <td id="userstorytext" class=modaltitle></td>
+        <td id="txt14"></td> 
+      </tr>
+      <tr>
+        <td id="beforethistext" class=modaltitle></td>
+        <td id="txt15"></td> 
+      </tr>
+      <tr>
+        <td id="afterthistext" class=modaltitle></td>
+        <td id="txt16"></td> 
       </tr>
     </table>
     </div>
@@ -303,18 +343,38 @@ $.getJSON(urlEng, function(data) {
             cell.append("<a class='artefactcell' onClick='modalFunction(this.id)' id= '"+this.id+"'>" 
                           + "<tag>" + " " +this.gsx$title.$t+ " " +this.gsx$collection.$t+ " " +this.gsx$designer.$t+ " " +this.gsx$material.$t+ " " +this.gsx$type.$t+ " " +this.gsx$tag.$t+ "</tag>"
                           + "<img id='cellimg_"+this.id+"' src='" +this.gsx$imageitem.$t+ "'/>" 
-                          + "<p class='thumbtitle' id='username_"+this.id+"'>" +this.gsx$title.$t+ "</p>"
+                          + "<p class='thumbtitle' id='title_"+this.id+"'>" +this.gsx$title.$t+ "</p>"
                           + "<p class='info' id='collection_"+this.id+"'>" +this.gsx$collection.$t+ "</p>"
+                          + "<p class='info' id='location_"+this.id+"'>" +this.gsx$location.$t+ "</p>"
                           + "<p class='info' id='type_"+this.id+"'>" +this.gsx$type.$t+ "</p>"
-                          + "<p class='info' id='designer_"+this.id+"'>" +this.gsx$designer.$t+ "</p>"
+                          + "<p class='info' id='function_"+this.id+"'>" +this.gsx$function.$t+ "</p>"
                           + "<p class='info' id='material_"+this.id+"'>" +this.gsx$material.$t+ "</p>"
-                          + "<p class='info' id='description_"+this.id+"'>" +this.gsx$description.$t+ "</p>"
+                          + "<p class='info' id='dimension_"+this.id+"'>" +this.gsx$dimension.$t+ "</p>"
+                          + "<p class='info' id='designer_"+this.id+"'>" +this.gsx$designer.$t+ "</p>"
+                          + "<p class='info' id='dateroot_"+this.id+"'>" +this.gsx$dateroot.$t+ "</p>"
+                          + "<p class='info' id='roothistory_"+this.id+"'>" +this.gsx$roothistory.$t+ "</p>"
+                          + "<p class='info' id='makerthis_"+this.id+"'>" +this.gsx$makerthis.$t+ "</p>"
+                          + "<p class='info' id='datethis_"+this.id+"'>" +this.gsx$datethis.$t+ "</p>"
+                          + "<p class='info' id='historythis_"+this.id+"'>" +this.gsx$historythis.$t+ "</p>"
+                          + "<p class='info' id='userstory_"+this.id+"'>" +this.gsx$userstory.$t+ "</p>"
+                          + "<p class='info' id='beforethis_"+this.id+"'>" +this.gsx$beforethis.$t+ "</p>"
+                          + "<p class='info' id='afterthis_"+this.id+"'>" +this.gsx$afterthis.$t+ "</p>"
                         + "<p class='info' id='nametext_"+this.id+"'>name:</p>"
                         + "<p class='info' id='collectiontext_"+this.id+"'>collection:</p>"
+                        + "<p class='info' id='locationtext_"+this.id+"'>location:</p>"
                         + "<p class='info' id='typetext_"+this.id+"'>type:</p>"
-                        + "<p class='info' id='designertext_"+this.id+"'>designer:</p>"
+                        + "<p class='info' id='functiontext_"+this.id+"'>function:</p>"
                         + "<p class='info' id='materialtext_"+this.id+"'>material:</p>"
-                        + "<p class='info' id='descriptiontext_"+this.id+"'>description:</p>"
+                        + "<p class='info' id='dimensiontext_"+this.id+"'>dimensions:</p>"
+                        + "<p class='info' id='designertext_"+this.id+"'>designer of this type of thing:</p>"
+                        + "<p class='info' id='dateroottext_"+this.id+"'>date of origin:</p>"
+                        + "<p class='info' id='roothistorytext_"+this.id+"'>history of these types of things:</p>"
+                        + "<p class='info' id='makerthistext_"+this.id+"'>maker of this thing:</p>"
+                        + "<p class='info' id='datethistext_"+this.id+"'>date of this thing:</p>"
+                        + "<p class='info' id='historythistext_"+this.id+"'>history of this thing:</p>"
+                        + "<p class='info' id='userstorytext_"+this.id+"'>user story:</p>"
+                        + "<p class='info' id='beforethistext_"+this.id+"'>things that came before:</p>"
+                        + "<p class='info' id='afterthistext_"+this.id+"'>things that came after:</p>"
                           + "</a>");
             $('#Table').append(cell);
         });
@@ -364,32 +424,60 @@ $.getJSON(urlInd, function(data) {
     
 
 function modalFunction(clicked_id) {
-    var modal, image, i, span, modalImg, username, myTable;
+    var modal, image, i, span, modalImg, title, myTable;
     
     image = ($("#cellimg_"+clicked_id+"").attr('src'));
-    username = ($("#username_"+clicked_id+"").html());
+    title = ($("#title_"+clicked_id+"").html());
     collection = ($("#collection_"+clicked_id+"").html());
+    location = ($("#location_"+clicked_id+"").html());
     type = ($("#type_"+clicked_id+"").html());
-    designer = ($("#designer_"+clicked_id+"").html());
+    tfunction = ($("#function_"+clicked_id+"").html());
     material = ($("#material_"+clicked_id+"").html());
-    description = ($("#description_"+clicked_id+"").html());
+    dimension = ($("#dimension_"+clicked_id+"").html());
+    designer = ($("#designer_"+clicked_id+"").html());
+    roothistory = ($("#roothistory_"+clicked_id+"").html());
+    dateroot = ($("#dateroot_"+clicked_id+"").html());
+    makerthis = ($("#makerthis_"+clicked_id+"").html());
+    datethis = ($("#datethis_"+clicked_id+"").html());
+    historythis = ($("#historythis_"+clicked_id+"").html());
+    userstory = ($("#userstory_"+clicked_id+"").html());
+    beforethis = ($("#beforethis_"+clicked_id+"").html());
+    afterthis = ($("#afterthis_"+clicked_id+"").html());
     
     nametext = ($("#nametext_"+clicked_id+"").html());
     collectiontext = ($("#collectiontext_"+clicked_id+"").html());
+    locationtext = ($("#locationtext_"+clicked_id+"").html());
     typetext = ($("#typetext_"+clicked_id+"").html());
-    designertext = ($("#designertext_"+clicked_id+"").html());
+    tfunctiontext = ($("#functiontext_"+clicked_id+"").html());
     materialtext = ($("#materialtext_"+clicked_id+"").html());
-    descriptiontext = ($("#descriptiontext_"+clicked_id+"").html());
+    dimensiontext = ($("#dimensiontext_"+clicked_id+"").html());
+    designertext = ($("#designertext_"+clicked_id+"").html());
+    roothistorytext = ($("#roothistorytext_"+clicked_id+"").html());
+    dateroottext = ($("#dateroottext_"+clicked_id+"").html());
+    makerthistext = ($("#makerthistext_"+clicked_id+"").html());
+    userstorytext = ($("#userstorytext_"+clicked_id+"").html());
+    datethistext = ($("#datethistext_"+clicked_id+"").html());
+    afterthistext = ($("#afterthistext_"+clicked_id+"").html());
     
     var modalImg = $("#img01")
     modalImg.attr('src', image);
-    titlebox = document.getElementById('txt00').innerHTML = username
-    usernamebox = document.getElementById('txt01').innerHTML = username
+    titlebox = document.getElementById('txt00').innerHTML = title
+    titlenamebox = document.getElementById('txt01').innerHTML = title
     collectionbox = document.getElementById('txt02').innerHTML = collection
-    typebox = document.getElementById('txt03').innerHTML = type
-    designerbox = document.getElementById('txt04').innerHTML = designer
-    materialbox = document.getElementById('txt05').innerHTML = material
-    descriptionbox = document.getElementById('txt06').innerHTML = description
+    locationbox = document.getElementById('txt03').innerHTML = location
+    typebox = document.getElementById('txt04').innerHTML = type
+    functionbox = document.getElementById('txt05').innerHTML = tfunction
+    materialbox = document.getElementById('txt06').innerHTML = material
+    dimensionbox = document.getElementById('txt07').innerHTML = dimension
+    designerbox = document.getElementById('txt08').innerHTML = designer
+    roothistorybox = document.getElementById('txt09').innerHTML = roothistory
+    daterootbox = document.getElementById('txt10').innerHTML = dateroot
+    makerthisbox = document.getElementById('txt11').innerHTML = makerthis
+    datethisbox = document.getElementById('txt12').innerHTML = datethis
+    historythisbox = document.getElementById('txt13').innerHTML = historythis
+    userstorybox = document.getElementById('txt14').innerHTML = userstory
+    beforethisbox = document.getElementById('txt15').innerHTML = beforethis
+    afterthisbox = document.getElementById('txt16').innerHTML = afterthis
     
     // Display modal
     modal = document.getElementById('myModal');
@@ -397,10 +485,20 @@ function modalFunction(clicked_id) {
     
     namet = document.getElementById('nametext').innerHTML = nametext
     collectt = document.getElementById('collectiontext').innerHTML = collectiontext
+    locationt = document.getElementById('locationtext').innerHTML = locationtext
     typet = document.getElementById('typetext').innerHTML = typetext
-    designert = document.getElementById('designertext').innerHTML = designertext
+    functiont = document.getElementById('functiontext').innerHTML = tfunctiontext
     materialt = document.getElementById('materialtext').innerHTML = materialtext
-    descriptiont = document.getElementById('descriptiontext').innerHTML = descriptiontext
+    dimensiont = document.getElementById('dimensiontext').innerHTML = dimensiontext
+    designert = document.getElementById('designertext').innerHTML = designertext
+    roothistoryt = document.getElementById('roothistorytext').innerHTML = roothistorytext
+    dateroott = document.getElementById('dateroottext').innerHTML = dateroottext
+    makerthist = document.getElementById('makerthistext').innerHTML = makerthistext
+    datethist = document.getElementById('datethistext').innerHTML = datethistext
+    historythist = document.getElementById('historythistext').innerHTML = historythistext
+    userstoryt = document.getElementById('userstorytext').innerHTML = userstorytext
+    beforethist = document.getElementById('beforethistext').innerHTML = beforethistext
+    afterthist = document.getElementById('afterthistext').innerHTML = afterthistext
     
     // Get the <span> element that closes the modal
     span = document.getElementsByClassName("close")[0];
