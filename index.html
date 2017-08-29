@@ -254,6 +254,10 @@ th, td {
         <td id="txt03" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
       </tr>
       <tr>
+        <td id="typebroadtext" class=modaltitle></td>
+        <td id="txt18" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>  
+      </tr>
+      <tr>
         <td id="typetext" class=modaltitle></td>
         <td id="txt04" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
       </tr>
@@ -348,7 +352,7 @@ $.getJSON(urlEng, function(data) {
         
             cell = $('#Table');
             cell.append("<a class='artefactcell' onClick='modalFunction(this.id)' id= '"+this.id+"'>" 
-                          + "<tag>" + " " +this.gsx$title.$t+ " " +this.gsx$collection.$t+ " " +this.gsx$loca.$t+ " " +this.gsx$type.$t+ " " +this.gsx$material.$t+ " " +this.gsx$dimension.$t+ " " +this.gsx$designer.$t+ " " +this.gsx$dateroot.$t+ " " +this.gsx$makerthing.$t+ " " +this.gsx$beforething.$t+ " " +this.gsx$afterthing.$t+ " " +this.gsx$tag.$t+ "</tag>"
+                          + "<tag>" + " " +this.gsx$title.$t+ " " +this.gsx$collection.$t+ " " +this.gsx$loca.$t+ " " +this.gsx$type.$t+ " " +this.gsx$typebroad.$t+ " " +this.gsx$material.$t+ " " +this.gsx$dimension.$t+ " " +this.gsx$designer.$t+ " " +this.gsx$dateroot.$t+ " " +this.gsx$makerthing.$t+ " " +this.gsx$beforething.$t+ " " +this.gsx$afterthing.$t+ " " +this.gsx$tag.$t+ "</tag>"
                           + "<img id='cellimg_"+this.id+"' src='" +this.gsx$imageitem.$t+ "'/>" 
                           + "<p class='thumbtitle' id='title_"+this.id+"'>" +this.gsx$title.$t+ "</p>"
                           + "<p class='info' id='collection_"+this.id+"'>" +this.gsx$collection.$t+ "</p>"
@@ -416,6 +420,7 @@ $.getJSON(urlInd, function(data) {
                           + "<p class='info' id='collection_"+this.id+"'>" +this.gsx$collection.$t+ "</p>"
                           + "<p class='info' id='loca_"+this.id+"'>" +this.gsx$loca.$t+ "</p>"
                           + "<p class='info' id='type_"+this.id+"'>" +this.gsx$type.$t+ "</p>"
+                          + "<p class='info' id='type_"+this.id+"'>" +this.gsx$typebroad.$t+ "</p>"
                           + "<p class='info' id='function_"+this.id+"'>" +this.gsx$function.$t+ "</p>"
                           + "<p class='info' id='material_"+this.id+"'>" +this.gsx$material.$t+ "</p>"
                           + "<p class='info' id='dimension_"+this.id+"'>" +this.gsx$dimension.$t+ "</p>"
@@ -433,6 +438,7 @@ $.getJSON(urlInd, function(data) {
                         + "<p class='info' id='collectiontext_"+this.id+"'>collection:</p>"
                         + "<p class='info' id='locationtext_"+this.id+"'>location:</p>"
                         + "<p class='info' id='typetext_"+this.id+"'>type:</p>"
+                        + "<p class='info' id='typebroadtext_"+this.id+"'>category:</p>"
                         + "<p class='info' id='functiontext_"+this.id+"'>function:</p>"
                         + "<p class='info' id='materialtext_"+this.id+"'>material:</p>"
                         + "<p class='info' id='dimensiontext_"+this.id+"'>dimensions:</p>"
@@ -462,6 +468,7 @@ function modalFunction(clicked_id) {
     collection = ($("#collection_"+clicked_id+"").html());
     loca = ($("#loca_"+clicked_id+"").html());
     type = ($("#type_"+clicked_id+"").html());
+    type = ($("#typebroad_"+clicked_id+"").html());
     tfunction = ($("#function_"+clicked_id+"").html());
     material = ($("#material_"+clicked_id+"").html());
     dimension = ($("#dimension_"+clicked_id+"").html());
@@ -480,6 +487,7 @@ function modalFunction(clicked_id) {
     collectiontext = ($("#collectiontext_"+clicked_id+"").html());
     locationtext = ($("#locationtext_"+clicked_id+"").html());
     typetext = ($("#typetext_"+clicked_id+"").html());
+    typetext = ($("#typebroadtext_"+clicked_id+"").html());
     tfunctiontext = ($("#functiontext_"+clicked_id+"").html());
     materialtext = ($("#materialtext_"+clicked_id+"").html());
     dimensiontext = ($("#dimensiontext_"+clicked_id+"").html());
@@ -501,6 +509,7 @@ function modalFunction(clicked_id) {
     collectionbox = document.getElementById('txt02').innerHTML = collection
     locationbox = document.getElementById('txt03').innerHTML = loca
     typebox = document.getElementById('txt04').innerHTML = type
+    typebroadbox = document.getElementById('txtq8').innerHTML = category
     functionbox = document.getElementById('txt05').innerHTML = tfunction
     materialbox = document.getElementById('txt06').innerHTML = material
     dimensionbox = document.getElementById('txt07').innerHTML = dimension
@@ -523,6 +532,7 @@ function modalFunction(clicked_id) {
     collectt = document.getElementById('collectiontext').innerHTML = collectiontext
     locationt = document.getElementById('locationtext').innerHTML = locationtext
     typet = document.getElementById('typetext').innerHTML = typetext
+    typebroadt = document.getElementById('typebroadtext').innerHTML = typebroadtext
     functiont = document.getElementById('functiontext').innerHTML = tfunctiontext
     materialt = document.getElementById('materialtext').innerHTML = materialtext
     dimensiont = document.getElementById('dimensiontext').innerHTML = dimensiontext
