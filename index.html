@@ -578,10 +578,9 @@ function searchFunction() {
     
 function puttextinsearchFunction(clicked_id) {
     
-    inputtext = ($("#"+clicked_id+"").html());
-    inputtextcomma = inputtext.split(",")
+    inputtext = ($("#"+clicked_id+"").html()).split(",");
     
-    filter = inputtextcomma.toUpperCase();
+    filter = inputtext.toUpperCase();
     table = document.getElementById("Table");
     cell = table.getElementsByClassName("artefactcell");
  
