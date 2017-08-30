@@ -580,6 +580,13 @@ function puttextinsearchFunction(clicked_id) {
     
     inputtext = ($("#"+clicked_id+"").html());
     
+    var fields = inputtext.split(',');
+
+    var clickedone = fields[0];
+    var clickedtwo = fields[1];
+    
+    alert clickedone
+    
     filter = inputtext.toUpperCase();
     table = document.getElementById("Table");
     cell = table.getElementsByClassName("artefactcell");
