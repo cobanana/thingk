@@ -578,14 +578,14 @@ function searchFunction() {
     
 function puttextinsearchFunction(clicked_id) {
     
-    inputtext = ($("#"+clicked_id+"").html());
+    inputtextcomma = ($("#"+clicked_id+"").html());
     
     var fields = inputtext.split(',');
+    var i;
+
+    for (i = 0; i < fields.length; i++) {
+    inputtext = document.getElementById(fields[i])
     
-    fields.forEach(function (item) {
-    var sepinp = document.getElementById(item);
-    alert (sepinp);
-});
     
     filter = inputtext.toUpperCase();
     table = document.getElementById("Table");
@@ -605,6 +605,7 @@ function puttextinsearchFunction(clicked_id) {
     modal.style.display = "none";
     
     }
+}
 
 </script>
 
