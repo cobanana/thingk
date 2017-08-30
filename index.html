@@ -459,7 +459,6 @@ $.getJSON(urlInd, function(data) {
     });
 }
     
-
 function modalFunction(clicked_id) {
     var modal, image, i, span, modalImg, title, myTable;
     
@@ -579,12 +578,6 @@ function searchFunction() {
 function puttextinsearchFunction(clicked_id) {
     
     inputtext = ($("#"+clicked_id+"").html());
-    
-    var fields = inputtext.split(',');
-    
-    fields.forEach(function (item) {
-    alert (fields);
-    });
     
     filter = inputtext.toUpperCase();
     table = document.getElementById("Table");
