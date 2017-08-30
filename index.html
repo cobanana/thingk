@@ -242,47 +242,35 @@ th, td {
     <img class="modal-content" id="img01">
     <table class="caption" style="width:100%">
       <tr>
-        <td id="locationtext" class=modaltitle></td>
+        <td id="txt05"></td> 
+      </tr>
+      <tr>
         <td id="txt03" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
         <td id="txt02" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
       </tr>
       <tr>
-        <td id="typebroadtext" class=modaltitle></td>
         <td id="txt18" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
         <td id="txt04" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
       </tr>
       <tr>
-        <td id="materialtext" class=modaltitle></td>
         <td id="txt06" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
-        <td id="dimensiontext" class=modaltitle></td>
         <td id="txt07"></td> 
       </tr>
       <tr>
-        <td id="designertext" class=modaltitle></td>
         <td id="txt08" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
-        <td id="makerthingtext" class=modaltitle></td>
         <td id="txt11" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
       </tr>
         <tr>
-        <td id="dateroottext" class=modaltitle></td>
         <td id="txt09" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
-        <td id="datethingtext" class=modaltitle></td>
         <td id="txt12" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
       </tr>
       <tr>
-        <td id="functiontext" class=modaltitle></td>
-        <td id="txt05"></td> 
-      </tr>
-      <tr>
-        <td id="roothistorytext" class=modaltitle></td>
         <td id="txt10"></td> 
       </tr>
       <tr>
-        <td id="historythingtext" class=modaltitle></td>
         <td id="txt13"></td> 
       </tr>
       <tr>
-        <td id="userstorytext" class=modaltitle></td>
         <td id="txt14"></td> 
       </tr>
       <tr>
@@ -292,7 +280,6 @@ th, td {
         <td id="txt16" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
       </tr>
       <tr>
-        <td id="referencestext" class=modaltitle></td>
         <td id="txt17"></td>  
       </tr>
     </table>
@@ -369,8 +356,8 @@ $.getJSON(urlEng, function(data) {
                         + "<p class='info' id='datethingtext_"+this.id+"'>date made:</p>"
                         + "<p class='info' id='historythingtext_"+this.id+"'>small history:</p>"
                         + "<p class='info' id='userstorytext_"+this.id+"'>user story:</p>"
-                        + "<p class='info' id='beforethingtext_"+this.id+"'>things that came before:</p>"
-                        + "<p class='info' id='afterthingtext_"+this.id+"'>things that came after:</p>"
+                        + "<p class='info' id='beforethingtext_"+this.id+"'><</p>"
+                        + "<p class='info' id='afterthingtext_"+this.id+"'>></p>"
                         + "<p class='info' id='referencestext_"+this.id+"'>references:</p>"
                           + "</a>");
             $('#Table').append(cell);
@@ -404,7 +391,7 @@ $.getJSON(urlInd, function(data) {
                           + "<p class='info' id='collection_"+this.id+"'>" +this.gsx$collection.$t+ "</p>"
                           + "<p class='info' id='loca_"+this.id+"'>" +this.gsx$loca.$t+ "</p>"
                           + "<p class='info' id='type_"+this.id+"'>" +this.gsx$type.$t+ "</p>"
-                          + "<p class='info' id='typebroad_"+this.id+"'>" +this.gsx$typebroad.$t+ "</p>"
+                          + "<p class='info' id='type_"+this.id+"'>" +this.gsx$typebroad.$t+ "</p>"
                           + "<p class='info' id='function_"+this.id+"'>" +this.gsx$function.$t+ "</p>"
                           + "<p class='info' id='material_"+this.id+"'>" +this.gsx$material.$t+ "</p>"
                           + "<p class='info' id='dimension_"+this.id+"'>" +this.gsx$dimension.$t+ "</p>"
@@ -413,26 +400,28 @@ $.getJSON(urlInd, function(data) {
                           + "<p class='info' id='roothistory_"+this.id+"'>" +this.gsx$roothistory.$t+ "</p>"
                           + "<p class='info' id='makerthing_"+this.id+"'>" +this.gsx$makerthing.$t+ "</p>"
                           + "<p class='info' id='datething_"+this.id+"'>" +this.gsx$datething.$t+ "</p>"
+                          + "<p class='info' id='historything_"+this.id+"'>" +this.gsx$historything.$t+ "</p>"
                           + "<p class='info' id='userstory_"+this.id+"'>" +this.gsx$userstory.$t+ "</p>"
                           + "<p class='info' id='beforething_"+this.id+"'>" +this.gsx$beforething.$t+ "</p>"
                           + "<p class='info' id='afterthing_"+this.id+"'>" +this.gsx$afterthing.$t+ "</p>"
                           + "<p class='info' id='references_"+this.id+"'>" +this.gsx$references.$t+ "</p>"
                         + "<p class='info' id='nametext_"+this.id+"'>name:</p>"
                         + "<p class='info' id='collectiontext_"+this.id+"'>collection:</p>"
-                        + "<p class='info' id='locationtext_"+this.id+"'>from:</p>"
+                        + "<p class='info' id='locationtext_"+this.id+"'>location:</p>"
                         + "<p class='info' id='typetext_"+this.id+"'>type:</p>"
                         + "<p class='info' id='typebroadtext_"+this.id+"'>category:</p>"
                         + "<p class='info' id='functiontext_"+this.id+"'>function:</p>"
-                        + "<p class='info' id='materialtext_"+this.id+"'>made from:</p>"
-                        + "<p class='info' id='dimensiontext_"+this.id+"'>size:</p>"
+                        + "<p class='info' id='materialtext_"+this.id+"'>material:</p>"
+                        + "<p class='info' id='dimensiontext_"+this.id+"'>dimensions:</p>"
                         + "<p class='info' id='designertext_"+this.id+"'>designer:</p>"
-                        + "<p class='info' id='dateroottext_"+this.id+"'>design date:</p>"
-                        + "<p class='info' id='roothistorytext_"+this.id+"'>background:</p>"
+                        + "<p class='info' id='dateroottext_"+this.id+"'>first seen:</p>"
+                        + "<p class='info' id='roothistorytext_"+this.id+"'>big history:</p>"
                         + "<p class='info' id='makerthingtext_"+this.id+"'>maker:</p>"
-                        + "<p class='info' id='datethingtext_"+this.id+"'>made date:</p>"
+                        + "<p class='info' id='datethingtext_"+this.id+"'>date made:</p>"
+                        + "<p class='info' id='historythingtext_"+this.id+"'>small history:</p>"
                         + "<p class='info' id='userstorytext_"+this.id+"'>user story:</p>"
-                        + "<p class='info' id='beforethingtext_"+this.id+"'>came from:</p>"
-                        + "<p class='info' id='afterthingtext_"+this.id+"'>made into:</p>"
+                        + "<p class='info' id='beforethingtext_"+this.id+"'><</p>"
+                        + "<p class='info' id='afterthingtext_"+this.id+"'>></p>"
                         + "<p class='info' id='referencestext_"+this.id+"'>references:</p>"
                           + "</a>");
             $('#Table').append(cell);
@@ -464,23 +453,23 @@ function modalFunction(clicked_id) {
     afterthing = ($("#afterthing_"+clicked_id+"").html());
     references = ($("#references_"+clicked_id+"").html());
     
-    collectiontext = ($("#collectiontext_"+clicked_id+"").html());
-    locationtext = ($("#locationtext_"+clicked_id+"").html());
-    typetext = ($("#typetext_"+clicked_id+"").html());
-    typebroadtext = ($("#typebroadtext_"+clicked_id+"").html());
-    tfunctiontext = ($("#functiontext_"+clicked_id+"").html());
-    materialtext = ($("#materialtext_"+clicked_id+"").html());
-    dimensiontext = ($("#dimensiontext_"+clicked_id+"").html());
-    designertext = ($("#designertext_"+clicked_id+"").html());
-    roothistorytext = ($("#roothistorytext_"+clicked_id+"").html());
-    dateroottext = ($("#dateroottext_"+clicked_id+"").html());
-    makerthingtext = ($("#makerthingtext_"+clicked_id+"").html());
-    datethingtext = ($("#datethingtext_"+clicked_id+"").html());
-    historythingtext = ($("#historythingtext_"+clicked_id+"").html());
-    userstorytext = ($("#userstorytext_"+clicked_id+"").html());
+    //collectiontext = ($("#collectiontext_"+clicked_id+"").html());
+    //locationtext = ($("#locationtext_"+clicked_id+"").html());
+    //typetext = ($("#typetext_"+clicked_id+"").html());
+    //typebroadtext = ($("#typebroadtext_"+clicked_id+"").html());
+    //tfunctiontext = ($("#functiontext_"+clicked_id+"").html());
+    //materialtext = ($("#materialtext_"+clicked_id+"").html());
+    //dimensiontext = ($("#dimensiontext_"+clicked_id+"").html());
+    //designertext = ($("#designertext_"+clicked_id+"").html());
+    //roothistorytext = ($("#roothistorytext_"+clicked_id+"").html());
+    //dateroottext = ($("#dateroottext_"+clicked_id+"").html());
+    //makerthingtext = ($("#makerthingtext_"+clicked_id+"").html());
+    //datethingtext = ($("#datethingtext_"+clicked_id+"").html());
+    //historythingtext = ($("#historythingtext_"+clicked_id+"").html());
+    //userstorytext = ($("#userstorytext_"+clicked_id+"").html());
     beforethingtext = ($("#beforethingtext_"+clicked_id+"").html());
     afterthingtext = ($("#afterthingtext_"+clicked_id+"").html());
-    referencestext = ($("#referencestext_"+clicked_id+"").html());
+    //referencestext = ($("#referencestext_"+clicked_id+"").html());
     
     var modalImg = $("#img01")
     modalImg.attr('src', image);
@@ -507,22 +496,22 @@ function modalFunction(clicked_id) {
     modal = document.getElementById('myModal');
     modal.style.display = "block";
     
-    collectt = document.getElementById('collectiontext').innerHTML = collectiontext
-    locationt = document.getElementById('locationtext').innerHTML = locationtext
-    typebroadt = document.getElementById('typebroadtext').innerHTML = typebroadtext
-    functiont = document.getElementById('functiontext').innerHTML = tfunctiontext
-    materialt = document.getElementById('materialtext').innerHTML = materialtext
-    dimensiont = document.getElementById('dimensiontext').innerHTML = dimensiontext
-    designert = document.getElementById('designertext').innerHTML = designertext
-    roothistoryt = document.getElementById('roothistorytext').innerHTML = roothistorytext
-    dateroott = document.getElementById('dateroottext').innerHTML = dateroottext
-    makerthingt = document.getElementById('makerthingtext').innerHTML = makerthingtext
-    datethingt = document.getElementById('datethingtext').innerHTML = datethingtext
-    historythingt = document.getElementById('historythingtext').innerHTML = historythingtext
-    userstoryt = document.getElementById('userstorytext').innerHTML = userstorytext
+    //collectt = document.getElementById('collectiontext').innerHTML = collectiontext
+    //locationt = document.getElementById('locationtext').innerHTML = locationtext
+    //typebroadt = document.getElementById('typebroadtext').innerHTML = typebroadtext
+    //functiont = document.getElementById('functiontext').innerHTML = tfunctiontext
+    //materialt = document.getElementById('materialtext').innerHTML = materialtext
+    //dimensiont = document.getElementById('dimensiontext').innerHTML = dimensiontext
+    //designert = document.getElementById('designertext').innerHTML = designertext
+    //roothistoryt = document.getElementById('roothistorytext').innerHTML = roothistorytext
+    //dateroott = document.getElementById('dateroottext').innerHTML = dateroottext
+    //makerthingt = document.getElementById('makerthingtext').innerHTML = makerthingtext
+    //datethingt = document.getElementById('datethingtext').innerHTML = datethingtext
+    //historythingt = document.getElementById('historythingtext').innerHTML = historythingtext
+    //userstoryt = document.getElementById('userstorytext').innerHTML = userstorytext
     beforethingt = document.getElementById('beforethingtext').innerHTML = beforethingtext
     afterthingt = document.getElementById('afterthingtext').innerHTML = afterthingtext
-    referencest = document.getElementById('referencestext').innerHTML = referencestext
+    //referencest = document.getElementById('referencestext').innerHTML = referencestext
     
     // Get the <span> element that closes the modal
     span = document.getElementsByClassName("close")[0];
