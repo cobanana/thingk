@@ -584,7 +584,7 @@ function puttextinsearchFunction(clicked_id) {
     var i;
 
     for (i = 0; i < fields.length; i++) {
-    inputtext = document.getElementById(fields[i])
+    document.getElementById(fields[i]) = inputtext;
     
     
     filter = inputtext.toUpperCase();
