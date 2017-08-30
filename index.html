@@ -242,56 +242,40 @@ th, td {
     <img class="modal-content" id="img01">
     <table class="caption" style="width:100%">
       <tr>
-        <td id="nametext" class=modaltitle></td>
-        <td id="txt01" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
-      </tr>
-      <tr>
-        <td id="collectiontext" class=modaltitle></td>
+        <td id="locationtext" class=modaltitle></td>
+        <td id="txt03" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
         <td id="txt02" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
       </tr>
       <tr>
-        <td id="locationtext" class=modaltitle></td>
-        <td id="txt03" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
-      </tr>
-      <tr>
         <td id="typebroadtext" class=modaltitle></td>
-        <td id="txt18" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>  
+        <td id="txt18" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
+        <td id="txt04" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
       </tr>
       <tr>
-        <td id="typetext" class=modaltitle></td>
-        <td id="txt04" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
-      </tr>
-      <tr>
-        <td id="functiontext" class=modaltitle></td>
-        <td id="txt05"></td> 
-      </tr>
-        <tr>
         <td id="materialtext" class=modaltitle></td>
         <td id="txt06" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
-      </tr>
-      <tr>
         <td id="dimensiontext" class=modaltitle></td>
         <td id="txt07"></td> 
       </tr>
       <tr>
         <td id="designertext" class=modaltitle></td>
-        <td id="txt08" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
+        <td id="txt08" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
+        <td id="makerthingtext" class=modaltitle></td>
+        <td id="txt11" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
       </tr>
         <tr>
         <td id="dateroottext" class=modaltitle></td>
         <td id="txt09" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
+        <td id="datethingtext" class=modaltitle></td>
+        <td id="txt12" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
+      </tr>
+      <tr>
+        <td id="functiontext" class=modaltitle></td>
+        <td id="txt05"></td> 
       </tr>
       <tr>
         <td id="roothistorytext" class=modaltitle></td>
         <td id="txt10"></td> 
-      </tr>
-      <tr>
-        <td id="makerthingtext" class=modaltitle></td>
-        <td id="txt11" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
-      </tr>
-      <tr>
-        <td id="datethingtext" class=modaltitle></td>
-        <td id="txt12" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
       </tr>
       <tr>
         <td id="historythingtext" class=modaltitle></td>
@@ -303,9 +287,7 @@ th, td {
       </tr>
       <tr>
         <td id="beforethingtext" class=modaltitle></td>
-        <td id="txt15" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
-      </tr>
-      <tr>
+        <td id="txt15" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
         <td id="afterthingtext" class=modaltitle></td>
         <td id="txt16" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
       </tr>
@@ -358,6 +340,7 @@ $.getJSON(urlEng, function(data) {
                           + "<p class='info' id='collection_"+this.id+"'>" +this.gsx$collection.$t+ "</p>"
                           + "<p class='info' id='loca_"+this.id+"'>" +this.gsx$loca.$t+ "</p>"
                           + "<p class='info' id='type_"+this.id+"'>" +this.gsx$type.$t+ "</p>"
+                          + "<p class='info' id='typebroad_"+this.id+"'>" +this.gsx$typebroad.$t+ "</p>"
                           + "<p class='info' id='function_"+this.id+"'>" +this.gsx$function.$t+ "</p>"
                           + "<p class='info' id='material_"+this.id+"'>" +this.gsx$material.$t+ "</p>"
                           + "<p class='info' id='dimension_"+this.id+"'>" +this.gsx$dimension.$t+ "</p>"
@@ -372,19 +355,17 @@ $.getJSON(urlEng, function(data) {
                           + "<p class='info' id='afterthing_"+this.id+"'>" +this.gsx$afterthing.$t+ "</p>"
                           + "<p class='info' id='references_"+this.id+"'>" +this.gsx$references.$t+ "</p>"
                         + "<p class='info' id='nametext_"+this.id+"'>name:</p>"
-                        + "<p class='info' id='collectiontext_"+this.id+"'>collection:</p>"
-                        + "<p class='info' id='locationtext_"+this.id+"'>location:</p>"
-                        + "<p class='info' id='typetext_"+this.id+"'>type:</p>"
+                        + "<p class='info' id='locationtext_"+this.id+"'>from:</p>"
+                        + "<p class='info' id='typetext_"+this.id+"'>category:</p>"
                         + "<p class='info' id='functiontext_"+this.id+"'>function:</p>"
                         + "<p class='info' id='materialtext_"+this.id+"'>made from:</p>"
                         + "<p class='info' id='dimensiontext_"+this.id+"'>size:</p>"
                         + "<p class='info' id='designertext_"+this.id+"'>designed by:</p>"
-                        + "<p class='info' id='dateroottext_"+this.id+"'>designed in:</p>"
+                        + "<p class='info' id='dateroottext_"+this.id+"'>design date:</p>"
                         + "<p class='info' id='roothistorytext_"+this.id+"'>background:</p>"
                         + "<p class='info' id='makerthingtext_"+this.id+"'>made by:</p>"
-                        + "<p class='info' id='datethingtext_"+this.id+"'>made in:</p>"
+                        + "<p class='info' id='datethingtext_"+this.id+"'>made date:</p>"
                         + "<p class='info' id='historythingtext_"+this.id+"'>notes:</p>"
-                        + "<p class='info' id='userstorytext_"+this.id+"'>personal story:</p>"
                         + "<p class='info' id='beforethingtext_"+this.id+"'>before:</p>"
                         + "<p class='info' id='afterthingtext_"+this.id+"'>after:</p>"
                         + "<p class='info' id='referencestext_"+this.id+"'>references:</p>"
