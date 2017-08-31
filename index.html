@@ -12,7 +12,7 @@
   background-repeat: no-repeat;
   width: 100%;
   height: 20px;
-  font-size: 16px;
+  font-size: 20px;
   font-family: 'Josefin Sans', sans-serif;
   padding: 12px 20px 12px 20px;
   border: 1px solid #ddd;
@@ -253,7 +253,7 @@ img {
 <h1 style="color:#4682B4">thingk!</h1>
 <h3 id="subtitle" style="color:#778899" font-weight="light"></h3>
 
-<input type="search" id="myInput" onkeyup="searchFunction()" placeholder="Search..." title="Type in a category">
+<input type="search" id="myInput" placeholder="Search..." title="Type in a category">
 
 <div id="Table"></div>
   
@@ -549,7 +549,27 @@ function modalFunction(clicked_id) {
         }
     };
 
-function searchFunction() {
+//function searchFunction() {
+  //  var input, filter, allCell, cell, tag, i;
+  
+    //input = document.getElementById("myInput");
+    //filter = input.value.toUpperCase();
+    //table = document.getElementById("Table");
+    //cell = table.getElementsByClassName("artefactcell");
+ 
+    //for (i = 0; i < cell.length; i++) {
+        //tag = cell[i].getElementsByTagName("tag")[0];
+            //if (tag) {
+                //if (tag.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                //cell[i].style.display = "";
+            //} else {
+                //cell[i].style.display = "none";
+                //}
+            //}       
+        //}
+    //}
+    
+$(myInput).on("input", function() { 
     var input, filter, allCell, cell, tag, i;
   
     input = document.getElementById("myInput");
@@ -567,7 +587,7 @@ function searchFunction() {
                 }
             }       
         }
-    }
+ })
     
 function puttextinsearchFunction(clicked_id) {
     
