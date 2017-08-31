@@ -123,7 +123,15 @@ img {
     display: none;
 }
     
-.caption:empty {
+.newsearchit {
+    padding-right: 40px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    font-style: oblique;
+}
+    
+.newsearchit:empty {
     display: none;
 }
   
@@ -165,6 +173,11 @@ img {
     color: #000;
     padding-bottom: 5px;
 }
+    
+.caption:empty {
+    display: none;
+}
+    
 .captionTitle {
     margin: auto;
     display: inline-block;
@@ -254,9 +267,9 @@ img {
     <table class="caption" style="width:100%">
       <tr>
         <td id="location" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
-        <td id="collection" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
+        <td id="collection" class=newsearchit onclick="puttextinsearchFunction(this.id)"></td>
         <td id="madedate" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
-        <td id="size" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
+        <td id="size" class=newsearchit onclick="puttextinsearchFunction(this.id)"></td> 
       </tr>
       <tr>
         <td id="designer" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
@@ -267,7 +280,7 @@ img {
     <table class="caption" style="width:100%">
       <tr>
         <td id="typebroad" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
-        <td id="type" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
+        <td id="type" class=newsearchit onclick="puttextinsearchFunction(this.id)"></td>
       </tr>
     </table>
     <table class="caption" style="width:100%">
