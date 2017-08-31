@@ -334,7 +334,6 @@ $.getJSON(urlEng, function(data) {
                           + "<p class='info' id='type_"+this.id+"'>" +this.gsx$type.$t+ "</p>"
                           + "<p class='info' id='typebroad_"+this.id+"'>" +this.gsx$typebroad.$t+ "</p>"
                           + "<p class='info' id='function_"+this.id+"'>" +this.gsx$function.$t+ "</p>"
-                          + "<p class='info' id='material_"+this.id+"'>" +this.gsx$material.$t+ "</p>"
                           + "<p class='info' id='dimension_"+this.id+"'>" +this.gsx$dimension.$t+ "</p>"
                           + "<p class='info' id='designer_"+this.id+"'>" +this.gsx$designer.$t+ "</p>"
                           + "<p class='info' id='dateroot_"+this.id+"'>" +this.gsx$dateroot.$t+ "</p>"
@@ -398,7 +397,6 @@ $.getJSON(urlInd, function(data) {
                           + "<p class='info' id='type_"+this.id+"'>" +this.gsx$type.$t+ "</p>"
                           + "<p class='info' id='typebroad_"+this.id+"'>" +this.gsx$typebroad.$t+ "</p>"
                           + "<p class='info' id='function_"+this.id+"'>" +this.gsx$function.$t+ "</p>"
-                          + "<p class='info' id='material_"+this.id+"'>" +this.gsx$material.$t+ "</p>"
                           + "<p class='info' id='dimension_"+this.id+"'>" +this.gsx$dimension.$t+ "</p>"
                           + "<p class='info' id='designer_"+this.id+"'>" +this.gsx$designer.$t+ "</p>"
                           + "<p class='info' id='dateroot_"+this.id+"'>" +this.gsx$dateroot.$t+ "</p>"
@@ -445,7 +443,6 @@ function modalFunction(clicked_id) {
     type = ($("#type_"+clicked_id+"").html());
     typebroad = ($("#typebroad_"+clicked_id+"").html());
     tfunction = ($("#function_"+clicked_id+"").html());
-    material = ($("#material_"+clicked_id+"").html());
     dimension = ($("#dimension_"+clicked_id+"").html());
     designer = ($("#designer_"+clicked_id+"").html());
     roothistory = ($("#roothistory_"+clicked_id+"").html());
@@ -484,7 +481,6 @@ function modalFunction(clicked_id) {
     typebox = document.getElementById('type').innerHTML = type
     typebroadbox = document.getElementById('typebroad').innerHTML = typebroad
     functionbox = document.getElementById('function').innerHTML = tfunction
-    materialbox = document.getElementById('madefrom').innerHTML = material
     dimensionbox = document.getElementById('size').innerHTML = dimension
     designerbox = document.getElementById('designer').innerHTML = designer
     //daterootbox = document.getElementById('designdate').innerHTML = dateroot
