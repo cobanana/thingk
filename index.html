@@ -114,7 +114,10 @@ img {
 th, td {
     padding: 20px;
     text-align: left;
-    empty-cells: hide;
+}
+    
+th, td:empty {
+    display: none;
 }
   
 .modal {
