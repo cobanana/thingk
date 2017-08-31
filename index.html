@@ -111,7 +111,7 @@ img {
 
 /* The Modal */
 
-th, td:empty {
+th, td {
     padding: 20px;
     text-align: left;
 }
@@ -514,8 +514,6 @@ function modalFunction(clicked_id) {
     beforethingt = document.getElementById('beforethingtext').innerHTML = beforethingtext
     afterthingt = document.getElementById('afterthingtext').innerHTML = afterthingtext
     //referencest = document.getElementById('referencestext').innerHTML = referencestext
-    
-    emptytable = ($(".table td:empty").css('display', 'none'));
     
     // Get the <span> element that closes the modal
     span = document.getElementsByClassName("close")[0];
