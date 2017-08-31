@@ -22,7 +22,7 @@ body {
   width: 80%;
   margin: 30px auto;
   font-family: 'Josefin Sans', sans-serif;
-  font-weight: 100;
+  font-weight: 50;
 }
     
     
@@ -123,6 +123,9 @@ img {
     display: none;
 }
     
+.newsearch {cursor: pointer; 
+}
+    
 .newsearchit {
     padding-right: 40px;
     padding-top: 5px;
@@ -133,6 +136,9 @@ img {
     
 .newsearchit:empty {
     display: none;
+}
+    
+.newsearchit {cursor: pointer; 
 }
   
 .modal {
@@ -190,7 +196,10 @@ img {
     font-weight: bold;
     }
 
-
+.captionTitle:empty {
+    display: none;
+}
+    
 /* Add Animation - Zoom in the Modal */
 .modal-content, #caption {
     -webkit-animation-name: zoom;
@@ -233,10 +242,6 @@ img {
         width: 100%;
     }
 }
-    
-.newsearch {cursor: pointer; 
-}
-
 
 
 </style>
