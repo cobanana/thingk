@@ -273,12 +273,11 @@ img {
     </tr>
     <tr>
         <td id="location" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
-        <td id="designer" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
-        <td id="maker" class=newsearchit onclick="puttextinsearchFunction(this.id)"></td> 
+        <td id="designdate" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
     </tr>
     <tr>
-        <td id="designdate" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
-        <td id="size" class=newsearchit onclick="puttextinsearchFunction(this.id)"></td> 
+        <td id="designer" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
+        <td id="maker" class=newsearchit onclick="puttextinsearchFunction(this.id)"></td> 
     </tr>
     </table>
         
@@ -508,7 +507,7 @@ function modalFunction(clicked_id) {
     typebox = document.getElementById('type').innerHTML = type
     typebroadbox = document.getElementById('typebroad').innerHTML = typebroad
     functionbox = document.getElementById('function').innerHTML = tfunction
-    dimensionbox = document.getElementById('size').innerHTML = dimension
+    //dimensionbox = document.getElementById('size').innerHTML = dimension
     designerbox = document.getElementById('designer').innerHTML = designer
     daterootbox = document.getElementById('designdate').innerHTML = dateroot
     roothistorybox = document.getElementById('background').innerHTML = roothistory
