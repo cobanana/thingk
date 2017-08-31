@@ -238,49 +238,63 @@ th, td {
 
   <!-- Modal Content -->
     <div>
-    <p class="captionTitle" id="txt00"></p> 
+    <p class="captionTitle" id="bigtitle"></p> 
     <img class="modal-content" id="img01">
     <table class="caption" style="width:100%">
       <tr>
-        <td id="txt05"></td> 
+        <td id="function"></td> 
+      </tr>
+    </table>
+    <table class="caption" style="width:100%">
+      <tr>
+        <td id="location" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
+        <td id="collection" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
+      </tr>
+    </table>
+    <table class="caption" style="width:100%">
+      <tr>
+        <td id="typebroad" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
+        <td id="type" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
+      </tr>
+    </table>
+    <table class="caption" style="width:100%">
+      <tr>
+        <td id="madefrom" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
+        <td id="size" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
+      </tr>
+    </table>
+    <table class="caption" style="width:100%">
+      <tr>
+        <td id="designer" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
+        <td id="maker" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
       </tr>
       <tr>
-        <td id="txt03" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
-        <td id="txt02" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
+        <td id="designdate" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
+        <td id="madedate" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
+      </tr>
+    </table>
+    <table class="caption" style="width:100%">
+      <tr>
+        <td id="background"></td> 
       </tr>
       <tr>
-        <td id="txt18" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
-        <td id="txt04" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
+        <td id="backgroundthis"></td> 
       </tr>
       <tr>
-        <td id="txt06" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
-        <td id="txt07"></td> 
+        <td id="userstory"></td> 
       </tr>
+    </table>
+    <table class="caption" style="width:100%">
       <tr>
-        <td id="txt08" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
-        <td id="txt11" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
+        <td id="references"></td>  
       </tr>
-        <tr>
-        <td id="txt09" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
-        <td id="txt12" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
-      </tr>
-      <tr>
-        <td id="txt10"></td> 
-      </tr>
-      <tr>
-        <td id="txt13"></td> 
-      </tr>
-      <tr>
-        <td id="txt14"></td> 
-      </tr>
+    </table>
+    <table class="caption" style="width:100%">
       <tr>
         <td id="beforethingtext" class=modaltitle></td>
-        <td id="txt15" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
+        <td id="before" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
         <td id="afterthingtext" class=modaltitle></td>
-        <td id="txt16" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
-      </tr>
-      <tr>
-        <td id="txt17"></td>  
+        <td id="after" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
       </tr>
     </table>
     </div>
@@ -473,24 +487,24 @@ function modalFunction(clicked_id) {
     
     var modalImg = $("#img01")
     modalImg.attr('src', image);
-    titlebox = document.getElementById('txt00').innerHTML = title
-    collectionbox = document.getElementById('txt02').innerHTML = collection
-    locationbox = document.getElementById('txt03').innerHTML = loca
-    typebox = document.getElementById('txt04').innerHTML = type
-    typebroadbox = document.getElementById('txt18').innerHTML = typebroad
-    functionbox = document.getElementById('txt05').innerHTML = tfunction
-    materialbox = document.getElementById('txt06').innerHTML = material
-    dimensionbox = document.getElementById('txt07').innerHTML = dimension
-    designerbox = document.getElementById('txt08').innerHTML = designer
-    daterootbox = document.getElementById('txt09').innerHTML = dateroot
-    roothistorybox = document.getElementById('txt10').innerHTML = roothistory
-    makerthingbox = document.getElementById('txt11').innerHTML = makerthing
-    datethingbox = document.getElementById('txt12').innerHTML = datething
-    historythingbox = document.getElementById('txt13').innerHTML = historything
-    userstorybox = document.getElementById('txt14').innerHTML = userstory
-    beforethingbox = document.getElementById('txt15').innerHTML = beforething
-    afterthingbox = document.getElementById('txt16').innerHTML = afterthing
-    referencesbox = document.getElementById('txt17').innerHTML = references
+    titlebox = document.getElementById('bigtitle').innerHTML = title
+    collectionbox = document.getElementById('collection').innerHTML = collection
+    locationbox = document.getElementById('location').innerHTML = loca
+    typebox = document.getElementById('type').innerHTML = type
+    typebroadbox = document.getElementById('typebroad').innerHTML = typebroad
+    functionbox = document.getElementById('function').innerHTML = tfunction
+    materialbox = document.getElementById('madefrom').innerHTML = material
+    dimensionbox = document.getElementById('size').innerHTML = dimension
+    designerbox = document.getElementById('designer').innerHTML = designer
+    daterootbox = document.getElementById('designdate').innerHTML = dateroot
+    roothistorybox = document.getElementById('background').innerHTML = roothistory
+    makerthingbox = document.getElementById('maker').innerHTML = makerthing
+    datethingbox = document.getElementById('madedate').innerHTML = datething
+    historythingbox = document.getElementById('backgroundthis').innerHTML = historything
+    userstorybox = document.getElementById('userstory').innerHTML = userstory
+    beforethingbox = document.getElementById('before').innerHTML = beforething
+    afterthingbox = document.getElementById('after').innerHTML = afterthing
+    referencesbox = document.getElementById('references').innerHTML = references
     
     // Display modal
     modal = document.getElementById('myModal');
