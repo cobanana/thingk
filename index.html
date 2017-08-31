@@ -116,6 +116,10 @@ th, td {
     text-align: left;
 }
     
+th, tr:empty {
+    padding: 10px;
+}
+    
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -515,7 +519,7 @@ function modalFunction(clicked_id) {
     afterthingt = document.getElementById('afterthingtext').innerHTML = afterthingtext
     //referencest = document.getElementById('referencestext').innerHTML = referencestext
     
-    emptytable = ($(".table td:empty").css('display', 'none'));
+    emptytable = ($(".table tr:empty").css('display', 'none'));
     
     // Get the <span> element that closes the modal
     span = document.getElementsByClassName("close")[0];
