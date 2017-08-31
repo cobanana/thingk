@@ -239,18 +239,19 @@ th, td {
   <!-- Modal Content -->
     <div>
     <p class="captionTitle" id="bigtitle"></p> 
-    <img class="modal-content" id="img01">
-    <table class="caption" style="width:100%">
-      <tr>
-        <td id="function"></td> 
-      </tr>
-    </table>
     <table class="caption" style="width:100%">
       <tr>
         <td id="location" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
-        <td id="collection" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
+        <td id="collection" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
+        <td id="madedate" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
+        <td id="size" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
+      </tr>
+      <tr>
+        <td id="designer" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
+        <td id="maker" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
       </tr>
     </table>
+    <img class="modal-content" id="img01">
     <table class="caption" style="width:100%">
       <tr>
         <td id="typebroad" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
@@ -259,18 +260,7 @@ th, td {
     </table>
     <table class="caption" style="width:100%">
       <tr>
-        <td id="madefrom" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
-        <td id="size" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
-      </tr>
-    </table>
-    <table class="caption" style="width:100%">
-      <tr>
-        <td id="designer" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
-        <td id="maker" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
-      </tr>
-      <tr>
-        <td id="designdate" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
-        <td id="madedate" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
+        <td id="function"></td> 
       </tr>
     </table>
     <table class="caption" style="width:100%">
@@ -292,6 +282,7 @@ th, td {
     <table class="caption" style="width:100%">
       <tr>
         <td id="beforethingtext" class=modaltitle></td>
+        <td id="madefrom" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
         <td id="before" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
         <td id="after" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
         <td id="afterthingtext" class=modaltitle></td>
@@ -357,11 +348,11 @@ $.getJSON(urlEng, function(data) {
                           + "<p class='info' id='references_"+this.id+"'>" +this.gsx$references.$t+ "</p>"
                         + "<p class='info' id='nametext_"+this.id+"'>name:</p>"
                         + "<p class='info' id='collectiontext_"+this.id+"'>collection:</p>"
-                        + "<p class='info' id='locationtext_"+this.id+"'>location:</p>"
+                        + "<p class='info' id='locationtext_"+this.id+"'>from:</p>"
                         + "<p class='info' id='typetext_"+this.id+"'>type:</p>"
                         + "<p class='info' id='typebroadtext_"+this.id+"'>category:</p>"
                         + "<p class='info' id='functiontext_"+this.id+"'>function:</p>"
-                        + "<p class='info' id='materialtext_"+this.id+"'>material:</p>"
+                        + "<p class='info' id='materialtext_"+this.id+"'>made of:</p>"
                         + "<p class='info' id='dimensiontext_"+this.id+"'>dimensions:</p>"
                         + "<p class='info' id='designertext_"+this.id+"'>designer:</p>"
                         + "<p class='info' id='dateroottext_"+this.id+"'>first seen:</p>"
