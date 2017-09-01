@@ -434,6 +434,8 @@ $.getJSON(urlInd, function(data) {
 function modalFunction(clicked_id) {
     var modal, image, i, span, modalImg, title, myTable;
     
+     $('#madeTable').empty();
+    
     image = ($("#cellimg_"+clicked_id+"").attr('src'));
     title = ($("#title_"+clicked_id+"").html());
     collection = ($("#collection_"+clicked_id+"").html());
@@ -456,12 +458,9 @@ function modalFunction(clicked_id) {
     
     var madefromstring = madefrom.split(",")
         
-        $('#madeTable').empty();
-        console.log(madefromstring);
-        
         for (i = 0; i < madefromstring.length; i++) {
             cellmade = $('#madeTable');
-            cellmade.append("<td id = '"+madefromstring[i]+"' class='newsearch' onclick='puttextinsearchFunction(this.id)'>" + madefromstring[i] + "</td>");
+            cellmade.append("<td id="+madefromstring+" class='newsearch'>" + madefromstring[i] + "</td>");
             $('#madeTable').append(cellmade);
             };
     
