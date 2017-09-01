@@ -457,7 +457,8 @@ function modalFunction(clicked_id) {
     
     var madefromstring = madefrom.split(",");
     var thumbt = document.getElementsByClassName('thumbtitle');
-    console.log(thumbt)
+    var arr = Array.prototype.slice.call(thumbt);
+    console.log(arr)
     
    // var madt = document.getElementById('madeTable').innerHTML = madefromstring.filter((n) => thumbt.includes(n));
     
