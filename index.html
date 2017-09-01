@@ -270,6 +270,11 @@ img {
 
   <!-- Modal Content -->
     <div>
+    
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo"></p>    
+        
     <p class="captionTitle" id="bigtitle" onclick="puttextinsearchFunction(this.id)"></p> 
     <table class="caption" style="width:100%">
     <tr>
@@ -451,16 +456,20 @@ function modalFunction(clicked_id) {
     partof = ($("#partof_"+clicked_id+"").html());
     references = ($("#references_"+clicked_id+"").html());
     
-    madefrom.split(',').forEach(function(madefromstring) {
+    madefrom.split(",").forEach(function(madefromstring) {
         $('#madeTable').empty();
         console.log(madefromstring);
         
-        arrayLength = madefromstring.length;
+        function myFunction() {
+        var madefromstring;
+        var x = document.getElementById("demo");
+        x.innerHTML = Array.isArray(madefromstring);
+}
         
-        for (i = 0; i < arrayLength; i++) {
+        for (i = 0; i < madefromstring.length; i++) {
         
         cellmade = $('#madeTable');
-            cellmade.append("<td>" + madefromstring[i] + " " + "</td>");
+            cellmade.append("<p>" + madefromstring[i] + " " + "</p>");
         $('#madeTable').append(cellmade);
             
         }
