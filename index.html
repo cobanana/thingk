@@ -304,7 +304,7 @@ img {
         <td id="userstory"></td> 
       </tr>
     </table>
-    <table class="caption" style="width:100%">
+    <table id=madeTable class="caption" style="width:100%">
       <tr>
         <td id="madefrom" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
         <td id="workedwith" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
@@ -512,11 +512,13 @@ function modalFunction(clicked_id) {
         console.log(madefromstring);
         
         arrayLength = madefromstring.length;
-
-        for (i = 0; i < arrayLength; i++) {
-        $('<div/>').text(madefromstring[i]).appendTo('madefrom');
         
-        //document.getElementById('madefrom').innerHTML = madefromstring;
+        for (i = 0; i < arrayLength; i++) {
+        
+        cellmade = $('#madeTable');
+            cellmade.append("<a>" + "<p>" + madefromstring[i] + "</p>" + "</a>");
+        $('#madeTable').append(cellmade);
+       // document.getElementById('madefrom').innerHTML = madefromstring;
         }
         });
     
