@@ -360,7 +360,7 @@ $.getJSON(urlEng, function(data) {
             cell.append("<a class='artefactcell' onClick='modalFunction(this.id)' id= '"+this.id+"'>" 
                           + "<tag>" + " " +this.gsx$title.$t+ " " +this.gsx$loca.$t+ " " +this.gsx$type.$t+ " " +this.gsx$typebroad.$t+ " " +this.gsx$dimension.$t+ " " +this.gsx$dateroot.$t+ " " +this.gsx$madefrom.$t+ " " +this.gsx$workedwith.$t+ " " +this.gsx$partof.$t+ " " +this.gsx$makerthing.$t+ " " +this.gsx$tag.$t+ "</tag>"
                          + "<img id='cellimg_"+this.id+"' src='" +this.gsx$imageitem.$t+ "'/>" 
-                          + "<p class='thumbtitle' id='title_"+this.id+"'>" +this.gsx$title.$t+ "</p>"
+                          + "<p class='thumbtitle' value = '"+this.gsx$title.$t+"' id='title_"+this.id+"'>" +this.gsx$title.$t+ "</p>"
                           + "<p class='info' id='collection_"+this.id+"'>" +this.gsx$collection.$t+ "</p>"
                           + "<p class='info' id='loca_"+this.id+"'>" +this.gsx$loca.$t+ "</p>"
                           + "<p class='info' id='type_"+this.id+"'>" +this.gsx$type.$t+ "</p>"
