@@ -462,7 +462,9 @@ function modalFunction(clicked_id) {
     return title >= document.getElementsByClassName('thumbtitle').value;
     }
 
-    document.getElementById('madeTable').innerHTML = madefromstring.filter(checkTitle);
+    var madt = document.getElementById('madeTable').innerHTML = madefromstring.filter(checkTitle);
+    
+    console.log(madt)
     
         //for (i = 0; i < madefromstring.length; i++) {
             
