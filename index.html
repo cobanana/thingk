@@ -511,18 +511,13 @@ function modalFunction(clicked_id) {
     madefrom.split(/\s*,\s*/).forEach(function(madefromstring) {
         console.log(madefromstring);
         
-        var madefromstring;
-        var arrayLength = madefromstring.length;
-        var temp;
+        arrayLength = madefromstring.length;
 
         for (i = 0; i < arrayLength; i++) {
-          temp = document.createElement('div');
-          temp.className = 'results';
-          temp.innerHTML = madefromstring[i];
-          madefromstringbox = document.getElementsById('madefrom')[0].appendChild(temp);
+        $('<div class="results" />').text(madefromstring[i]).appendTo('madefrom');
         }
         
-        //document.getElementById('madefrom').innerHTML = madefromstring
+        document.getElementById('madefrom').innerHTML = madefromstring
         });
     
     workedwith.split(/\s*,\s*/).forEach(function(workedwithstring) {
