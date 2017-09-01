@@ -514,7 +514,7 @@ function modalFunction(clicked_id) {
         arrayLength = madefromstring.length;
 
         for (i = 0; i < arrayLength; i++) {
-        $('<div class="results" />').text(madefromstring[i]).appendTo('madefrom');
+        $('<td class="results" />').text(madefromstring[i]).appendTo('madefrom');
         }
         
         document.getElementById('madefrom').innerHTML = madefromstring
