@@ -456,8 +456,8 @@ function modalFunction(clicked_id) {
     references = ($("#references_"+clicked_id+"").html());
     
     var madefromstring = madefrom.split(",");
-    var thumbt = document.getElementsByClassName('thumbtitle');
-    var arr = Array.prototype.values.call(thumbt);
+    var thumbt = document.getElementsByClassName('thumbtitle').innerHTML;
+    var arr = Array.prototype.slice.call(thumbt);
     
     console.log(madefromstring)
     console.log(arr)
