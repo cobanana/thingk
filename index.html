@@ -456,10 +456,12 @@ function modalFunction(clicked_id) {
     references = ($("#references_"+clicked_id+"").html());
     
     var madefromstring = madefrom.split(",");
-    var thumbt = document.getElementsByClassName('thumbtitle')
-    for (i = 0; i < thumbt.length; i++) {
-        var thumbv = thumbt[i].innerHTML;
-    }
+    var thumbt = document.querySelector(".thumbtitle"); 
+    var thumbv = thumbt.innerHtml;
+    //var thumbt = document.getElementsByClassName('thumbtitle')
+    //for (i = 0; i < thumbt.length; i++) {
+        //var thumbv = thumbt[i].innerHTML;
+    //}
     //var arr = Array.prototype.slice.call(thumbt)
     
     console.log(madefromstring)
