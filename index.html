@@ -456,13 +456,11 @@ function modalFunction(clicked_id) {
     references = ($("#references_"+clicked_id+"").html());
     
     var madefromstring = madefrom.split(",");
-    var thumbt = document.getElementsByClassName('thumbtitle');
-    var thumbv = thumbt.getElementsByTagName('p')[0].innerHTML;
-    var arr = Array.prototype.slice.call(thumbv);
+    var thumbt = document.getElementsByClassName('thumbtitle').innerHTML;
+    var arr = Array.prototype.slice.call(thumbt);
     
     console.log(madefromstring)
     console.log(thumbt)
-    console.log(thumbv)
     console.log(arr)
     
     //var madt = arrval.filter(n => madefromstring.includes(n));
