@@ -513,9 +513,9 @@ function modalFunction(clicked_id) {
         madefrombox = document.getElementById('madefrom')
         
         madefromstring.forEach(function(item, index) {
-        madefrombox.innerHTML = madefrombox.innerHTML + item + 
+        madefrombox.innerHTML = madefrombox.innerHTML + item + "<br>" ;
            // madefrombox = document.getElementById('madefrom').innerHTML = madefromstring;
-            });
+            })
         });
     
     workedwith.split(/\s*,\s*/).forEach(function(workedwithstring) {
