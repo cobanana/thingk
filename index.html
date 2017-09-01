@@ -375,25 +375,6 @@ $.getJSON(urlEng, function(data) {
                           + "<p class='info' id='partof_"+this.id+"'>" +this.gsx$partof.$t+ "</p>"
                           + "<p class='info' id='references_"+this.id+"'>" +this.gsx$references.$t+ "</p>"
                           + "<p class='info' id='madefrom_"+this.id+"'>" +this.gsx$madefrom.$t+ "</p>"
-                        + "<p class='info' id='nametext_"+this.id+"'>name:</p>"
-                        + "<p class='info' id='collectiontext_"+this.id+"'>collection:</p>"
-                        + "<p class='info' id='locationtext_"+this.id+"'>from:</p>"
-                        + "<p class='info' id='typetext_"+this.id+"'>type:</p>"
-                        + "<p class='info' id='typebroadtext_"+this.id+"'>category:</p>"
-                        + "<p class='info' id='functiontext_"+this.id+"'>function:</p>"
-                        + "<p class='info' id='materialtext_"+this.id+"'>made of:</p>"
-                        + "<p class='info' id='dimensiontext_"+this.id+"'>dimensions:</p>"
-                        + "<p class='info' id='designertext_"+this.id+"'>designer:</p>"
-                        + "<p class='info' id='dateroottext_"+this.id+"'>first seen:</p>"
-                        + "<p class='info' id='roothistorytext_"+this.id+"'>big history:</p>"
-                        + "<p class='info' id='makerthingtext_"+this.id+"'>maker:</p>"
-                        + "<p class='info' id='datethingtext_"+this.id+"'>date made:</p>"
-                        + "<p class='info' id='historythingtext_"+this.id+"'>small history:</p>"
-                        + "<p class='info' id='userstorytext_"+this.id+"'>user story:</p>"
-                        + "<p class='info' id='workedwithtext_"+this.id+"'>worked with:</p>"
-                        + "<p class='info' id='partoftext_"+this.id+"'>part of:</p>"
-                        + "<p class='info' id='madefromtext_"+this.id+"'>made from:</p>"
-                        + "<p class='info' id='referencestext_"+this.id+"'>references:</p>"
                           + "</a>");
             $('#Table').append(cell);
         });
@@ -440,25 +421,6 @@ $.getJSON(urlInd, function(data) {
                           + "<p class='info' id='partof_"+this.id+"'>" +this.gsx$partof.$t+ "</p>"
                           + "<p class='info' id='references_"+this.id+"'>" +this.gsx$references.$t+ "</p>"
                           + "<p class='info' id='madefrom_"+this.id+"'>" +this.gsx$madefrom.$t+ "</p>"
-                        + "<p class='info' id='nametext_"+this.id+"'>name:</p>"
-                        + "<p class='info' id='collectiontext_"+this.id+"'>collection:</p>"
-                        + "<p class='info' id='locationtext_"+this.id+"'>from:</p>"
-                        + "<p class='info' id='typetext_"+this.id+"'>type:</p>"
-                        + "<p class='info' id='typebroadtext_"+this.id+"'>category:</p>"
-                        + "<p class='info' id='functiontext_"+this.id+"'>function:</p>"
-                        + "<p class='info' id='materialtext_"+this.id+"'>made of:</p>"
-                        + "<p class='info' id='dimensiontext_"+this.id+"'>dimensions:</p>"
-                        + "<p class='info' id='designertext_"+this.id+"'>designer:</p>"
-                        + "<p class='info' id='dateroottext_"+this.id+"'>first seen:</p>"
-                        + "<p class='info' id='roothistorytext_"+this.id+"'>big history:</p>"
-                        + "<p class='info' id='makerthingtext_"+this.id+"'>maker:</p>"
-                        + "<p class='info' id='datethingtext_"+this.id+"'>date made:</p>"
-                        + "<p class='info' id='historythingtext_"+this.id+"'>small history:</p>"
-                        + "<p class='info' id='userstorytext_"+this.id+"'>user story:</p>"
-                        + "<p class='info' id='workedwithtext_"+this.id+"'>worked with:</p>"
-                        + "<p class='info' id='partoftext_"+this.id+"'>part of:</p>"
-                        + "<p class='info' id='madefromtext_"+this.id+"'>made from:</p>"
-                        + "<p class='info' id='referencestext_"+this.id+"'>references:</p>"
                           + "</a>");
             $('#Table').append(cell);
         });
@@ -489,25 +451,6 @@ function modalFunction(clicked_id) {
     partof = ($("#partof_"+clicked_id+"").html());
     references = ($("#references_"+clicked_id+"").html());
     
-    //collectiontext = ($("#collectiontext_"+clicked_id+"").html());
-    //locationtext = ($("#locationtext_"+clicked_id+"").html());
-    //typetext = ($("#typetext_"+clicked_id+"").html());
-    //typebroadtext = ($("#typebroadtext_"+clicked_id+"").html());
-    //tfunctiontext = ($("#functiontext_"+clicked_id+"").html());
-    //materialtext = ($("#materialtext_"+clicked_id+"").html());
-    //dimensiontext = ($("#dimensiontext_"+clicked_id+"").html());
-    //designertext = ($("#designertext_"+clicked_id+"").html());
-    //roothistorytext = ($("#roothistorytext_"+clicked_id+"").html());
-    //dateroottext = ($("#dateroottext_"+clicked_id+"").html());
-    //makerthingtext = ($("#makerthingtext_"+clicked_id+"").html());
-    //datethingtext = ($("#datethingtext_"+clicked_id+"").html());
-    //historythingtext = ($("#historythingtext_"+clicked_id+"").html());
-    //userstorytext = ($("#userstorytext_"+clicked_id+"").html());
-    //madefromtext = ($("#madefromtext_"+clicked_id+"").html());
-    //workedwithtext = ($("#workedwithtext_"+clicked_id+"").html());
-    //partoftext = ($("#partoftext_"+clicked_id+"").html());
-    //referencestext = ($("#referencestext_"+clicked_id+"").html());
-    
     madefrom.split(/\s*,\s*/).forEach(function(madefromstring) {
         console.log(madefromstring);
         
@@ -516,9 +459,16 @@ function modalFunction(clicked_id) {
         for (i = 0; i < arrayLength; i++) {
         
         cellmade = $('#madeTable');
-            cellmade.append("<a>" + madefromstring[i] + "</a>");
+            cellmade.append("<a>" + madefromstring[i] + " " + "</a>");
         $('#madeTable').append(cellmade);
-       // document.getElementById('madefrom').innerHTML = madefromstring;
+        
+        span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+        cellmade.style.display = "none";
+        }
+            
         }
         });
     
@@ -555,24 +505,6 @@ function modalFunction(clicked_id) {
     modal = document.getElementById('myModal');
     modal.style.display = "block";
     
-    //collectt = document.getElementById('collectiontext').innerHTML = collectiontext
-    //locationt = document.getElementById('locationtext').innerHTML = locationtext
-    //typebroadt = document.getElementById('typebroadtext').innerHTML = typebroadtext
-    //functiont = document.getElementById('functiontext').innerHTML = tfunctiontext
-    //materialt = document.getElementById('materialtext').innerHTML = materialtext
-    //dimensiont = document.getElementById('dimensiontext').innerHTML = dimensiontext
-    //designert = document.getElementById('designertext').innerHTML = designertext
-    //roothistoryt = document.getElementById('roothistorytext').innerHTML = roothistorytext
-    //dateroott = document.getElementById('dateroottext').innerHTML = dateroottext
-    //makerthingt = document.getElementById('makerthingtext').innerHTML = makerthingtext
-    //datethingt = document.getElementById('datethingtext').innerHTML = datethingtext
-    //historythingt = document.getElementById('historythingtext').innerHTML = historythingtext
-    //userstoryt = document.getElementById('userstorytext').innerHTML = userstorytext
-    //madefromt = document.getElementById('madefromtext').innerHTML = madefromtext
-    //workedwitht = document.getElementById('workedwithtext').innerHTML = workedwithtext
-    //partoft = document.getElementById('partoftext').innerHTML = partoftext
-    //referencest = document.getElementById('referencestext').innerHTML = referencestext
-    
     // Get the <span> element that closes the modal
     span = document.getElementsByClassName("close")[0];
 
@@ -581,26 +513,6 @@ function modalFunction(clicked_id) {
     modal.style.display = "none";
         }
     };
-
-//function searchFunction() {
-  //  var input, filter, allCell, cell, tag, i;
-  
-    //input = document.getElementById("myInput");
-    //filter = input.value.toUpperCase();
-    //table = document.getElementById("Table");
-    //cell = table.getElementsByClassName("artefactcell");
- 
-    //for (i = 0; i < cell.length; i++) {
-        //tag = cell[i].getElementsByTagName("tag")[0];
-            //if (tag) {
-                //if (tag.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                //cell[i].style.display = "";
-            //} else {
-                //cell[i].style.display = "none";
-                //}
-            //}       
-        //}
-    //}
     
 $(myInput).on("input", function() { 
     var input, filter, allCell, cell, tag, i;
