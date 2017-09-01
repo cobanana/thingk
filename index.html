@@ -452,6 +452,7 @@ function modalFunction(clicked_id) {
     references = ($("#references_"+clicked_id+"").html());
     
     madefrom.split(",").forEach(function(madefromstring) {
+        $('#madeTable').empty();
         console.log(madefromstring);
         
         arrayLength = madefromstring.length;
@@ -459,15 +460,8 @@ function modalFunction(clicked_id) {
         for (i = 0; i < arrayLength; i++) {
         
         cellmade = $('#madeTable');
-            cellmade.append("<a>" + madefromstring[i] + " " + "</a>");
+            cellmade.append("<div>" + madefromstring[i] + " " + "</div>");
         $('#madeTable').append(cellmade);
-        
-        span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-        cellmade.style.display = "none";
-        }
             
         }
         });
