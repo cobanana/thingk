@@ -306,21 +306,14 @@ img {
     </table>
     <table class="caption" style="width:100%">
       <tr>
-        <td id="madefromtext" class=modaltitle></td>
         <td id="madefrom" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
-      </tr>
-    </table>
-    <table class="caption" style="width:100%">
-      <tr>
-        <td id="workedwithtext" class=modaltitle></td>
         <td id="workedwith" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
         <td id="partof" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
-        <td id="partoftext" class=modaltitle></td>
       </tr>
     </table>
     <table class="caption" style="width:100%">
       <tr>
-        <td id="collection" class=newsearchit onclick="puttextinsearchFunction(this.id)"></td>
+        <td id="collection" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
         <td id="references"></td>
       </tr>
     </table>
@@ -535,6 +528,10 @@ function modalFunction(clicked_id) {
     workedwithbox = document.getElementById('workedwith').innerHTML = workedwith
     partofbox = document.getElementById('partof').innerHTML = partof
     referencesbox = document.getElementById('references').innerHTML = references
+    
+    madefrom.split(/\s*,\s*/).forEach(function(myString) {
+    console.log(myString);
+    });
     
     // Display modal
     modal = document.getElementById('myModal');
