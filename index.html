@@ -459,10 +459,10 @@ function modalFunction(clicked_id) {
     var madefromstring = madefrom.split(",");
     
     function checkTitle(title) {
-    return title >= document.getElementsByClassName($("#thumbtitle")).value;
+    return title >= document.getElementsByClassName($('#thumbtitle')).value;
     }
 
-    document.getElementById($("#madeTable")).innerHTML = madefromstring.filter(checkTitle);
+    document.getElementById($('#madeTable')).innerHTML = madefromstring.filter(checkTitle);
     
         //for (i = 0; i < madefromstring.length; i++) {
             
