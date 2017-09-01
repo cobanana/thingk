@@ -457,21 +457,13 @@ function modalFunction(clicked_id) {
     references = ($("#references_"+clicked_id+"").html());
     
     var madefromstring = madefrom.split(",");
-    
-    var entrymade = madefromstring.feed.entrymade;
-        
-        entrymade.forEach(function(item) {
-            item.id = id++;
-            });
-    $(entrymade).each(function() {    
         
         for (i = 0; i < madefromstring.length; i++) {
             
             cellmade = $('#madeTable');
-            cellmade.append("<td id = "+this.id+" value="+madefromstring[i]+" class='newsearch' onclick='puttextinsearchFunction(this.id)'>" + madefromstring[i] + "</td>");
+            cellmade.append("<td id = "+cellmade.this+" value="+madefromstring[i]+" class='newsearch' onclick='puttextinsearchFunction(this.id)'>" + madefromstring[i] + "</td>");
             $('#madeTable').append(cellmade);
             };
-    });
     
    // workedwith.split(/\s*,\s*/).forEach(function(workedwithstring) {
      //   console.log(workedwithstring);
