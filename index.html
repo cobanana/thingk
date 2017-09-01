@@ -505,18 +505,8 @@ function modalFunction(clicked_id) {
     
     madefrom.split(/\s*,\s*/).forEach(function(madefromstring) {
         console.log(madefromstring);
-        var entrymade = madefromstring.feed.entrymade;
-
-        $(entrymade).each(function() {
-        
-            cellmade = $('#tableMade');
-            cellmade.append("<a class='newsearch' onClick='puttextinsearchFunction(this.id)'>" 
-                        + "<p id='madefrom' class=newsearch onClick='puttextinsearchFunction(this.id)'></p>"
-                        + "</a>");
-            $('#tableMade').append(cellmade);
+        madefrombox = document.getElementById('madefrom').innerHTML = madefromstring
         });
-    })
-        
         
     workedwith.split(/\s*,\s*/).forEach(function(workedwithstring) {
         console.log(workedwithstring);
