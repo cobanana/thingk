@@ -304,7 +304,12 @@ img {
         <td id="userstory"></td> 
       </tr>
     </table>
-    <table id=tableMade class="caption" style="width:100%">
+    <table class="caption" style="width:100%">
+      <tr>
+        <td id="madefrom" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
+        <td id="workedwith" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
+        <td id="partof" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
+      </tr>
     </table>
     <table class="caption" style="width:100%">
       <tr>
@@ -505,17 +510,17 @@ function modalFunction(clicked_id) {
     
     madefrom.split(/\s*,\s*/).forEach(function(madefromstring) {
         console.log(madefromstring);
-        madefrombox = document.getElementById('madefrom').innerHTML = madefromstring;
+        madefrombox = document.getElementById('madefrom').innerHTML = madefromstring
         });
-        
+    
     workedwith.split(/\s*,\s*/).forEach(function(workedwithstring) {
         console.log(workedwithstring);
-        workedwithbox = document.getElementById('workedwith').innerHTML = workedwithstring;
+        workedwithbox = document.getElementById('workedwith').innerHTML = workedwithstring
         });
         
     partof.split(/\s*,\s*/).forEach(function(partofstring) {
         console.log(partofstring);
-        partofbox = document.getElementById('partof').innerHTML = partofstring;
+        partofbox = document.getElementById('partof').innerHTML = partofstring
         });
     
     var modalImg = $("#img01")
