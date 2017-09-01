@@ -459,16 +459,11 @@ function modalFunction(clicked_id) {
         $('#madeTable').empty();
         console.log(madefromstring);
         
-        var x = document.getElementById("demo");
-        x.innerHTML = Array.isArray(madefromstring);
-        
         for (i = 0; i < madefromstring.length; i++) {
-        
-        cellmade = $('#madeTable');
-            cellmade.append("<p>" + madefromstring[i] + " " + "</p>");
-        $('#madeTable').append(cellmade);
-            
-        };
+            cellmade = $('#madeTable');
+            cellmade.append("<td>" + madefromstring[i] + " " + "</td>");
+            $('#madeTable').append(cellmade);
+            };
     
    // workedwith.split(/\s*,\s*/).forEach(function(workedwithstring) {
      //   console.log(workedwithstring);
