@@ -454,11 +454,11 @@ function modalFunction(clicked_id) {
     partof = ($("#partof_"+clicked_id+"").html());
     references = ($("#references_"+clicked_id+"").html());
     
-    madefrom.split(",").forEach(function(madefromstring) {
+    var madefromstring = madefrom.split(",")
+        
         $('#madeTable').empty();
         console.log(madefromstring);
         
-        var madefromstring;
         var x = document.getElementById("demo");
         x.innerHTML = Array.isArray(madefromstring);
         
@@ -468,8 +468,7 @@ function modalFunction(clicked_id) {
             cellmade.append("<p>" + madefromstring[i] + " " + "</p>");
         $('#madeTable').append(cellmade);
             
-        }
-        });
+        };
     
    // workedwith.split(/\s*,\s*/).forEach(function(workedwithstring) {
      //   console.log(workedwithstring);
