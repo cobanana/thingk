@@ -510,8 +510,10 @@ function modalFunction(clicked_id) {
     
     madefrom.split(/\s*,\s*/).forEach(function(madefromstring) {
         console.log(madefromstring);
-        madefromst.append(madefromstring);
-        madefrombox = document.getElementById('madefrom').innerHTML = madefromst;
+        madefromstring.forEach(function() {
+            madefrombox = document.getElementById('madefrom').innerHTML = madefromstring;
+            });
+       // madefrombox = document.getElementById('madefrom').innerHTML = madefromstring;
         });
     
     workedwith.split(/\s*,\s*/).forEach(function(workedwithstring) {
