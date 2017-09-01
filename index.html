@@ -510,17 +510,18 @@ function modalFunction(clicked_id) {
     
     madefrom.split(/\s*,\s*/).forEach(function(madefromstring) {
         console.log(madefromstring);
-        madefrombox = document.getElementById('madefrom').innerHTML = madefromstring[i]
+        madefrombox = document.getElementById('madefrom').innerHTML
+        madefrombox.append(madefromstring)
         });
     
     workedwith.split(/\s*,\s*/).forEach(function(workedwithstring) {
         console.log(workedwithstring);
-        workedwithbox = document.getElementById('workedwith').innerHTML = workedwithstring[i]
+        workedwithbox = document.getElementById('workedwith').innerHTML = workedwithstring
         });
         
     partof.split(/\s*,\s*/).forEach(function(partofstring) {
         console.log(partofstring);
-        partofbox = document.getElementById('partof').innerHTML = partofstring[i]
+        partofbox = document.getElementById('partof').innerHTML = partofstring
         });
     
     var modalImg = $("#img01")
