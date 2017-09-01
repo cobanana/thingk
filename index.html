@@ -306,11 +306,16 @@ img {
     </table>
     <table class="caption" style="width:100%">
       <tr>
-        <td id="beforethingtext" class=modaltitle></td>
+        <td id="madefromtext" class=modaltitle></td>
         <td id="madefrom" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
-        <td id="before" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
-        <td id="after" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
-        <td id="afterthingtext" class=modaltitle></td>
+      </tr>
+    </table>
+    <table class="caption" style="width:100%">
+      <tr>
+        <td id="workedwithtext" class=modaltitle></td>
+        <td id="workedwith" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
+        <td id="partof" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
+        <td id="partoftext" class=modaltitle></td>
       </tr>
     </table>
     <table class="caption" style="width:100%">
@@ -357,7 +362,7 @@ $.getJSON(urlEng, function(data) {
         
             cell = $('#Table');
             cell.append("<a class='artefactcell' onClick='modalFunction(this.id)' id= '"+this.id+"'>" 
-                          + "<tag>" + " " +this.gsx$title.$t+ " " +this.gsx$loca.$t+ " " +this.gsx$type.$t+ " " +this.gsx$typebroad.$t+ " " +this.gsx$dimension.$t+ " " +this.gsx$dateroot.$t+ " " +this.gsx$makerthing.$t+ " " +this.gsx$tag.$t+ "</tag>"
+                          + "<tag>" + " " +this.gsx$title.$t+ " " +this.gsx$loca.$t+ " " +this.gsx$type.$t+ " " +this.gsx$typebroad.$t+ " " +this.gsx$dimension.$t+ " " +this.gsx$dateroot.$t+ " " +this.gsx$madefrom.$t+ " " +this.gsx$workedwith.$t+ " " +this.gsx$partof.$t+ " " +this.gsx$makerthing.$t+ " " +this.gsx$tag.$t+ "</tag>"
                          + "<img id='cellimg_"+this.id+"' src='" +this.gsx$imageitem.$t+ "'/>" 
                           + "<p class='thumbtitle' id='title_"+this.id+"'>" +this.gsx$title.$t+ "</p>"
                           + "<p class='info' id='collection_"+this.id+"'>" +this.gsx$collection.$t+ "</p>"
@@ -373,9 +378,10 @@ $.getJSON(urlEng, function(data) {
                           + "<p class='info' id='datething_"+this.id+"'>" +this.gsx$datething.$t+ "</p>"
                           + "<p class='info' id='historything_"+this.id+"'>" +this.gsx$historything.$t+ "</p>"
                           + "<p class='info' id='userstory_"+this.id+"'>" +this.gsx$userstory.$t+ "</p>"
-                          + "<p class='info' id='beforething_"+this.id+"'>" +this.gsx$beforething.$t+ "</p>"
-                          + "<p class='info' id='afterthing_"+this.id+"'>" +this.gsx$afterthing.$t+ "</p>"
+                          + "<p class='info' id='workedwith_"+this.id+"'>" +this.gsx$workedwith.$t+ "</p>"
+                          + "<p class='info' id='partof_"+this.id+"'>" +this.gsx$partof.$t+ "</p>"
                           + "<p class='info' id='references_"+this.id+"'>" +this.gsx$references.$t+ "</p>"
+                          + "<p class='info' id='madefrom_"+this.id+"'>" +this.gsx$madefrom.$t+ "</p>"
                         + "<p class='info' id='nametext_"+this.id+"'>name:</p>"
                         + "<p class='info' id='collectiontext_"+this.id+"'>collection:</p>"
                         + "<p class='info' id='locationtext_"+this.id+"'>from:</p>"
@@ -391,8 +397,8 @@ $.getJSON(urlEng, function(data) {
                         + "<p class='info' id='datethingtext_"+this.id+"'>date made:</p>"
                         + "<p class='info' id='historythingtext_"+this.id+"'>small history:</p>"
                         + "<p class='info' id='userstorytext_"+this.id+"'>user story:</p>"
-                        + "<p class='info' id='beforethingtext_"+this.id+"'><</p>"
-                        + "<p class='info' id='afterthingtext_"+this.id+"'>></p>"
+                        + "<p class='info' id='workedwith_"+this.id+"'>worked with:</p>"
+                        + "<p class='info' id='partof_"+this.id+"'>part of:</p>"
                         + "<p class='info' id='referencestext_"+this.id+"'>references:</p>"
                           + "</a>");
             $('#Table').append(cell);
@@ -420,8 +426,8 @@ $.getJSON(urlInd, function(data) {
         
             cell = $('#Table');
             cell.append("<a class='artefactcell' onClick='modalFunction(this.id)' id= '"+this.id+"'>" 
-                          + "<tag>" + " " +this.gsx$title.$t+ " " +this.gsx$loca.$t+ " " +this.gsx$type.$t+ " " +this.gsx$typebroad.$t+ " " +this.gsx$dimension.$t+ " " +this.gsx$dateroot.$t+ " " +this.gsx$makerthing.$t+ " " +this.gsx$tag.$t+ "</tag>"
-                          + "<img id='cellimg_"+this.id+"' src='" +this.gsx$imageitem.$t+ "'/>" 
+                          + "<tag>" + " " +this.gsx$title.$t+ " " +this.gsx$loca.$t+ " " +this.gsx$type.$t+ " " +this.gsx$typebroad.$t+ " " +this.gsx$dimension.$t+ " " +this.gsx$dateroot.$t+ " " +this.gsx$madefrom.$t+ " " +this.gsx$workedwith.$t+ " " +this.gsx$partof.$t+ " " +this.gsx$makerthing.$t+ " " +this.gsx$tag.$t+ "</tag>"
+                         + "<img id='cellimg_"+this.id+"' src='" +this.gsx$imageitem.$t+ "'/>" 
                           + "<p class='thumbtitle' id='title_"+this.id+"'>" +this.gsx$title.$t+ "</p>"
                           + "<p class='info' id='collection_"+this.id+"'>" +this.gsx$collection.$t+ "</p>"
                           + "<p class='info' id='loca_"+this.id+"'>" +this.gsx$loca.$t+ "</p>"
@@ -436,16 +442,17 @@ $.getJSON(urlInd, function(data) {
                           + "<p class='info' id='datething_"+this.id+"'>" +this.gsx$datething.$t+ "</p>"
                           + "<p class='info' id='historything_"+this.id+"'>" +this.gsx$historything.$t+ "</p>"
                           + "<p class='info' id='userstory_"+this.id+"'>" +this.gsx$userstory.$t+ "</p>"
-                          + "<p class='info' id='beforething_"+this.id+"'>" +this.gsx$beforething.$t+ "</p>"
-                          + "<p class='info' id='afterthing_"+this.id+"'>" +this.gsx$afterthing.$t+ "</p>"
+                          + "<p class='info' id='workedwith_"+this.id+"'>" +this.gsx$workedwith.$t+ "</p>"
+                          + "<p class='info' id='partof_"+this.id+"'>" +this.gsx$partof.$t+ "</p>"
                           + "<p class='info' id='references_"+this.id+"'>" +this.gsx$references.$t+ "</p>"
+                          + "<p class='info' id='madefrom_"+this.id+"'>" +this.gsx$madefrom.$t+ "</p>"
                         + "<p class='info' id='nametext_"+this.id+"'>name:</p>"
                         + "<p class='info' id='collectiontext_"+this.id+"'>collection:</p>"
-                        + "<p class='info' id='locationtext_"+this.id+"'>location:</p>"
+                        + "<p class='info' id='locationtext_"+this.id+"'>from:</p>"
                         + "<p class='info' id='typetext_"+this.id+"'>type:</p>"
                         + "<p class='info' id='typebroadtext_"+this.id+"'>category:</p>"
                         + "<p class='info' id='functiontext_"+this.id+"'>function:</p>"
-                        + "<p class='info' id='materialtext_"+this.id+"'>material:</p>"
+                        + "<p class='info' id='materialtext_"+this.id+"'>made of:</p>"
                         + "<p class='info' id='dimensiontext_"+this.id+"'>dimensions:</p>"
                         + "<p class='info' id='designertext_"+this.id+"'>designer:</p>"
                         + "<p class='info' id='dateroottext_"+this.id+"'>first seen:</p>"
@@ -454,8 +461,8 @@ $.getJSON(urlInd, function(data) {
                         + "<p class='info' id='datethingtext_"+this.id+"'>date made:</p>"
                         + "<p class='info' id='historythingtext_"+this.id+"'>small history:</p>"
                         + "<p class='info' id='userstorytext_"+this.id+"'>user story:</p>"
-                        + "<p class='info' id='beforethingtext_"+this.id+"'><</p>"
-                        + "<p class='info' id='afterthingtext_"+this.id+"'>></p>"
+                        + "<p class='info' id='workedwith_"+this.id+"'>worked with:</p>"
+                        + "<p class='info' id='partof_"+this.id+"'>part of:</p>"
                         + "<p class='info' id='referencestext_"+this.id+"'>references:</p>"
                           + "</a>");
             $('#Table').append(cell);
@@ -482,8 +489,9 @@ function modalFunction(clicked_id) {
     datething = ($("#datething_"+clicked_id+"").html());
     historything = ($("#historything_"+clicked_id+"").html());
     userstory = ($("#userstory_"+clicked_id+"").html());
-    beforething = ($("#beforething_"+clicked_id+"").html());
-    afterthing = ($("#afterthing_"+clicked_id+"").html());
+    madefrom = ($("#madefrom_"+clicked_id+"").html());
+    workedwith = ($("#workedwith_"+clicked_id+"").html());
+    partof = ($("#partof_"+clicked_id+"").html());
     references = ($("#references_"+clicked_id+"").html());
     
     //collectiontext = ($("#collectiontext_"+clicked_id+"").html());
@@ -500,8 +508,9 @@ function modalFunction(clicked_id) {
     //datethingtext = ($("#datethingtext_"+clicked_id+"").html());
     //historythingtext = ($("#historythingtext_"+clicked_id+"").html());
     //userstorytext = ($("#userstorytext_"+clicked_id+"").html());
-    beforethingtext = ($("#beforethingtext_"+clicked_id+"").html());
-    afterthingtext = ($("#afterthingtext_"+clicked_id+"").html());
+    madefromtext = ($("#madefromtext_"+clicked_id+"").html());
+    workedwithtext = ($("#workedwithtext_"+clicked_id+"").html());
+    partoftext = ($("#partoftext_"+clicked_id+"").html());
     //referencestext = ($("#referencestext_"+clicked_id+"").html());
     
     var modalImg = $("#img01")
@@ -520,8 +529,9 @@ function modalFunction(clicked_id) {
     //datethingbox = document.getElementById('madedate').innerHTML = datething
     historythingbox = document.getElementById('backgroundthis').innerHTML = historything
     userstorybox = document.getElementById('userstory').innerHTML = userstory
-    beforethingbox = document.getElementById('before').innerHTML = beforething
-    afterthingbox = document.getElementById('after').innerHTML = afterthing
+    madefrombox = document.getElementById('madefrom').innerHTML = madefrom
+    workedwithbox = document.getElementById('workedwith').innerHTML = workedwith
+    partofbox = document.getElementById('partof').innerHTML = partof
     referencesbox = document.getElementById('references').innerHTML = references
     
     // Display modal
@@ -541,8 +551,9 @@ function modalFunction(clicked_id) {
     //datethingt = document.getElementById('datethingtext').innerHTML = datethingtext
     //historythingt = document.getElementById('historythingtext').innerHTML = historythingtext
     //userstoryt = document.getElementById('userstorytext').innerHTML = userstorytext
-    beforethingt = document.getElementById('beforethingtext').innerHTML = beforethingtext
-    afterthingt = document.getElementById('afterthingtext').innerHTML = afterthingtext
+    madefromt = document.getElementById('madefromtext').innerHTML = madefromtext
+    workedwitht = document.getElementById('workedwithtext').innerHTML = workedwithtext
+    partoft = document.getElementById('partoftext').innerHTML = partoftext
     //referencest = document.getElementById('referencestext').innerHTML = referencestext
     
     // Get the <span> element that closes the modal
