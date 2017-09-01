@@ -458,15 +458,14 @@ function modalFunction(clicked_id) {
     
     var madefromstring = madefrom.split(",");
     
-    var thumbt;
-    
     function checkTitle(thumbt) {
+    var thumbt;
     return thumbt >= document.getElementsByClassName('thumbtitle').value;
+    console.log(thumbt);
     }
 
     var madt = document.getElementById('madeTable').innerHTML = madefromstring.filter(checkTitle);
     
-    console.log(thumbt)
     
         //for (i = 0; i < madefromstring.length; i++) {
             
