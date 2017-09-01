@@ -459,7 +459,7 @@ function modalFunction(clicked_id) {
     var thumbt = document.getElementsByClassName('thumbtitle');
     var arr = Array.prototype.slice.call(thumbt);
     
-    var madt = madefromstring.filter((n) => arr.includes(n));
+    var madt = arr.filter((n) => madefromstring.includes(n));
     
     console.log(madt)
     
