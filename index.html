@@ -508,6 +508,18 @@ function modalFunction(clicked_id) {
     //partoftext = ($("#partoftext_"+clicked_id+"").html());
     //referencestext = ($("#referencestext_"+clicked_id+"").html());
     
+    madefrom.split(/\s*,\s*/).forEach(function(madefromstring) {
+        console.log(madefromstring);
+        });
+    
+    workedwith.split(/\s*,\s*/).forEach(function(workedwithstring) {
+        console.log(workedwithstring);
+        });
+        
+    partof.split(/\s*,\s*/).forEach(function(partofstring) {
+        console.log(partofstring);
+        });
+    
     var modalImg = $("#img01")
     modalImg.attr('src', image);
     titlebox = document.getElementById('bigtitle').innerHTML = title
@@ -524,14 +536,11 @@ function modalFunction(clicked_id) {
     //datethingbox = document.getElementById('madedate').innerHTML = datething
     historythingbox = document.getElementById('backgroundthis').innerHTML = historything
     userstorybox = document.getElementById('userstory').innerHTML = userstory
-    madefrombox = document.getElementById('madefrom').innerHTML = madefrom
-    workedwithbox = document.getElementById('workedwith').innerHTML = workedwith
-    partofbox = document.getElementById('partof').innerHTML = partof
+    madefrombox = document.getElementById('madefrom').innerHTML = madefromstring
+    workedwithbox = document.getElementById('workedwith').innerHTML = workedwithstring
+    partofbox = document.getElementById('partof').innerHTML = partofstring
     referencesbox = document.getElementById('references').innerHTML = references
     
-    madefrom.split(/\s*,\s*/).forEach(function(myString) {
-    console.log(myString);
-    });
     
     // Display modal
     modal = document.getElementById('myModal');
