@@ -458,22 +458,18 @@ function modalFunction(clicked_id) {
     
     var madefromstring = madefrom.split(",");
     
-    var findOne = function (madefromstring, data) {
-    return data.some(function (v) {
-        return madefromstring.indexOf(v) >= 0;
-            });
-        };
-        
-    console.log(findOne)
+    function checkTitle(title) {
+    return title >= document.getElementsByClassName($("#thumbtitle")).value;
+    }
+
+    document.getElementById($("#madeTable")).innerHTML = madefromstring.filter(checkTitle);
     
-        for (i = 0; i < madefromstring.length; i++) {
+        //for (i = 0; i < madefromstring.length; i++) {
             
-            
-            
-            cellmade = $('#madeTable');
-            cellmade.append("<td id = "+cellmade.this+" value="+madefromstring[i]+" class='newsearch' onclick='puttextinsearchFunction(this.id)'>" + madefromstring[i] + "</td>");
-            $('#madeTable').append(cellmade);
-            };
+            //cellmade = $('#madeTable');
+            //cellmade.append("<td id = "+cellmade.this+" value="+madefromstring[i]+" class='newsearch' //onclick='puttextinsearchFunction(this.id)'>" + madefromstring[i] + "</td>");
+            //$('#madeTable').append(cellmade);
+            //};
     
    // workedwith.split(/\s*,\s*/).forEach(function(workedwithstring) {
      //   console.log(workedwithstring);
