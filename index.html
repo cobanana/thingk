@@ -455,9 +455,7 @@ function modalFunction(clicked_id) {
         $('#madeTable').empty();
         console.log(madefromstring);
         
-        arrayLength = madefromstring.length;
-        
-        for (i = 0; i < arrayLength; i++) {
+        for (i = 0; i < madefromstring; i++) {
         
         cellmade = $('#madeTable');
             cellmade.append("<div>" + madefromstring[i] + " " + "</div>");
