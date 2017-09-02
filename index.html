@@ -381,8 +381,8 @@ $.getJSON(urlEng, function(data) {
                           + "<p class='info' id='datething_"+this.id+"'>" +this.gsx$datething.$t+ "</p>"
                           + "<p class='info' id='historything_"+this.id+"'>" +this.gsx$historything.$t+ "</p>"
                           + "<p class='info' id='userstory_"+this.id+"'>" +this.gsx$userstory.$t+ "</p>"
-                          + "<p class='worked' id='workedwith_"+this.id+"'>" +this.gsx$workedwith.$t+ "</p>"
-                          + "<p class='part' id='partof_"+this.id+"'>" +this.gsx$partof.$t+ "</p>"
+                          + "<p class='info' id='workedwith_"+this.id+"'>" +this.gsx$workedwith.$t+ "</p>"
+                          + "<p class='info' id='partof_"+this.id+"'>" +this.gsx$partof.$t+ "</p>"
                           + "<p class='info' id='references_"+this.id+"'>" +this.gsx$references.$t+ "</p>"
                           + "<p class='info' id='madefrom_"+this.id+"'>" +this.gsx$madefrom.$t+ "</p>"
                           + "</a>");
@@ -426,8 +426,8 @@ $.getJSON(urlInd, function(data) {
                           + "<p class='info' id='datething_"+this.id+"'>" +this.gsx$datething.$t+ "</p>"
                           + "<p class='info' id='historything_"+this.id+"'>" +this.gsx$historything.$t+ "</p>"
                           + "<p class='info' id='userstory_"+this.id+"'>" +this.gsx$userstory.$t+ "</p>"
-                          + "<p class='worked' id='workedwith_"+this.id+"'>" +this.gsx$workedwith.$t+ "</p>"
-                          + "<p class='part' id='partof_"+this.id+"'>" +this.gsx$partof.$t+ "</p>"
+                          + "<p class='info' id='workedwith_"+this.id+"'>" +this.gsx$workedwith.$t+ "</p>"
+                          + "<p class='info' id='partof_"+this.id+"'>" +this.gsx$partof.$t+ "</p>"
                           + "<p class='info' id='references_"+this.id+"'>" +this.gsx$references.$t+ "</p>"
                           + "<p class='info' id='madefrom_"+this.id+"'>" +this.gsx$madefrom.$t+ "</p>"
                           + "</a>");
@@ -463,6 +463,8 @@ function modalFunction(clicked_id) {
     references = ($("#references_"+clicked_id+"").html());
     
     var madefromstring = madefrom.split(",");
+    var workwithstring = workedwith.split(",");
+    var partofstring = partof.split(",");
     
     var thumbt = document.getElementsByClassName('thumbtitle'); 
     var m = [];
@@ -470,27 +472,15 @@ function modalFunction(clicked_id) {
     m.push( thumbt[ i ].innerHTML );
     }
     
-    var workedt = document.getElementsByClassName('worked'); 
-    var w = [];
-    for ( var i = 0; i < workedt.length; i++ ) {
-    w.push( workedt[ i ].innerHTML );
-    }
-    
-    var partt = document.getElementsByClassName('part'); 
-    var p = [];
-    for ( var i = 0; i < partt.length; i++ ) {
-    p.push( partt[ i ].innerHTML );
-    }
-    
     console.log(madefromstring)
     console.log(thumbt)
-    console.log(a)
+    console.log(m)
     
     var madt = madefromstring.filter(m => m.includes(m));
     console.log(madt)
-    var workwit = madefromstring.filter(w => w.includes(w));
+    var workwit = workwithstring.filter(m => m.includes(m));
     console.log(workwit)
-    var partot = madefromstring.filter(p => p.includes(p));
+    var partot = partofstring.filter(m => m.includes(m));
     console.log(partot)
     
     for (i = 0; i < madt.length; i++) {
