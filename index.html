@@ -463,14 +463,14 @@ function modalFunction(clicked_id) {
     a.push( thumbt[ i ].innerHTML );
     }
     
-    var arr = Array.from(thumbt);
+    //var arr = Array.from(thumbt);
     
     console.log(madefromstring)
     console.log(thumbt)
     console.log(a)
-    console.log(arr)
+    //console.log(arr)
     
-    var madt = madefromstring.filter(n => arr.includes(n));
+    var madt = madefromstring.filter(n => a.includes(n));
     console.log(madt)
     
         //for (i = 0; i < madefromstring.length; i++) {
