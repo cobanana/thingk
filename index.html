@@ -442,7 +442,9 @@ $.getJSON(urlInd, function(data) {
 function modalFunction(clicked_id) {
     var modal, image, i, span, modalImg, title, myTable;
     
-     $('#madeTable').empty();
+    $('#madeTable').empty();
+    $('#workedTable').empty();
+    $('#partTable').empty();
     
     image = ($("#cellimg_"+clicked_id+"").attr('src'));
     title = ($("#title_"+clicked_id+"").html());
