@@ -82,6 +82,14 @@ cell {
   display: none;
 }
     
+.worked {
+  display: none;
+}
+    
+.part {
+  display: none;
+}
+    
 tag {
   display: none;
 }
@@ -308,12 +316,11 @@ img {
       </tr>
     </table>
     <table id=madeTable class="caption" style="width:100%">
-      <tr>
-        <td id="madefrom" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
-        <td id="workedwith" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
-        <td id="partof" class=newsearch onclick="puttextinsearchFunction(this.id)"></td> 
-      </tr>
     </table>
+    <table id=workedTable class="caption" style="width:100%">
+    </table>
+    <table id=partTable class="caption" style="width:100%">
+    </table>    
     <table class="caption" style="width:100%">
       <tr>
         <td id="collection" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
@@ -374,8 +381,8 @@ $.getJSON(urlEng, function(data) {
                           + "<p class='info' id='datething_"+this.id+"'>" +this.gsx$datething.$t+ "</p>"
                           + "<p class='info' id='historything_"+this.id+"'>" +this.gsx$historything.$t+ "</p>"
                           + "<p class='info' id='userstory_"+this.id+"'>" +this.gsx$userstory.$t+ "</p>"
-                          + "<p class='info' id='workedwith_"+this.id+"'>" +this.gsx$workedwith.$t+ "</p>"
-                          + "<p class='info' id='partof_"+this.id+"'>" +this.gsx$partof.$t+ "</p>"
+                          + "<p class='worked' id='workedwith_"+this.id+"'>" +this.gsx$workedwith.$t+ "</p>"
+                          + "<p class='part' id='partof_"+this.id+"'>" +this.gsx$partof.$t+ "</p>"
                           + "<p class='info' id='references_"+this.id+"'>" +this.gsx$references.$t+ "</p>"
                           + "<p class='info' id='madefrom_"+this.id+"'>" +this.gsx$madefrom.$t+ "</p>"
                           + "</a>");
@@ -419,8 +426,8 @@ $.getJSON(urlInd, function(data) {
                           + "<p class='info' id='datething_"+this.id+"'>" +this.gsx$datething.$t+ "</p>"
                           + "<p class='info' id='historything_"+this.id+"'>" +this.gsx$historything.$t+ "</p>"
                           + "<p class='info' id='userstory_"+this.id+"'>" +this.gsx$userstory.$t+ "</p>"
-                          + "<p class='info' id='workedwith_"+this.id+"'>" +this.gsx$workedwith.$t+ "</p>"
-                          + "<p class='info' id='partof_"+this.id+"'>" +this.gsx$partof.$t+ "</p>"
+                          + "<p class='worked' id='workedwith_"+this.id+"'>" +this.gsx$workedwith.$t+ "</p>"
+                          + "<p class='part' id='partof_"+this.id+"'>" +this.gsx$partof.$t+ "</p>"
                           + "<p class='info' id='references_"+this.id+"'>" +this.gsx$references.$t+ "</p>"
                           + "<p class='info' id='madefrom_"+this.id+"'>" +this.gsx$madefrom.$t+ "</p>"
                           + "</a>");
@@ -456,22 +463,35 @@ function modalFunction(clicked_id) {
     references = ($("#references_"+clicked_id+"").html());
     
     var madefromstring = madefrom.split(",");
+    
     var thumbt = document.getElementsByClassName('thumbtitle'); 
-    //var thumbt = ($('thumbtitle').html()); 
-    var a = [];
+    var m = [];
     for ( var i = 0; i < thumbt.length; i++ ) {
-    a.push( thumbt[ i ].innerHTML );
+    m.push( thumbt[ i ].innerHTML );
     }
     
-    //var arr = Array.from(thumbt);
+    var workedt = document.getElementsByClassName('worked'); 
+    var w = [];
+    for ( var i = 0; i < workedt.length; i++ ) {
+    w.push( workedt[ i ].innerHTML );
+    }
+    
+    var partt = document.getElementsByClassName('part'); 
+    var p = [];
+    for ( var i = 0; i < partt.length; i++ ) {
+    p.push( partt[ i ].innerHTML );
+    }
     
     console.log(madefromstring)
     console.log(thumbt)
     console.log(a)
-    //console.log(arr)
     
-    var madt = madefromstring.filter(n => a.includes(n));
+    var madt = madefromstring.filter(m => m.includes(m));
     console.log(madt)
+    var workwit = madefromstring.filter(w => w.includes(w));
+    console.log(workwit)
+    var partot = madefromstring.filter(p => p.includes(p));
+    console.log(partot)
     
     for (i = 0; i < madt.length; i++) {
             
@@ -479,6 +499,19 @@ function modalFunction(clicked_id) {
         cellmade.append("<td id = "+cellmade.this+" value="+madt[i]+" class='newsearch' onclick='puttextinsearchFunction(this.id)'>" + madt[i] + "</td>");
         $('#madeTable').append(cellmade);
         };
+    for (i = 0; i < workwit.length; i++) {
+            
+        cellwork = $('#workedTable');
+        cellwork.append("<td id = "+cellwork.this+" value="+workwit[i]+" class='newsearch' onclick='puttextinsearchFunction(this.id)'>" + workwit[i] + "</td>");
+        $('#workedTable').append(cellwork);
+        };
+    for (i = 0; i < partot.length; i++) {
+            
+        cellpart = $('#partTable');
+        cellpart.append("<td id = "+cellpart.this+" value="+partot[i]+" class='newsearch' onclick='puttextinsearchFunction(this.id)'>" + partot[i] + "</td>");
+        $('#partTable').append(cellpart);
+        };
+    
     
    // workedwith.split(/\s*,\s*/).forEach(function(workedwithstring) {
      //   console.log(workedwithstring);
