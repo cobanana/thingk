@@ -365,7 +365,7 @@ $.getJSON(urlEng, function(data) {
         
             cell = $('#Table');
             cell.append("<a class='artefactcell' onClick='modalFunction(this.id)' id= '"+this.id+"'>" 
-                          + "<tag>" + " " +this.gsx$title.$t+ " " +this.gsx$loca.$t+ " " +this.gsx$type.$t+ " " +this.gsx$typebroad.$t+ " " +this.gsx$dimension.$t+ " " +this.gsx$dateroot.$t+ " " +this.gsx$madefrom.$t+ " " +this.gsx$workedwith.$t+ " " +this.gsx$partof.$t+ " " +this.gsx$makerthing.$t+ " " +this.gsx$tag.$t+ "</tag>"
+                          + "<tag id='tagall'>" + " " +this.gsx$title.$t+ " " +this.gsx$loca.$t+ " " +this.gsx$type.$t+ " " +this.gsx$typebroad.$t+ " " +this.gsx$dimension.$t+ " " +this.gsx$dateroot.$t+ " " +this.gsx$madefrom.$t+ " " +this.gsx$workedwith.$t+ " " +this.gsx$partof.$t+ " " +this.gsx$makerthing.$t+ " " +this.gsx$tag.$t+ "</tag>"
                          + "<img id='cellimg_"+this.id+"' src='" +this.gsx$imageitem.$t+ "'/>" 
                           + "<p class='thumbtitle' id='title_"+this.id+"'>" +this.gsx$title.$t+ "</p>"
                           + "<p class='info' id='collection_"+this.id+"'>" +this.gsx$collection.$t+ "</p>"
@@ -554,7 +554,7 @@ $(myInput).on("input", function() {
     cell = table.getElementsByClassName("artefactcell");
  
     for (i = 0; i < cell.length; i++) {
-        tag = cell[i].getElementsByTagName("tag")[0];
+        tag = cell[i].getElementsByTagName("tagall")[0];
             if (tag) {
                 if (tag.innerHTML.toUpperCase().indexOf(filter) > -1) {
                 cell[i].style.display = "";
