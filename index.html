@@ -324,7 +324,6 @@ img {
     <table id=partTable class="caption" style="width:100%"></table>    
     <table class="caption" style="width:100%">
       <tr>
-        <td id="collection" class=newsearch onclick="puttextinsearchFunction(this.id)"></td>
         <td id="references"></td>
       </tr>
     </table>
@@ -370,7 +369,6 @@ $.getJSON(urlEng, function(data) {
                          + "<img id='cellimg_"+this.id+"' src='" +this.gsx$imageitem.$t+ "'/>" 
                           + "<title>" +this.gsx$title.$t+ "</title>"
                           + "<p class='thumbtitle' id='title_"+this.id+"'>" +this.gsx$title.$t+ "</p>"
-                          + "<p class='info' id='collection_"+this.id+"'>" +this.gsx$collection.$t+ "</p>"
                           + "<p class='info' id='loca_"+this.id+"'>" +this.gsx$loca.$t+ "</p>"
                           + "<p class='info' id='type_"+this.id+"'>" +this.gsx$type.$t+ "</p>"
                           + "<p class='info' id='typebroad_"+this.id+"'>" +this.gsx$typebroad.$t+ "</p>"
@@ -415,7 +413,6 @@ $.getJSON(urlInd, function(data) {
                           + "<tagall>" + " " +this.gsx$title.$t+ " " +this.gsx$loca.$t+ " " +this.gsx$type.$t+ " " +this.gsx$typebroad.$t+ " " +this.gsx$dimension.$t+ " " +this.gsx$dateroot.$t+ " " +this.gsx$madefrom.$t+ " " +this.gsx$workedwith.$t+ " " +this.gsx$partof.$t+ " " +this.gsx$makerthing.$t+ " " +this.gsx$tag.$t+ "</tagall>"
                           + "<img id='cellimg_"+this.id+"' src='" +this.gsx$imageitem.$t+ "'/>" 
                           + "<p class='thumbtitle' id='title_"+this.id+"'>" +this.gsx$title.$t+ "</p>"
-                          + "<p class='info' id='collection_"+this.id+"'>" +this.gsx$collection.$t+ "</p>"
                           + "<p class='info' id='loca_"+this.id+"'>" +this.gsx$loca.$t+ "</p>"
                           + "<p class='info' id='type_"+this.id+"'>" +this.gsx$type.$t+ "</p>"
                           + "<p class='info' id='typebroad_"+this.id+"'>" +this.gsx$typebroad.$t+ "</p>"
@@ -448,7 +445,6 @@ function modalFunction(clicked_id) {
     
     image = ($("#cellimg_"+clicked_id+"").attr('src'));
     title = ($("#title_"+clicked_id+"").html());
-    collection = ($("#collection_"+clicked_id+"").html());
     loca = ($("#loca_"+clicked_id+"").html());
     type = ($("#type_"+clicked_id+"").html());
     typebroad = ($("#typebroad_"+clicked_id+"").html());
@@ -520,7 +516,6 @@ function modalFunction(clicked_id) {
     var modalImg = $("#img01")
     modalImg.attr('src', image);
     titlebox = document.getElementById('bigtitle').innerHTML = title
-    collectionbox = document.getElementById('collection').innerHTML = collection
     locationbox = document.getElementById('location').innerHTML = loca
     typebox = document.getElementById('type').innerHTML = type
     typebroadbox = document.getElementById('typebroad').innerHTML = typebroad
