@@ -367,6 +367,7 @@ $.getJSON(urlEng, function(data) {
             cell.append("<a class='artefactcell' onClick='modalFunction(this.id)' id= '"+this.id+"'>" 
                           + "<tagall>" + " " +this.gsx$title.$t+ " " +this.gsx$loca.$t+ " " +this.gsx$type.$t+ " " +this.gsx$typebroad.$t+ " " +this.gsx$dimension.$t+ " " +this.gsx$dateroot.$t+ " " +this.gsx$madefrom.$t+ " " +this.gsx$workedwith.$t+ " " +this.gsx$partof.$t+ " " +this.gsx$makerthing.$t+ " " +this.gsx$tag.$t+ "</tagall>"
                          + "<img id='cellimg_"+this.id+"' src='" +this.gsx$imageitem.$t+ "'/>" 
+                          + "<title>" +this.gsx$title.$t+ "</title>"
                           + "<p class='thumbtitle' id='title_"+this.id+"'>" +this.gsx$title.$t+ "</p>"
                           + "<p class='info' id='collection_"+this.id+"'>" +this.gsx$collection.$t+ "</p>"
                           + "<p class='info' id='loca_"+this.id+"'>" +this.gsx$loca.$t+ "</p>"
@@ -486,19 +487,19 @@ function modalFunction(clicked_id) {
     for (i = 0; i < madt.length; i++) {
             
         cellmade = $('#madeTable');
-        cellmade.append("<td id = "+cellmade.this+" value="+madt[i]+" class='newsearch' onclick='puttextinsearchFunction(this.id)'>" + madt[i] + "</td>");
+        cellmade.append("<td id = "+cellmade.this+" value="+madt[i]+" class='newsearch' onclick='titlesearchFunction(this.id)'>" + madt[i] + "</td>");
         $('#madeTable').append(cellmade);
         };
     for (i = 0; i < workwit.length; i++) {
             
         cellwork = $('#workedTable');
-        cellwork.append("<td id = "+cellwork.this+" value="+workwit[i]+" class='newsearch' onclick='puttextinsearchFunction(this.id)'>" + workwit[i] + "</td>");
+        cellwork.append("<td id = "+cellwork.this+" value="+workwit[i]+" class='newsearch' onclick='titlesearchFunction(this.id)'>" + workwit[i] + "</td>");
         $('#workedTable').append(cellwork);
         };
     for (i = 0; i < partot.length; i++) {
             
         cellpart = $('#partTable');
-        cellpart.append("<td id = "+cellpart.this+" value="+partot[i]+" class='newsearch' onclick='puttextinsearchFunction(this.id)'>" + partot[i] + "</td>");
+        cellpart.append("<td id = "+cellpart.this+" value="+partot[i]+" class='newsearch' onclick='titlesearchFunction(this.id)'>" + partot[i] + "</td>");
         $('#partTable').append(cellpart);
         };
     
@@ -588,7 +589,29 @@ function puttextinsearchFunction(clicked_id) {
     
     }
     
-
+function titlesearchFunction(clicked_id) {
+    
+    inputtext = ($("#"+clicked_id+"").html());
+    
+    filter = inputtext.toUpperCase();
+    table = document.getElementById("Table");
+    cell = table.getElementsByClassName("artefactcell");
+ 
+    for (i = 0; i < cell.length; i++) {
+        tag = cell[i].getElementsByTagName("title")[0];
+            if (tag) {
+                if (tag.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                cell[i].style.display = "";
+            } else {
+                cell[i].style.display = "none";
+                }
+            }       
+        }
+    modal = document.getElementById('myModal');
+    modal.style.display = "none";
+    
+    }
+    
 </script>
 
 
