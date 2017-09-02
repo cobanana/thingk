@@ -473,12 +473,12 @@ function modalFunction(clicked_id) {
     var madt = madefromstring.filter(n => a.includes(n));
     console.log(madt)
     
-        //for (i = 0; i < madefromstring.length; i++) {
+    for (i = 0; i < madt.length; i++) {
             
-            //cellmade = $('#madeTable');
-            //cellmade.append("<td id = "+cellmade.this+" value="+madefromstring[i]+" class='newsearch' //onclick='puttextinsearchFunction(this.id)'>" + madefromstring[i] + "</td>");
-            //$('#madeTable').append(cellmade);
-            //};
+        cellmade = $('#madeTable');
+        cellmade.append("<td id = "+cellmade.this+" value="+madt[i]+" class='newsearch' onclick='puttextinsearchFunction(this.id)'>" + madt[i] + "</td>");
+        $('#madeTable').append(cellmade);
+        };
     
    // workedwith.split(/\s*,\s*/).forEach(function(workedwithstring) {
      //   console.log(workedwithstring);
