@@ -488,19 +488,19 @@ function modalFunction(clicked_id) {
     for (i = 0; i < madt.length; i++) {
             
         cellmade = $('#madeTable');
-        cellmade.append("<td id = "+cellmade.this+" value="+madt[i]+" class='newsearch' onclick='titlesearchFunction(this.id)'>"+madt[i]+"</td>");
+        cellmade.append("<td id = "+madt.this+" value="+madt[i]+" class='newsearch' onclick='titlesearchFunction(this.id)'>"+madt[i]+"</td>");
         $('#madeTable').append(cellmade);
         };
     for (i = 0; i < workwit.length; i++) {
             
         cellwork = $('#workedTable');
-        cellwork.append("<td id = "+cellwork.this+" value="+workwit[i]+" class='newsearch' onclick='titlesearchFunction(this.id)'>"+workwit[i]+"</td>");
+        cellwork.append("<td id = "+workwit.this+" value="+workwit[i]+" class='newsearch' onclick='titlesearchFunction(this.id)'>"+workwit[i]+"</td>");
         $('#workedTable').append(cellwork);
         };
     for (i = 0; i < partot.length; i++) {
             
         cellpart = $('#partTable');
-        cellpart.append("<td id = "+cellpart.this+" value="+partot[i]+" class='newsearch' onclick='titlesearchFunction(this.id)'>"+partot[i]+"</td>");
+        cellpart.append("<td id = "+partot.this+" value="+partot[i]+" class='newsearch' onclick='titlesearchFunction(this.id)'>"+partot[i]+"</td>");
         $('#partTable').append(cellpart);
         };
     
