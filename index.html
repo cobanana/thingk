@@ -457,19 +457,15 @@ function modalFunction(clicked_id) {
     
     var madefromstring = madefrom.split(",");
     var thumbt = document.querySelectorAll(".thumbtitle"); 
-    for (i = 0; i < thumbt.length; i++) {
-        var thumbv = thumbt[i].innerHTML;
-    }
-    //var arr = Array.prototype.slice.call(thumbt)
+    var arr = Array.prototype.slice.call(thumbt)
     
     console.log(madefromstring)
     console.log(thumbt)
-    console.log(thumbv)
-   // console.log(arr)
+    console.log(arr)
     
-    //var madt = arrval.filter(n => madefromstring.includes(n));
+    var madt = val.filter(n => madefromstring.includes(n));
     
-    //console.log(madt)
+    console.log(madt)
     
         //for (i = 0; i < madefromstring.length; i++) {
             
