@@ -136,20 +136,19 @@ img {
 .newsearch {cursor: pointer; 
 }
     
-.newsearchit {
-    padding-right: 40px;
+.newsearchmod {
+    padding-right: 100px;
     padding-top: 3px;
     padding-bottom: 3px;
     text-align: left;
-    font-style: oblique;
     color: darkgrey;
 }
     
-.newsearchit:empty {
+.newsearchmod:empty {
     display: none;
 }
     
-.newsearchit {cursor: pointer; 
+.newsearchmod {cursor: pointer; 
 }
   
 .modal {
@@ -194,22 +193,7 @@ img {
 .caption:empty {
     display: none;
 }
-    
-.captionmod {
-    margin: auto;
-    display: inline-block;
-    width: 80%;
-    max-width: 700px;
-    text-align: left;
-    color: #000;
-    padding-bottom: 5px;
-    padding-right: 10px;
-}
-    
-.captionmod:empty {
-    display: none;
-}
-    
+      
 .captionTitle {
     margin: auto;
     display: inline-block;
@@ -334,9 +318,9 @@ img {
         <td id="userstory"></td> 
       </tr>
     </table>
-    <table id=madeTable class="captionmod" style="width:100%"></table>
-    <table id=workedTable class="captionmod" style="width:100%"></table>
-    <table id=partTable class="captionmod" style="width:100%"></table>    
+    <table id=madeTable class="caption" style="width:100%"></table>
+    <table id=workedTable class="caption" style="width:100%"></table>
+    <table id=partTable class="caption" style="width:100%"></table>    
     <table class="caption" style="width:100%">
       <tr>
         <td id="references"></td>
@@ -501,19 +485,19 @@ function modalFunction(clicked_id) {
     for (i = 0; i < madt.length; i++) {
             
         cellmade = $('#madeTable');
-        cellmade.append("<td id ="+madt[i]+" class='newsearch' onclick='titlesearchFunction(this.id)'>  "+madt[i]+"  </td>");
+        cellmade.append("<td id ="+madt[i]+" class='newsearchmod' onclick='titlesearchFunction(this.id)'>  "+madt[i]+"  </td>");
         $('#madeTable').append(cellmade);
         };
     for (i = 0; i < workwit.length; i++) {
             
         cellwork = $('#workedTable');
-        cellwork.append("<td id ="+workwit[i]+" class='newsearch' onclick='titlesearchFunction(this.id)'>  "+workwit[i]+"  </td>");
+        cellwork.append("<td id ="+workwit[i]+" class='newsearchmod' onclick='titlesearchFunction(this.id)'>  "+workwit[i]+"  </td>");
         $('#workedTable').append(cellwork);
         };
     for (i = 0; i < partot.length; i++) {
             
         cellpart = $('#partTable');
-        cellpart.append("<td id ="+partot[i]+" class='newsearch' onclick='titlesearchFunction(this.id)'>   "+partot[i]+"  </td>");
+        cellpart.append("<td id ="+partot[i]+" class='newsearchmod' onclick='titlesearchFunction(this.id)'>   "+partot[i]+"  </td>");
         $('#partTable').append(cellpart);
         };
     
