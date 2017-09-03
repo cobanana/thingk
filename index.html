@@ -343,6 +343,8 @@ var urlEng = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDEng + 
     
 var id = 0; 
 
+
+
 function engFunction() {
     
 $('#Table').empty()
@@ -358,6 +360,8 @@ $.getJSON(urlEng, function(data) {
             });
         
         entry.sort(function(a, b){return 0.5 - Math.random()});
+    
+    consol.log(entry)
 
         $(entry).each(function() {
         
