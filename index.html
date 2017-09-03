@@ -321,7 +321,7 @@ img {
       </tr>
     </table>
     
-    
+    <h1 class="captionheader">made it:</h1>
     <table id=madeTable class="caption" style="width:100%"></table>
     <h1 class="captionheader">works with:</h1>    
     <table id=workedTable class="caption" style="width:100%"></table>
@@ -435,8 +435,7 @@ function modalFunction(clicked_id) {
     for (i = 0; i < madt.length; i++) {
             
         cellmade = $('#madeTable');
-        cellmade.append("<tr><h1 class='captionheader'>made it:</h1></tr>" 
-                        + "<tr><td id ="+madt[i]+" class='newsearchmod' onclick='titlesearchFunction(this.id)'>"+madt[i]+"</td></tr>");
+        cellmade.append("<td id ="+madt[i]+" class='newsearchmod' onclick='titlesearchFunction(this.id)'>"+madt[i]+"</td>");
         $('#madeTable').append(cellmade);
         };
     for (i = 0; i < workwit.length; i++) {
