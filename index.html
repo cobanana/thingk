@@ -338,14 +338,13 @@ img {
 <script>
     
 var spreadsheetIDEng = "1oPe03KrJAcRrYZ0Prg6_RJlUZFPb1ONz9LDk8rj4M00";
-var spreadsheetIDInd = "1SRZ2e6YDmam6UDORma-_U2eHZG-zJrksXogRMNHwBKM";
 
 var urlEng = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDEng + "/od6/public/values?alt=json";
-var urlInd = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDInd + "/od6/public/values?alt=json";
-
+    
 var id = 0; 
 
 function engFunction() {
+    
 $('#Table').empty()
 
 document.getElementById('subtitle').innerHTML = 'a collection of things which influence our relationship with design';
@@ -388,55 +387,8 @@ $.getJSON(urlEng, function(data) {
             $('#Table').append(cell);
         });
     });
-}
-    
-function indFunction() {
-$('#Table').empty()
-    
-document.getElementById('subtitle').innerHTML = 'kumpulan hal-hal yang mempengaruhi disain';
-
-$.getJSON(urlInd, function(data) {
-
-        var entry = data.feed.entry;
-        
-        entry.forEach(function(item) {
-            item.id = id++;
-            });
-        
-        entry.sort(function(a, b){return 0.5 - Math.random()});
-
-        $(entry).each(function() {
-        
-            cell = $('#Table');
-            cell.append("<a class='artefactcell' onClick='modalFunction(this.id)' id= '"+this.id+"'>" 
-                          + "<tagall>" + " " +this.gsx$title.$t+ " " +this.gsx$loca.$t+ " " +this.gsx$type.$t+ " " +this.gsx$typebroad.$t+ " " +this.gsx$dimension.$t+ " " +this.gsx$dateroot.$t+ " " +this.gsx$madefrom.$t+ " " +this.gsx$workedwith.$t+ " " +this.gsx$partof.$t+ " " +this.gsx$makerthing.$t+ " " +this.gsx$tag.$t+ "</tagall>"
-                          + "<img id='cellimg_"+this.id+"' src='" +this.gsx$imageitem.$t+ "'/>" 
-                          + "<p class='thumbtitle' id='title_"+this.id+"'>" +this.gsx$title.$t+ "</p>"
-                          + "<p class='info' id='loca_"+this.id+"'>" +this.gsx$loca.$t+ "</p>"
-                          + "<p class='info' id='type_"+this.id+"'>" +this.gsx$type.$t+ "</p>"
-                          + "<p class='info' id='typebroad_"+this.id+"'>" +this.gsx$typebroad.$t+ "</p>"
-                          + "<p class='info' id='function_"+this.id+"'>" +this.gsx$function.$t+ "</p>"
-                          + "<p class='info' id='dimension_"+this.id+"'>" +this.gsx$dimension.$t+ "</p>"
-                          + "<p class='info' id='designer_"+this.id+"'>" +this.gsx$designer.$t+ "</p>"
-                          + "<p class='info' id='dateroot_"+this.id+"'>" +this.gsx$dateroot.$t+ "</p>"
-                          + "<p class='info' id='roothistory_"+this.id+"'>" +this.gsx$roothistory.$t+ "</p>"
-                          + "<p class='info' id='makerthing_"+this.id+"'>" +this.gsx$makerthing.$t+ "</p>"
-                          + "<p class='info' id='datething_"+this.id+"'>" +this.gsx$datething.$t+ "</p>"
-                          + "<p class='info' id='historything_"+this.id+"'>" +this.gsx$historything.$t+ "</p>"
-                          + "<p class='info' id='userstory_"+this.id+"'>" +this.gsx$userstory.$t+ "</p>"
-                          + "<p class='info' id='workedwith_"+this.id+"'>" +this.gsx$workedwith.$t+ "</p>"
-                          + "<p class='info' id='partof_"+this.id+"'>" +this.gsx$partof.$t+ "</p>"
-                          + "<p class='info' id='references_"+this.id+"'>" +this.gsx$references.$t+ "</p>"
-                          + "<p class='info' id='madefrom_"+this.id+"'>" +this.gsx$madefrom.$t+ "</p>"
-                          + "</a>");
-            $('#Table').append(cell);
-        });
-
-    });
-}
     
 function modalFunction(clicked_id) {
-    var modal, image, i, span, modalImg, title, myTable;
     
     $('#madeTable').empty();
     $('#workedTable').empty();
@@ -500,17 +452,6 @@ function modalFunction(clicked_id) {
         cellpart.append("<td id ="+partot[i]+" class='newsearchmod' onclick='titlesearchFunction(this.id)'>"+partot[i]+"</td>");
         $('#partTable').append(cellpart);
         };
-    
-    
-   // workedwith.split(/\s*,\s*/).forEach(function(workedwithstring) {
-     //   console.log(workedwithstring);
-       // workedwithbox = document.getElementById('workedwith').innerHTML = workedwithstring
-        //});
-        
-    //partof.split(/\s*,\s*/).forEach(function(partofstring) {
-        //console.log(partofstring);
-        //partofbox = document.getElementById('partof').innerHTML = partofstring
-        //});
     
     var modalImg = $("#img01")
     modalImg.attr('src', image);
@@ -608,6 +549,9 @@ function titlesearchFunction(clicked_id) {
     modal.style.display = "none";
     
     }
+    
+}
+    
     
 </script>
 
