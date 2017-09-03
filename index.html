@@ -284,19 +284,11 @@ img {
 
     <p id="demo"></p>    
         
-    <p class="captionTitle" id="bigtitle" onclick="puttextinsearchFunction(this.id)"></p> 
+    <p class="captionTitle" id="bigname" onclick="puttextinsearchFunction(this.id)"></p> 
     <table class="caption" style="width:100%">
-    <tr>
-        <td id="typebroad" class=newsearch onclick="puttextinsearchFunction(this.id)" style="width:50%"></td> 
-        <td id="type" class=newsearch onclick="puttextinsearchFunction(this.id)" style="width:50%"></td>
-    </tr>
     <tr>
         <td id="location" class=newsearch onclick="puttextinsearchFunction(this.id)" style="width:50%"></td> 
         <td id="designdate" class=newsearch onclick="puttextinsearchFunction(this.id)" style="width:50%"></td>
-    </tr>
-    <tr>
-        <td id="designer" class=newsearch onclick="puttextinsearchFunction(this.id)" style="width:50%"></td>
-        <td id="maker" class=newsearch onclick="puttextinsearchFunction(this.id)" style="width:50%"></td> 
     </tr>
     </table>
         
@@ -315,12 +307,17 @@ img {
         <td id="backgroundthis"></td> 
       </tr>
       <tr>
-        <td id="userstory"></td> 
+        <td id="story"></td> 
       </tr>
     </table>
+    
+    <h1 style="color:#4682B4">made by/with:</h1>
     <table id=madeTable class="caption" style="width:100%"></table>
+    <h1 style="color:#4682B4">used by/with:</h1>    
     <table id=workedTable class="caption" style="width:100%"></table>
-    <table id=partTable class="caption" style="width:100%"></table>    
+    <h1 style="color:#4682B4">makes (up):</h1>    
+    <table id=partTable class="caption" style="width:100%"></table>  
+    
     <table class="caption" style="width:100%">
       <tr>
         <td id="references"></td>
@@ -362,31 +359,25 @@ $.getJSON(urlEng, function(data) {
         entry.sort(function(a, b){return 0.5 - Math.random()});
     
     console.log(entry)
+    
+    var test = 
 
         $(entry).each(function() {
         
             cell = $('#Table');
             cell.append("<a class='artefactcell' onClick='modalFunction(this.id)' id= '"+this.id+"'>" 
-                          + "<tagall>" + " " +this.gsx$title.$t+ " " +this.gsx$loca.$t+ " " +this.gsx$type.$t+ " " +this.gsx$typebroad.$t+ " " +this.gsx$dimension.$t+ " " +this.gsx$dateroot.$t+ " " +this.gsx$madefrom.$t+ " " +this.gsx$workedwith.$t+ " " +this.gsx$partof.$t+ " " +this.gsx$makerthing.$t+ " " +this.gsx$tag.$t+ "</tagall>"
+                          + "<tagall>" + " " +this.gsx$name.$t+ " " +this.gsx$loca.$t+ " " +this.gsx$type.$t+ " " +this.gsx$typebroad.$t+ " " +this.gsx$date.$t+ " " +this.gsx$tag.$t+ "</tagall>"
                          + "<img id='cellimg_"+this.id+"' src='" +this.gsx$imageitem.$t+ "'/>" 
-                          + "<title>" +this.gsx$title.$t+ "</title>"
-                          + "<p class='thumbtitle' id='title_"+this.id+"'>" +this.gsx$title.$t+ "</p>"
+                          + "<title>" +this.gsx$name.$t+ "</title>"
+                          + "<p class='thumbtitle' id='name_"+this.id+"'>" +this.gsx$name.$t+ "</p>"
                           + "<p class='info' id='loca_"+this.id+"'>" +this.gsx$loca.$t+ "</p>"
-                          + "<p class='info' id='type_"+this.id+"'>" +this.gsx$type.$t+ "</p>"
-                          + "<p class='info' id='typebroad_"+this.id+"'>" +this.gsx$typebroad.$t+ "</p>"
-                          + "<p class='info' id='function_"+this.id+"'>" +this.gsx$function.$t+ "</p>"
-                          + "<p class='info' id='dimension_"+this.id+"'>" +this.gsx$dimension.$t+ "</p>"
-                          + "<p class='info' id='designer_"+this.id+"'>" +this.gsx$designer.$t+ "</p>"
-                          + "<p class='info' id='dateroot_"+this.id+"'>" +this.gsx$dateroot.$t+ "</p>"
-                          + "<p class='info' id='roothistory_"+this.id+"'>" +this.gsx$roothistory.$t+ "</p>"
-                          + "<p class='info' id='makerthing_"+this.id+"'>" +this.gsx$makerthing.$t+ "</p>"
-                          + "<p class='info' id='datething_"+this.id+"'>" +this.gsx$datething.$t+ "</p>"
-                          + "<p class='info' id='historything_"+this.id+"'>" +this.gsx$historything.$t+ "</p>"
-                          + "<p class='info' id='userstory_"+this.id+"'>" +this.gsx$userstory.$t+ "</p>"
-                          + "<p class='info' id='workedwith_"+this.id+"'>" +this.gsx$workedwith.$t+ "</p>"
-                          + "<p class='info' id='partof_"+this.id+"'>" +this.gsx$partof.$t+ "</p>"
+                          + "<p class='info' id='date_"+this.id+"'>" +this.gsx$date.$t+ "</p>"
+                          + "<p class='info' id='background_"+this.id+"'>" +this.gsx$background.$t+ "</p>"
+                          + "<p class='info' id='story_"+this.id+"'>" +this.gsx$story.$t+ "</p>"
+                          + "<p class='info' id='madewithby_"+this.id+"'>" +this.gsx$madewithby.$t+ "</p>"
+                          + "<p class='info' id='usedwithby_"+this.id+"'>" +this.gsx$usedwithby.$t+ "</p>"
+                          + "<p class='info' id='makes_"+this.id+"'>" +this.gsx$makes.$t+ "</p>"
                           + "<p class='info' id='references_"+this.id+"'>" +this.gsx$references.$t+ "</p>"
-                          + "<p class='info' id='madefrom_"+this.id+"'>" +this.gsx$madefrom.$t+ "</p>"
                           + "</a>");
             $('#Table').append(cell);
         });
@@ -400,27 +391,19 @@ function modalFunction(clicked_id) {
     $('#partTable').empty();
     
     image = ($("#cellimg_"+clicked_id+"").attr('src'));
-    title = ($("#title_"+clicked_id+"").html());
+    name = ($("#name_"+clicked_id+"").html());
     loca = ($("#loca_"+clicked_id+"").html());
-    type = ($("#type_"+clicked_id+"").html());
-    typebroad = ($("#typebroad_"+clicked_id+"").html());
-    tfunction = ($("#function_"+clicked_id+"").html());
-    dimension = ($("#dimension_"+clicked_id+"").html());
-    designer = ($("#designer_"+clicked_id+"").html());
-    roothistory = ($("#roothistory_"+clicked_id+"").html());
-    dateroot = ($("#dateroot_"+clicked_id+"").html());
-    makerthing = ($("#makerthing_"+clicked_id+"").html());
-    datething = ($("#datething_"+clicked_id+"").html());
-    historything = ($("#historything_"+clicked_id+"").html());
-    userstory = ($("#userstory_"+clicked_id+"").html());
-    madefrom = ($("#madefrom_"+clicked_id+"").html());
-    workedwith = ($("#workedwith_"+clicked_id+"").html());
-    partof = ($("#partof_"+clicked_id+"").html());
+    date = ($("#date_"+clicked_id+"").html());
+    background = ($("#background_"+clicked_id+"").html());
+    story = ($("#story_"+clicked_id+"").html());
+    madewithby = ($("#madewithby_"+clicked_id+"").html());
+    usedwithby = ($("#usedwithby_"+clicked_id+"").html());
+    makes = ($("#makes_"+clicked_id+"").html());
     references = ($("#references_"+clicked_id+"").html());
     
-    var madefromstring = madefrom.split(",");
-    var workwithstring = workedwith.split(",");
-    var partofstring = partof.split(",");
+    var madewithbystring = madewithby.split(",");
+    var usedwithbystring = usedwithby.split(",");
+    var makesstring = makes.split(",");
     
     var thumbt = document.getElementsByClassName('thumbtitle'); 
     var m = [];
@@ -428,15 +411,15 @@ function modalFunction(clicked_id) {
     m.push( thumbt[ i ].innerHTML );
     }
     
-    console.log(madefromstring)
+    console.log(madewithbystring)
     console.log(thumbt)
     console.log(m)
     
-    var madt = madefromstring.filter(m => m.includes(m));
+    var madt = madewithbystring.filter(m => m.includes(m));
     console.log(madt)
-    var workwit = workwithstring.filter(m => m.includes(m));
+    var workwit = usedwithbystring.filter(m => m.includes(m));
     console.log(workwit)
-    var partot = partofstring.filter(m => m.includes(m));
+    var partot = makesstring.filter(m => m.includes(m));
     console.log(partot)
     
     for (i = 0; i < madt.length; i++) {
@@ -460,19 +443,11 @@ function modalFunction(clicked_id) {
     
     var modalImg = $("#img01")
     modalImg.attr('src', image);
-    titlebox = document.getElementById('bigtitle').innerHTML = title
+    namebox = document.getElementById('bigname').innerHTML = name
     locationbox = document.getElementById('location').innerHTML = loca
-    typebox = document.getElementById('type').innerHTML = type
-    typebroadbox = document.getElementById('typebroad').innerHTML = typebroad
-    functionbox = document.getElementById('function').innerHTML = tfunction
-    //dimensionbox = document.getElementById('size').innerHTML = dimension
-    designerbox = document.getElementById('designer').innerHTML = designer
-    daterootbox = document.getElementById('designdate').innerHTML = dateroot
-    roothistorybox = document.getElementById('background').innerHTML = roothistory
-    makerthingbox = document.getElementById('maker').innerHTML = makerthing
-    //datethingbox = document.getElementById('madedate').innerHTML = datething
-    historythingbox = document.getElementById('backgroundthis').innerHTML = historything
-    userstorybox = document.getElementById('userstory').innerHTML = userstory
+    datebox = document.getElementById('designdate').innerHTML = date
+    backgroundbox = document.getElementById('background').innerHTML = background
+    storybox = document.getElementById('story').innerHTML = story
     referencesbox = document.getElementById('references').innerHTML = references
     
     
@@ -541,7 +516,7 @@ function titlesearchFunction(clicked_id) {
     cell = table.getElementsByClassName("artefactcell");
  
     for (i = 0; i < cell.length; i++) {
-        tag = cell[i].getElementsByTagName("title")[0];
+        tag = cell[i].getElementsByTagName("name")[0];
             if (tag) {
                 if (tag.innerHTML.toUpperCase().indexOf(filter) > -1) {
                 cell[i].style.display = "";
