@@ -193,6 +193,16 @@ img {
 .caption:empty {
     display: none;
 }
+    
+.captionheader {
+    margin: auto;
+    display: inline-block;
+    width: 80%;
+    max-width: 700px;
+    text-align: left;
+    color: #4682B4;
+    padding-bottom: 5px;
+}
       
 .captionTitle {
     margin: auto;
@@ -203,7 +213,6 @@ img {
     color: #000;
     padding-bottom: 6px;
     font-size: 50px;
-    font-weight: bold;
     }
 
 .captionTitle:empty {
@@ -311,11 +320,11 @@ img {
       </tr>
     </table>
     
-    <h1 style="color:#4682B4">made by/with:</h1>
+    <h1 class="captionheader">made by/with:</h1>
     <table id=madeTable class="caption" style="width:100%"></table>
-    <h1 style="color:#4682B4">used by/with:</h1>    
+    <h1 class="captionheader">used by/with:</h1>    
     <table id=workedTable class="caption" style="width:100%"></table>
-    <h1 style="color:#4682B4">makes (up):</h1>    
+    <h1 class="captionheader">makes (up):</h1>    
     <table id=partTable class="caption" style="width:100%"></table>  
     
     <table class="caption" style="width:100%">
