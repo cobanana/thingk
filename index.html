@@ -303,29 +303,27 @@ img {
     </table>
         
     <img class="modal-content" id="img01">
-        
-    <table class="caption" style="width:100%">
-      <tr>
-        <td id="function"></td> 
-      </tr>
-    </table>
+    
+    <h1 class="captionheader">origin</h1>
     <table class="caption" style="width:100%">
       <tr>
         <td id="background"></td> 
       </tr>
-      <tr>
-        <td id="backgroundthis"></td> 
-      </tr>
-      <tr>
-        <td id="story"></td> 
-      </tr>
     </table>
-    
-    <h1 class="captionheader">made it:</h1>
     <table id=madeTable class="caption" style="width:100%"></table>
-    <h1 class="captionheader">works with:</h1>    
+    <h1 class="captionheader">use</h1> 
+    <table class="caption" style="width:100%">
+      <tr>
+        <td id="funct"></td> 
+      </tr>
+    </table>    
     <table id=workedTable class="caption" style="width:100%"></table>
-    <h1 class="captionheader">part of:</h1>    
+    <h1 class="captionheader">creates</h1>  
+    <table class="caption" style="width:100%">
+      <tr>
+        <td id="create"></td> 
+      </tr>
+    </table> 
     <table id=partTable class="caption" style="width:100%"></table>  
     
     <table class="caption" style="width:100%">
@@ -383,7 +381,8 @@ $.getJSON(urlEng, function(data) {
                           + "<p class='info' id='loca_"+this.id+"'>" +this.gsx$loca.$t+ "</p>"
                           + "<p class='info' id='date_"+this.id+"'>" +this.gsx$date.$t+ "</p>"
                           + "<p class='info' id='background_"+this.id+"'>" +this.gsx$background.$t+ "</p>"
-                          + "<p class='info' id='story_"+this.id+"'>" +this.gsx$story.$t+ "</p>"
+                          + "<p class='info' id='funct_"+this.id+"'>" +this.gsx$funct.$t+ "</p>"
+                          + "<p class='info' id='create_"+this.id+"'>" +this.gsx$create.$t+ "</p>"
                           + "<p class='info' id='madewithby_"+this.id+"'>" +this.gsx$madewithby.$t+ "</p>"
                           + "<p class='info' id='usedwithby_"+this.id+"'>" +this.gsx$usedwithby.$t+ "</p>"
                           + "<p class='info' id='makes_"+this.id+"'>" +this.gsx$makes.$t+ "</p>"
@@ -405,7 +404,8 @@ function modalFunction(clicked_id) {
     loca = ($("#loca_"+clicked_id+"").html());
     date = ($("#date_"+clicked_id+"").html());
     background = ($("#background_"+clicked_id+"").html());
-    story = ($("#story_"+clicked_id+"").html());
+    funct = ($("#funct_"+clicked_id+"").html());
+    create = ($("#create_"+clicked_id+"").html());
     madewithby = ($("#madewithby_"+clicked_id+"").html());
     usedwithby = ($("#usedwithby_"+clicked_id+"").html());
     makes = ($("#makes_"+clicked_id+"").html());
@@ -457,7 +457,8 @@ function modalFunction(clicked_id) {
     locationbox = document.getElementById('location').innerHTML = loca
     datebox = document.getElementById('designdate').innerHTML = date
     backgroundbox = document.getElementById('background').innerHTML = background
-    storybox = document.getElementById('story').innerHTML = story
+    functbox = document.getElementById('funct').innerHTML = funct
+    createbox = document.getElementById('create').innerHTML = create
     referencesbox = document.getElementById('references').innerHTML = references
     
     
