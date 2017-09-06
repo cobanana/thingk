@@ -302,26 +302,28 @@ img {
         
     <img class="modal-content" id="img01">
     
-    <h1 class="captionheader">origin</h1>
+    <h1 class="captionheader">before</h1>
     <table class="caption" style="width:100%">
       <tr>
         <td id="background"></td> 
       </tr>
     </table>
+        
     <table id=madeTable class="caption" style="width:100%"></table>
-    <h1 class="captionheader">practice</h1> 
+    <h1 class="captionheader">during</h1> 
     <table class="caption" style="width:100%">
-      <tr>
-        <td id="funct"></td> 
+      <tr id="funct">
       </tr>
-    </table>    
+    </table> 
+        
     <table id=workedTable class="caption" style="width:100%"></table>
-    <h1 class="captionheader">product</h1>  
+    <h1 class="captionheader">after</h1>  
     <table class="caption" style="width:100%">
       <tr>
         <td id="create"></td> 
       </tr>
     </table> 
+        
     <table id=partTable class="caption" style="width:100%"></table>  
     
     <table class="caption" style="width:100%">
@@ -439,7 +441,7 @@ function modalFunction(clicked_id) {
     for (i = 0; i < workwit.length; i++) {
             
         cellwork = $('#workedTable');
-        cellwork.append("<td id ="+workwit[i]+" class='newsearchmod' onclick='titlesearchFunction(this.id)'>"+workwit[i]+"</td>");
+        cellwork.append("<tr id ="+workwit[i]+" class='newsearchmod' onclick='titlesearchFunction(this.id)'>"+workwit[i]+"</tr>");
         $('#workedTable').append(cellwork);
         };
     for (i = 0; i < partot.length; i++) {
