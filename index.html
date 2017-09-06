@@ -442,7 +442,7 @@ function modalFunction(clicked_id) {
     for (i = 0; i < workwit.length; i++) {
             
         cellwork = $('#workedTable');
-        cellwork.append("<tr id ="+workwit[i]+" class='newsearchmod' onclick='titlesearchFunction(this.id)'>"+workwit[i]+"</tr>");
+        cellwork.append("<td id ="+workwit[i]+" class='newsearchmod' onclick='titlesearchFunction(this.id)'>"+workwit[i]+"</td>");
         $('#workedTable').append(cellwork);
         };
     for (i = 0; i < partot.length; i++) {
