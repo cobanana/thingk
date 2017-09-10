@@ -395,10 +395,8 @@ $.getJSON(urlEng, function(data) {
             $('#Table').append(cell);
         });
     console.log(entry)
-    });   
-}
     
-function modalFunction(clicked_id) {
+    function modalFunction(clicked_id) {
     
     $('#madeTable').empty();
     $('#workedTable').empty();
@@ -493,6 +491,10 @@ function modalFunction(clicked_id) {
     modal.style.display = "none";
         }
     };
+    
+    });   
+}
+    
     
 $(myInput).on("input", function() { 
     var input, filter, allCell, cell, tag, i;
