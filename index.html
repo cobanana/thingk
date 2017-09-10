@@ -428,6 +428,7 @@ function modalFunction(clicked_id) {
     console.log(madewithbystring)
     console.log(thumbt)
     console.log(m)
+    console.log(entry)
     
     var madt = madewithbystring.filter(m => m.includes(m));
     console.log(madt)
@@ -471,11 +472,12 @@ function modalFunction(clicked_id) {
         
             cellmad = $('#TableMad');
             cellmad.append("<a class='artefactcell' onClick='modalFunction(this.id)' id= '"+madt[i]+"'>" 
-                          + "<img id='cellmadimg_"+madt[i]+"' src='" +this.gsx$imageitem.$t+ "'/>" 
+                         // + "<img id='cellmadimg_"+madt[i]+"' src='" +this.gsx$imageitem.$t+ "'/>" 
                           + "<p class='thumbtitle' id='name_"+madt[i]+"'>" +madt[i]+ "</p>"
                           + "</a>");
             $('#TableMad').append(cellmad);
         };
+    
     
     
     // Display modal
