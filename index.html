@@ -425,13 +425,14 @@ function modalFunction(clicked_id) {
     m.push( thumbt[i].innerHTML);
     }
     
-    var mimg = [];
-    mimg = thumbt.each('src') );
+    thumbt.each(function() {  
+    imgsrc = this.src;
+    console.log(imgsrc);
+   });  
     
     console.log(madewithbystring)
     console.log(thumbt)
     console.log(m)
-    console.log(mimg)
     
     var madt = madewithbystring.filter(m => m.includes(m));
     console.log(madt)
