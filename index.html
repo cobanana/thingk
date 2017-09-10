@@ -318,7 +318,7 @@ img {
     </table> 
         
     <table id=workedTable class="caption" style="width:100%"></table>
-    <h1 class="captionheader">legacy</h1>  
+    <h1 class="captionheader">legacy</h1>   
     <table class="caption" style="width:100%">
       <tr>
         <td id="create"></td> 
@@ -332,6 +332,9 @@ img {
         <td id="references"></td>
       </tr>
     </table>
+    
+    <div id="TableMad"></div>
+    
     </div>
     
 </div>
@@ -461,6 +464,26 @@ function modalFunction(clicked_id) {
     functbox = document.getElementById('funct').innerHTML = funct
     createbox = document.getElementById('create').innerHTML = create
     referencesbox = document.getElementById('references').innerHTML = references
+    
+    $(madt).each(function() {
+        
+            cellmad = $('#TableMad');
+            cellmad.append("<a class='artefactcell' onClick='modalFunction(this.id)' id= '"+this.id+"'>" 
+                          + "<img id='cellmadimg_"+this.id+"' src='" +this.gsx$imageitem.$t+ "'/>" 
+                          + "<name>" +this.gsx$name.$t+ "</name>"
+                          + "<p class='thumbtitle' id='name_"+this.id+"'>" +this.gsx$name.$t+ "</p>"
+                          + "<p class='info' id='loca_"+this.id+"'>" +this.gsx$loca.$t+ "</p>"
+                          + "<p class='info' id='date_"+this.id+"'>" +this.gsx$date.$t+ "</p>"
+                          + "<p class='info' id='background_"+this.id+"'>" +this.gsx$background.$t+ "</p>"
+                          + "<p class='info' id='funct_"+this.id+"'>" +this.gsx$funct.$t+ "</p>"
+                          + "<p class='info' id='create_"+this.id+"'>" +this.gsx$create.$t+ "</p>"
+                          + "<p class='info' id='madewithby_"+this.id+"'>" +this.gsx$madewithby.$t+ "</p>"
+                          + "<p class='info' id='usedwithby_"+this.id+"'>" +this.gsx$usedwithby.$t+ "</p>"
+                          + "<p class='info' id='makes_"+this.id+"'>" +this.gsx$makes.$t+ "</p>"
+                          + "<p class='info' id='references_"+this.id+"'>" +this.gsx$references.$t+ "</p>"
+                          + "</a>");
+            $('#TableMad').append(cellmad);
+        });
     
     
     // Display modal
