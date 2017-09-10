@@ -442,12 +442,14 @@ function modalFunction(clicked_id) {
         cellmade.append("<td id ="+madt[i]+" class='newsearchmod' onclick='titlesearchFunction(this.id)'>"+madt[i]+"</td>");
         $('#madeTable').append(cellmade);
         };
+    
     for (i = 0; i < workwit.length; i++) {
             
         cellwork = $('#workedTable');
         cellwork.append("<td id ="+workwit[i]+" class='newsearchmod' onclick='titlesearchFunction(this.id)'>"+workwit[i]+"</td>");
         $('#workedTable').append(cellwork);
         };
+    
     for (i = 0; i < partot.length; i++) {
             
         cellpart = $('#partTable');
@@ -465,22 +467,13 @@ function modalFunction(clicked_id) {
     createbox = document.getElementById('create').innerHTML = create
     referencesbox = document.getElementById('references').innerHTML = references
     
-    $(madt).each(function() {
+    for (i = 0; i < madt.length; i++) {
         
             cellmad = $('#TableMad');
-            cellmad.append("<a class='artefactcell' onClick='modalFunction(this.id)' id= '"+this.id+"'>" 
-                          + "<img id='cellmadimg_"+this.id+"' src='" +this.gsx$imageitem.$t+ "'/>" 
-                          + "<name>" +this.gsx$name.$t+ "</name>"
-                          + "<p class='thumbtitle' id='name_"+this.id+"'>" +this.gsx$name.$t+ "</p>"
-                          + "<p class='info' id='loca_"+this.id+"'>" +this.gsx$loca.$t+ "</p>"
-                          + "<p class='info' id='date_"+this.id+"'>" +this.gsx$date.$t+ "</p>"
-                          + "<p class='info' id='background_"+this.id+"'>" +this.gsx$background.$t+ "</p>"
-                          + "<p class='info' id='funct_"+this.id+"'>" +this.gsx$funct.$t+ "</p>"
-                          + "<p class='info' id='create_"+this.id+"'>" +this.gsx$create.$t+ "</p>"
-                          + "<p class='info' id='madewithby_"+this.id+"'>" +this.gsx$madewithby.$t+ "</p>"
-                          + "<p class='info' id='usedwithby_"+this.id+"'>" +this.gsx$usedwithby.$t+ "</p>"
-                          + "<p class='info' id='makes_"+this.id+"'>" +this.gsx$makes.$t+ "</p>"
-                          + "<p class='info' id='references_"+this.id+"'>" +this.gsx$references.$t+ "</p>"
+            cellmad.append("<a class='artefactcell' onClick='modalFunction(this.id)' id= '"+madt[i]+"'>" 
+                          + "<img id='cellmadimg_"+madt[i]+"' src='" +image[i] "'/>" 
+                          + "<name>" +madt[i]+ "</name>"
+                          + "<p class='thumbtitle' id='name_"+madt[i]+"'>" +madt[i]+ "</p>"
                           + "</a>");
             $('#TableMad').append(cellmad);
         });
