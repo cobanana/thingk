@@ -333,7 +333,7 @@ img {
       </tr>
     </table>
     
-    <div id="TableMad"></div>
+    <div id="TablePart" class="caption" style="width:100%"></div>
     
     </div>
     
@@ -402,6 +402,7 @@ function modalFunction(clicked_id) {
     $('#madeTable').empty();
     $('#workedTable').empty();
     $('#partTable').empty();
+    $('#partTable').empty();
     
     image = ($("#cellimg_"+clicked_id+"").attr('src'));
     name = ($("#name_"+clicked_id+"").html());
@@ -467,14 +468,14 @@ function modalFunction(clicked_id) {
     createbox = document.getElementById('create').innerHTML = create
     referencesbox = document.getElementById('references').innerHTML = references
     
-    for (i = 0; i < madt.length; i++) {
+    for (i = 0; i < partot.length; i++) {
         
-            cellmad = $('#TableMad');
-            cellmad.append("<a class='artefactcell' onClick='modalFunction(this.id)' id= '"+madt[i]+"'>" 
+            cellpat = $('#TablePart');
+            cellpat.append("<a class='artefactcell' onClick='modalFunction(this.id)' id= '"+partot[i]+"'>" 
                          // + "<img id='cellmadimg_"+madt[i]+"' src='" +this.gsx$imageitem.$t+ "'/>" 
-                          + "<p class='thumbtitle' id='name_"+madt[i]+"'>" +madt[i]+ "</p>"
+                          + "<p class='thumbtitle' id='name_"+partot[i]+"'>" +partot[i]+ "</p>"
                           + "</a>");
-            $('#TableMad').append(cellmad);
+            $('#TablePart').append(cellpat);
         };
     
     
