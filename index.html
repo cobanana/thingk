@@ -421,10 +421,13 @@ function modalFunction(clicked_id) {
     
     var thumbt = document.getElementsByClassName('thumbtitle'); 
     var m = [];
-    var mimg = [];
     for ( var i = 0; i < thumbt.length; i++ ) {
     m.push( thumbt[i].innerHTML);
-    mimg = m.each('src');    
+    }
+    
+    var mimg = [];
+    for ( var i = 0; i < thumbt.length; i++ ) {
+    mimg.push( thumbt[i].attr('src') );
     }
     
     console.log(madewithbystring)
