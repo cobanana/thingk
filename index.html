@@ -303,38 +303,19 @@ img {
     <img class="modal-content" id="img01">
     
     <h1 class="captionheader">origin</h1>
-    <table class="caption" style="width:100%">
-      <tr>
-        <td id="background"></td> 
-      </tr>
-    </table>
-        
-    <table id=madeTable class="caption" style="width:100%"></table>
-    <h1 class="captionheader">assembly</h1> 
-    <table class="caption" style="width:100%">
-      <tr>
-          <td id="funct"></td> 
-      </tr>
-    </table> 
-        
-    <table id=workedTable class="caption" style="width:100%"></table>
+    <div id="background" class="caption" style="width:100%"></div>    
+    <div id="TableMade" class="caption" style="width:100%"></div>
+    
+    <h1 class="captionheader">assembly</h1>  
+    <div id="funct" class="caption" style="width:100%"></div>   
+    <div id="TableWork" class="caption" style="width:100%"></div>
+    
     <h1 class="captionheader">legacy</h1>   
-    <table class="caption" style="width:100%">
-      <tr>
-        <td id="create"></td> 
-      </tr>
-    </table> 
-        
-    <table id=partTable class="caption" style="width:100%"></table>  
+    <div id="create" class="caption" style="width:100%"></div>  
+    <div id="TablePart" class="caption" style="width:100%"></div>  
     
-    <table class="caption" style="width:100%">
-      <tr>
-        <td id="references"></td>
-      </tr>
-    </table>
-    
-    <div id="TablePart" class="caption" style="width:100%"></div>
-    
+    <div id="references" class="caption" style="width:100%"></div>
+
     </div>
     
 </div>
@@ -399,10 +380,9 @@ $.getJSON(urlEng, function(data) {
     
 function modalFunction(clicked_id) {
     
-    $('#madeTable').empty();
-    $('#workedTable').empty();
-    $('#partTable').empty();
-    $('#partTable').empty();
+    $('#TableMade').empty();
+    $('#TableWork').empty();
+    $('#TablePart').empty();
     
     image = ($("#cellimg_"+clicked_id+"").attr('src'));
     name = ($("#name_"+clicked_id+"").html());
@@ -437,27 +417,6 @@ function modalFunction(clicked_id) {
     var partot = makesstring.filter(m => m.includes(m));
     console.log(partot)
     
-    for (i = 0; i < madt.length; i++) {
-            
-        cellmade = $('#madeTable');
-        cellmade.append("<td id ="+madt[i]+" class='newsearchmod' onclick='titlesearchFunction(this.id)'>"+madt[i]+"</td>");
-        $('#madeTable').append(cellmade);
-        };
-    
-    for (i = 0; i < workwit.length; i++) {
-            
-        cellwork = $('#workedTable');
-        cellwork.append("<td id ="+workwit[i]+" class='newsearchmod' onclick='titlesearchFunction(this.id)'>"+workwit[i]+"</td>");
-        $('#workedTable').append(cellwork);
-        };
-    
-    for (i = 0; i < partot.length; i++) {
-            
-        cellpart = $('#partTable');
-        cellpart.append("<td id ="+partot[i]+" class='newsearchmod' onclick='titlesearchFunction(this.id)'>"+partot[i]+"</td>");
-        $('#partTable').append(cellpart);
-        };
-    
     var modalImg = $("#img01")
     modalImg.attr('src', image);
     namebox = document.getElementById('bigname').innerHTML = name
@@ -467,6 +426,26 @@ function modalFunction(clicked_id) {
     functbox = document.getElementById('funct').innerHTML = funct
     createbox = document.getElementById('create').innerHTML = create
     referencesbox = document.getElementById('references').innerHTML = references
+    
+    for (i = 0; i < madt.length; i++) {
+        
+            cellmad = $('#TableMade');
+            cellmad.append("<a class='artefactcell' onClick='modalFunction(this.id)' id= '"+madt[i]+"'>" 
+                         // + "<img id='cellmadimg_"+madt[i]+"' src='" +this.gsx$imageitem.$t+ "'/>" 
+                          + "<p class='thumbtitle' id='name_"+madt[i]+"'>" +madt[i]+ "</p>"
+                          + "</a>");
+            $('#TableMade').append(cellmad);
+        };
+    
+    for (i = 0; i < workwit.length; i++) {
+        
+            cellwok = $('#TableWork');
+            cellwok.append("<a class='artefactcell' onClick='modalFunction(this.id)' id= '"+workwit[i]+"'>" 
+                         // + "<img id='cellmadimg_"+madt[i]+"' src='" +this.gsx$imageitem.$t+ "'/>" 
+                          + "<p class='thumbtitle' id='name_"+workwit[i]+"'>" +workwit[i]+ "</p>"
+                          + "</a>");
+            $('#TableWork').append(cellwok);
+        };
     
     for (i = 0; i < partot.length; i++) {
         
