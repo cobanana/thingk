@@ -438,6 +438,7 @@ function modalFunction(clicked_id) {
             cellmad.append("<a class='newsearch' onclick='puttextinsearchFunction(this.id)' id= '"+madt[i]+"'>" 
                          // + "<img id='cellmadimg_"+madt[i]+"' src='" +this.gsx$imageitem.$t+ "'/>" 
                           + "<p class='thumbtitle' id='name_"+madt[i]+"'>" +madt[i]+ "</p>"
+                          + "<name>" +madt[i]+ "</name>"
                           + "</a>");
             $('#TableMade').append(cellmad);
         };
@@ -445,9 +446,10 @@ function modalFunction(clicked_id) {
     for (i = 0; i < workwit.length; i++) {
         
             cellwok = $('#TableWork');
-            cellwok.append("<a class='artefactcell' onclick='puttextinsearchFunction(this.id)' id= '"+workwit[i]+"'>" 
+            cellwok.append("<a class='newsearch' onclick='puttextinsearchFunction(this.id)' id= '"+workwit[i]+"'>" 
                          // + "<img id='cellmadimg_"+madt[i]+"' src='" +this.gsx$imageitem.$t+ "'/>" 
                           + "<p class='thumbtitle' id='name_"+workwit[i]+"'>" +workwit[i]+ "</p>"
+                          + "<name>" +workwit[i]+ "</name>"
                           + "</a>");
             $('#TableWork').append(cellwok);
         };
@@ -455,9 +457,10 @@ function modalFunction(clicked_id) {
     for (i = 0; i < partot.length; i++) {
         
             cellpat = $('#TablePart');
-            cellpat.append("<a class='artefactcell' onclick='puttextinsearchFunction(this.id)' id= '"+partot[i]+"'>" 
+            cellpat.append("<a class='newsearch' onclick='puttextinsearchFunction(this.id)' id= '"+partot[i]+"'>" 
                          // + "<img id='cellmadimg_"+madt[i]+"' src='" +this.gsx$imageitem.$t+ "'/>" 
                           + "<p class='thumbtitle' id='name_"+partot[i]+"'>" +partot[i]+ "</p>"
+                          + "<name>" +partot[i]+ "</name>"
                           + "</a>");
             $('#TablePart').append(cellpat);
         };
@@ -526,7 +529,7 @@ function titlesearchFunction(clicked_id) {
     
     filter = inputtext.toUpperCase();
     table = document.getElementById("Table");
-    cell = table.getElementsByClassName("artefactcell");
+    cell = table.getElementsByClassName("newsearch");
  
     for (i = 0; i < cell.length; i++) {
         tag = cell[i].getElementsByTagName("name")[0];
