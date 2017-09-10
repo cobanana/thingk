@@ -362,7 +362,7 @@ $.getJSON(urlEng, function(data) {
                           + "<tagall>" + " " +this.gsx$name.$t+ " " +this.gsx$loca.$t+ " " +this.gsx$type.$t+ " " +this.gsx$typebroad.$t+ " " +this.gsx$date.$t+ " " +this.gsx$tag.$t+ "</tagall>"
                          + "<img id='cellimg_"+this.id+"' src='" +this.gsx$imageitem.$t+ "'/>" 
                           + "<name>" +this.gsx$name.$t+ "</name>"
-                          + "<p class='thumbtitle' src='" +this.gsx$imageitem.$t+ "' id='name_"+this.id+"'>" +this.gsx$name.$t+ "</p>"
+                          + "<p class='thumbtitle' id='name_"+this.id+"'>" +this.gsx$name.$t+ "</p>"
                           + "<p class='info' id='loca_"+this.id+"'>" +this.gsx$loca.$t+ "</p>"
                           + "<p class='info' id='date_"+this.id+"'>" +this.gsx$date.$t+ "</p>"
                           + "<p class='info' id='background_"+this.id+"'>" +this.gsx$background.$t+ "</p>"
@@ -403,7 +403,7 @@ function modalFunction(clicked_id) {
     var thumbt = document.getElementsByClassName('thumbtitle'); 
     var m = [];
     for ( var i = 0; i < thumbt.length; i++ ) {
-    m.push( thumbt[i].innerHTML);
+    m.push( thumbt[i].innerHTML );
     }
     
     console.log(madewithbystring)
