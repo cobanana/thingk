@@ -471,8 +471,7 @@ function modalFunction(clicked_id) {
         
             cellmad = $('#TableMad');
             cellmad.append("<a class='artefactcell' onClick='modalFunction(this.id)' id= '"+madt[i]+"'>" 
-                          + "<img id='cellmadimg_"+madt[i]+"' src='" +image[i]+ "'/>" 
-                          + "<name>" +madt[i]+ "</name>"
+                          + "<img id='cellmadimg_"+madt[i]+"' src='" +madt[i].gsx$imageitem.$t+ "'/>" 
                           + "<p class='thumbtitle' id='name_"+madt[i]+"'>" +madt[i]+ "</p>"
                           + "</a>");
             $('#TableMad').append(cellmad);
