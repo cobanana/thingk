@@ -63,6 +63,19 @@ div {
   color: darkgray;
 }
 
+.artefactcellcap {
+  display: inline-block;
+  margin: auto;
+  display: inline-block;
+  width: 80%;
+  max-width: 700px;
+  margin-bottom: 8px;
+  
+  text-decoration: none;
+  color: darkgray;
+}
+
+    
 @media screen and (min-width: 50em) {
  artefactcell {
     width: calc(25% - 6px);
@@ -430,7 +443,7 @@ function modalFunction(clicked_id) {
     for (i = 0; i < madt.length; i++) {
         
             cellmad = $('#TableMade');
-            cellmad.append("<a class='caption' onclick='puttextinsearchFunction(this.id)' id= '"+madt[i]+"'>" 
+            cellmad.append("<a class='artefactcellcap' onclick='puttextinsearchFunction(this.id)' id= '"+madt[i]+"'>" 
                          // + "<img id='cellmadimg_"+madt[i]+"' src='" +this.gsx$imageitem.$t+ "'/>" 
                           + "<p class='thumbtitle' id='name_"+madt[i]+"'>" +madt[i]+ "</p>"
                           + "</a>");
@@ -440,7 +453,7 @@ function modalFunction(clicked_id) {
     for (i = 0; i < workwit.length; i++) {
         
             cellwok = $('#TableWork');
-            cellwok.append("<a class='caption' onclick='puttextinsearchFunction(this.id)' id= '"+workwit[i]+"'>" 
+            cellwok.append("<a class='artefactcellcap' onclick='puttextinsearchFunction(this.id)' id= '"+workwit[i]+"'>" 
                          // + "<img id='cellmadimg_"+madt[i]+"' src='" +this.gsx$imageitem.$t+ "'/>" 
                           + "<p class='thumbtitle' id='name_"+workwit[i]+"'>" +workwit[i]+ "</p>"
                           + "</a>");
@@ -450,7 +463,7 @@ function modalFunction(clicked_id) {
     for (i = 0; i < partot.length; i++) {
         
             cellpat = $('#TablePart');
-            cellpat.append("<a class='caption' onclick='puttextinsearchFunction(this.id)' id= '"+partot[i]+"'>" 
+            cellpat.append("<a class='artefactcellcap' onclick='puttextinsearchFunction(this.id)' id= '"+partot[i]+"'>" 
                          // + "<img id='cellmadimg_"+madt[i]+"' src='" +this.gsx$imageitem.$t+ "'/>" 
                           + "<p class='thumbtitle' id='name_"+partot[i]+"'>" +partot[i]+ "</p>"
                           + "</a>");
