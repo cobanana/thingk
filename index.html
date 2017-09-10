@@ -425,9 +425,14 @@ function modalFunction(clicked_id) {
     m.push( thumbt[i].innerHTML);
     }
     
-    thumbt.each(function(i){
-    var mimg = $(this).attr("src");
-    })
+    thumbt.forEach(function(src, index, arr) {
+    var img = document.createElement('img');
+    img.src = url;
+    docFrag.appendChild(img);
+});
+
+
+    container.appendChild(docFrag);
     
     console.log(madewithbystring)
     console.log(thumbt)
