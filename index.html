@@ -199,6 +199,15 @@ img {
     display: none;
 }
     
+.artefactcellcap {
+  margin: auto;
+  display: inline-block;
+  width: calc(20% - 4px);
+  max-width: 700px;
+  text-decoration: none;
+  color: darkgray;
+}
+    
 .captionheader {
     margin: auto;
     display: inline-block;
@@ -435,7 +444,7 @@ function modalFunction(clicked_id) {
     for (i = 0; i < madt.length; i++) {
         
             cellmad = $('#TableMade');
-            cellmad.append("<a class='artefactcell' id= '"+madt[i]+"'>" 
+            cellmad.append("<a class='artefactcellcap' id= '"+madt[i]+"'>" 
                          // + "<img id='cellmadimg_"+madt[i]+"' src='" +this.gsx$imageitem.$t+ "'/>" 
                           + "<p class='thumbtitle' id='name_"+madt[i]+"' onclick='puttextinsearchFunction(this.id)'>" +madt[i]+ "</p>"
                           + "<name>" +madt[i]+ "</name>"
@@ -446,7 +455,7 @@ function modalFunction(clicked_id) {
     for (i = 0; i < workwit.length; i++) {
         
             cellwok = $('#TableWork');
-            cellwok.append("<a class='artefactcell' id= '"+workwit[i]+"'>" 
+            cellwok.append("<a class='artefactcellcap' id= '"+workwit[i]+"'>" 
                          // + "<img id='cellmadimg_"+madt[i]+"' src='" +this.gsx$imageitem.$t+ "'/>" 
                           + "<p class='thumbtitle' id='name_"+workwit[i]+"' onclick='puttextinsearchFunction(this.id)'>" +workwit[i]+ "</p>"
                           + "<name>" +workwit[i]+ "</name>"
@@ -457,7 +466,7 @@ function modalFunction(clicked_id) {
     for (i = 0; i < partot.length; i++) {
         
             cellpat = $('#TablePart');
-            cellpat.append("<a class='artefactcell' id= '"+partot[i]+"'>" 
+            cellpat.append("<a class='artefactcellcap' id= '"+partot[i]+"'>" 
                          // + "<img id='cellmadimg_"+madt[i]+"' src='" +this.gsx$imageitem.$t+ "'/>" 
                           + "<p class='thumbtitle' id='name_"+partot[i]+"' onclick='puttextinsearchFunction(this.id)'>" +partot[i]+ "</p>"
                           + "<name>" +partot[i]+ "</name>"
