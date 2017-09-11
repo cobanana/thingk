@@ -309,7 +309,7 @@ img {
     
     <h1 class="captionheader">origin</h1>
     <div id="background" class="caption" style="width:100%"></div>    
-    <div id="TableMade" class='newsearch' onclick='puttextinsearchFunction(this.id)' style="width:100%"></div>
+    <div id="TableMade" class='newsearch' style="width:100%"></div>
     
     <h1 class="captionheader">assembly</h1>  
     <div id="funct" class="caption" style="width:100%"></div>   
@@ -435,7 +435,7 @@ function modalFunction(clicked_id) {
     for (i = 0; i < madt.length; i++) {
         
             cellmad = $('#TableMade');
-            cellmad.append("<a id= '"+madt[i]+"'>" 
+            cellmad.append("<a id= '"+madt[i]+"' onclick='puttextinsearchFunction(" +madt[i]+ ")'>" 
                          // + "<img id='cellmadimg_"+madt[i]+"' src='" +this.gsx$imageitem.$t+ "'/>" 
                           + "<p class='thumbtitle' id='name_"+madt[i]+"'>" +madt[i]+ "</p>"
                           + "<name>" +madt[i]+ "</name>"
