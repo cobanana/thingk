@@ -435,9 +435,9 @@ function modalFunction(clicked_id) {
     for (i = 0; i < madt.length; i++) {
         
             cellmad = $('#TableMade');
-            cellmad.append("<a id= '"+madt[i]+"' onclick='puttextinsearchFunction(this.id)'>" 
+            cellmad.append("<a id= '"+madt[i]+"'>" 
                          // + "<img id='cellmadimg_"+madt[i]+"' src='" +this.gsx$imageitem.$t+ "'/>" 
-                          + "<p class='thumbtitle' id='name_"+madt[i]+"'>" +madt[i]+ "</p>"
+                          + "<p class='thumbtitle' id='name_"+madt[i]+"' onclick='puttextinsearchFunction(this.id)'>" +madt[i]+ "</p>"
                           + "<name>" +madt[i]+ "</name>"
                           + "</a>");
             $('#TableMade').append(cellmad);
