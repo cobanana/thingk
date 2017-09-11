@@ -444,8 +444,7 @@ function modalFunction(clicked_id) {
     var modalImg = $("#img01")
     modalImg.attr('src', image);
     namebox = document.getElementById('bigname').innerHTML = name
-    typebox = document.getElementById('type').innerHTML = type
-    datebox = document.getElementById('designdate').innerHTML = date
+    //datebox = document.getElementById('designdate').innerHTML = date
     backgroundbox = document.getElementById('background').innerHTML = background
     functbox = document.getElementById('funct').innerHTML = funct
     createbox = document.getElementById('create').innerHTML = create
@@ -460,6 +459,22 @@ function modalFunction(clicked_id) {
             $('#location').append(cellloca);
         };
     
+    for (i = 0; i < typestring.length; i++) {
+        
+            celltype = $('#type');
+            celltype.append("<a class='artefactcellcap'>" 
+                          + "<p class='thumbtitle' id ="+typestring[i]+" onclick='puttextinsearchFunction(this.id)'>"+typestring[i]+"</p>"
+                          + "</a>");
+            $('#type').append(celltype);
+        };
+    
+        
+            celldate = $('designdate');
+            celldate.append("<a class='artefactcellcap'>" 
+                          + "<p class='thumbtitle' id ="+date+" onclick='puttextinsearchFunction(this.id)'>"+date+"</p>"
+                          + "</a>");
+            $('#designdate').append(celldate);
+
     for (i = 0; i < madt.length; i++) {
         
             cellmad = $('#TableMade');
