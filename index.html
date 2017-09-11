@@ -309,15 +309,15 @@ img {
     
     <h1 class="captionheader">origin</h1>
     <div id="background" class="caption" style="width:100%"></div>    
-    <div id="TableMade" class='newsearch' style="width:100%"></div>
+    <div id="TableMade" style="width:100%"></div>
     
     <h1 class="captionheader">assembly</h1>  
     <div id="funct" class="caption" style="width:100%"></div>   
-    <div id="TableWork" class='newsearch' onclick='puttextinsearchFunction(this.id)' style="width:100%"></div>
+    <div id="TableWork" style="width:100%"></div>
     
     <h1 class="captionheader">legacy</h1>   
     <div id="create" class="caption" style="width:100%"></div>  
-    <div id="TablePart" class='newsearch' onclick='puttextinsearchFunction(this.id)' style="width:100%"></div>  
+    <div id="TablePart" style="width:100%"></div>  
     
     <div id="references" class="caption" style="width:100%"></div>
 
@@ -435,7 +435,7 @@ function modalFunction(clicked_id) {
     for (i = 0; i < madt.length; i++) {
         
             cellmad = $('#TableMade');
-            cellmad.append("<a id= '"+madt[i]+"'>" 
+            cellmad.append("<a class='artefactcell' id= '"+madt[i]+"'>" 
                          // + "<img id='cellmadimg_"+madt[i]+"' src='" +this.gsx$imageitem.$t+ "'/>" 
                           + "<p class='thumbtitle' id='name_"+madt[i]+"' onclick='puttextinsearchFunction(this.id)'>" +madt[i]+ "</p>"
                           + "<name>" +madt[i]+ "</name>"
@@ -446,9 +446,9 @@ function modalFunction(clicked_id) {
     for (i = 0; i < workwit.length; i++) {
         
             cellwok = $('#TableWork');
-            cellwok.append("<a id= '"+workwit[i]+"'>" 
+            cellwok.append("<a class='artefactcell' id= '"+workwit[i]+"'>" 
                          // + "<img id='cellmadimg_"+madt[i]+"' src='" +this.gsx$imageitem.$t+ "'/>" 
-                          + "<p class='thumbtitle' id='name_"+workwit[i]+"'>" +workwit[i]+ "</p>"
+                          + "<p class='thumbtitle' id='name_"+workwit[i]+"' onclick='puttextinsearchFunction(this.id)'>" +workwit[i]+ "</p>"
                           + "<name>" +workwit[i]+ "</name>"
                           + "</a>");
             $('#TableWork').append(cellwok);
@@ -457,9 +457,9 @@ function modalFunction(clicked_id) {
     for (i = 0; i < partot.length; i++) {
         
             cellpat = $('#TablePart');
-            cellpat.append("<a id= '"+partot[i]+"'>" 
+            cellpat.append("<a class='artefactcell' id= '"+partot[i]+"'>" 
                          // + "<img id='cellmadimg_"+madt[i]+"' src='" +this.gsx$imageitem.$t+ "'/>" 
-                          + "<p class='thumbtitle' id='name_"+partot[i]+"'>" +partot[i]+ "</p>"
+                          + "<p class='thumbtitle' id='name_"+partot[i]+"' onclick='puttextinsearchFunction(this.id)'>" +partot[i]+ "</p>"
                           + "<name>" +partot[i]+ "</name>"
                           + "</a>");
             $('#TablePart').append(cellpat);
