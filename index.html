@@ -315,6 +315,9 @@ img {
         <td id="location" class=newsearch style="width:50%"></td> 
         <td id="designdate" class=newsearch onclick="puttextinsearchFunction(this.id)" style="width:50%"></td>
     </tr>
+    <tr>
+        <td id="type" class=newsearch onclick="puttextinsearchFunction(this.id)" style="width:100%"></td>
+    </tr>
     </table>
         
     <img class="modal-content" id="img01">
@@ -382,6 +385,7 @@ $.getJSON(urlEng, function(data) {
                           + "<p class='thumbtitle' id='name_"+this.id+"'>" +this.gsx$name.$t+ "</p>"
                           + "<p class='info' id='loca_"+this.id+"'>" +this.gsx$loca.$t+ "</p>"
                           + "<p class='info' id='date_"+this.id+"'>" +this.gsx$date.$t+ "</p>"
+                          + "<p class='info' id='type_"+this.id+"'>" +this.gsx$type.$t+ "</p>"
                           + "<p class='info' id='background_"+this.id+"'>" +this.gsx$background.$t+ "</p>"
                           + "<p class='info' id='funct_"+this.id+"'>" +this.gsx$funct.$t+ "</p>"
                           + "<p class='info' id='create_"+this.id+"'>" +this.gsx$create.$t+ "</p>"
@@ -400,11 +404,13 @@ function modalFunction(clicked_id) {
     $('#TableMade').empty();
     $('#TableWork').empty();
     $('#TablePart').empty();
+    $('#location').empty();
     
     image = ($("#cellimg_"+clicked_id+"").attr('src'));
     name = ($("#name_"+clicked_id+"").html());
     loca = ($("#loca_"+clicked_id+"").html());
     date = ($("#date_"+clicked_id+"").html());
+    type = ($("#type_"+clicked_id+"").html());
     background = ($("#background_"+clicked_id+"").html());
     funct = ($("#funct_"+clicked_id+"").html());
     create = ($("#create_"+clicked_id+"").html());
@@ -417,7 +423,7 @@ function modalFunction(clicked_id) {
     var usedwithbystring = usedwithby.split(",");
     var makesstring = makes.split(",");
     var locastring = loca.split(",");
-    //var typestring = type.split(",");
+    var typestring = type.split(",");
     
     var thumbt = document.getElementsByClassName('thumbtitle'); 
     var m = [];
@@ -439,7 +445,7 @@ function modalFunction(clicked_id) {
     var modalImg = $("#img01")
     modalImg.attr('src', image);
     namebox = document.getElementById('bigname').innerHTML = name
-    //locationbox = document.getElementById('location').innerHTML = loca
+    typebox = document.getElementById('type').innerHTML = type
     datebox = document.getElementById('designdate').innerHTML = date
     backgroundbox = document.getElementById('background').innerHTML = background
     functbox = document.getElementById('funct').innerHTML = funct
