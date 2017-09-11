@@ -411,6 +411,7 @@ function modalFunction(clicked_id) {
     name = ($("#name_"+clicked_id+"").html());
     loca = ($("#loca_"+clicked_id+"").html());
     type = ($("#type_"+clicked_id+"").html());
+    date = ($("#date_"+clicked_id+"").html());
     background = ($("#background_"+clicked_id+"").html());
     funct = ($("#funct_"+clicked_id+"").html());
     create = ($("#create_"+clicked_id+"").html());
@@ -419,13 +420,12 @@ function modalFunction(clicked_id) {
     makes = ($("#makes_"+clicked_id+"").html());
     references = ($("#references_"+clicked_id+"").html());
     
-    var date = ($("#date_"+clicked_id+"").html());
-    
     var madewithbystring = madewithby.split(",");
     var usedwithbystring = usedwithby.split(",");
     var makesstring = makes.split(",");
     var locastring = loca.split(",");
     var typestring = type.split(",");
+    var datestring = date.split(",");
     
     var thumbt = document.getElementsByClassName('thumbtitle'); 
     var m = [];
@@ -475,7 +475,7 @@ function modalFunction(clicked_id) {
      for (i = 0; i < date.length; i++) {
             celldate = $('designdate');
             celldate.append("<a class='artefactcellcap'>" 
-                          + "<p class='thumbtitle' id ="+date+" onclick='puttextinsearchFunction(this.id)'>"+date+"</p>"
+                          + "<p class='thumbtitle' id ="+datestring[i]+" onclick='puttextinsearchFunction(this.id)'>"+datestring[i]+"</p>"
                           + "</a>");
             $('#designdate').append(celldate);
         };
