@@ -416,6 +416,8 @@ function modalFunction(clicked_id) {
     var madewithbystring = madewithby.split(",");
     var usedwithbystring = usedwithby.split(",");
     var makesstring = makes.split(",");
+    var locastring = loca.split(",");
+    var typestring = type.split(",");
     
     var thumbt = document.getElementsByClassName('thumbtitle'); 
     var m = [];
@@ -437,12 +439,21 @@ function modalFunction(clicked_id) {
     var modalImg = $("#img01")
     modalImg.attr('src', image);
     namebox = document.getElementById('bigname').innerHTML = name
-    locationbox = document.getElementById('location').innerHTML = loca
+    //locationbox = document.getElementById('location').innerHTML = loca
     datebox = document.getElementById('designdate').innerHTML = date
     backgroundbox = document.getElementById('background').innerHTML = background
     functbox = document.getElementById('funct').innerHTML = funct
     createbox = document.getElementById('create').innerHTML = create
     referencesbox = document.getElementById('references').innerHTML = references
+    
+    for (i = 0; i < madt.length; i++) {
+        
+            cellloca = $('#location');
+            cellloca.append("<a class='artefactcellcap'>" 
+                          + "<p class='thumbtitle' id ="+locastring[i]+" onclick='titlesearchFunction(this.id)'>"+locastring[i]+"</p>"
+                          + "</a>");
+            $('#TableMade').append(cellloca);
+        };
     
     for (i = 0; i < madt.length; i++) {
         
