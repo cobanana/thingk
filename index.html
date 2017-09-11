@@ -410,7 +410,6 @@ function modalFunction(clicked_id) {
     image = ($("#cellimg_"+clicked_id+"").attr('src'));
     name = ($("#name_"+clicked_id+"").html());
     loca = ($("#loca_"+clicked_id+"").html());
-    date = ($("#date_"+clicked_id+"").html());
     type = ($("#type_"+clicked_id+"").html());
     background = ($("#background_"+clicked_id+"").html());
     funct = ($("#funct_"+clicked_id+"").html());
@@ -419,6 +418,8 @@ function modalFunction(clicked_id) {
     usedwithby = ($("#usedwithby_"+clicked_id+"").html());
     makes = ($("#makes_"+clicked_id+"").html());
     references = ($("#references_"+clicked_id+"").html());
+    
+    var date = ($("#date_"+clicked_id+"").html());
     
     var madewithbystring = madewithby.split(",");
     var usedwithbystring = usedwithby.split(",");
@@ -470,12 +471,14 @@ function modalFunction(clicked_id) {
             $('#type').append(celltype);
         };
     
-        
+   
+     for (i = 0; i < date.length; i++) {
             celldate = $('designdate');
             celldate.append("<a class='artefactcellcap'>" 
                           + "<p class='thumbtitle' id ="+date+" onclick='puttextinsearchFunction(this.id)'>"+date+"</p>"
                           + "</a>");
             $('#designdate').append(celldate);
+        };
 
     for (i = 0; i < madt.length; i++) {
         
