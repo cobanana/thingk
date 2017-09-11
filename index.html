@@ -312,7 +312,7 @@ img {
     <p class="captionTitle" id="bigname" onclick="puttextinsearchFunction(this.id)"></p> 
     <table class="caption" style="width:100%">
     <tr>
-        <td id="location" class=newsearch onclick="puttextinsearchFunction(this.id)" style="width:50%"></td> 
+        <td id="location" class=newsearch style="width:50%"></td> 
         <td id="designdate" class=newsearch onclick="puttextinsearchFunction(this.id)" style="width:50%"></td>
     </tr>
     </table>
@@ -450,9 +450,9 @@ function modalFunction(clicked_id) {
         
             cellloca = $('#location');
             cellloca.append("<a class='artefactcellcap'>" 
-                          + "<p class='thumbtitle' id ="+locastring[i]+" onclick='titlesearchFunction(this.id)'>"+locastring[i]+"</p>"
+                          + "<p class='thumbtitle' id ="+locastring[i]+" onclick='puttextinsearchFunction(this.id)'>"+locastring[i]+"</p>"
                           + "</a>");
-            $('#TableMade').append(cellloca);
+            $('#location').append(cellloca);
         };
     
     for (i = 0; i < madt.length; i++) {
