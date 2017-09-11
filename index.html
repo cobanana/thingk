@@ -447,9 +447,8 @@ function modalFunction(clicked_id) {
     for (i = 0; i < madt.length; i++) {
         
             cellmad = $('#TableMade');
-            cellmad.append("<a class='artefactcellcap' id= '"+madt[i]+"'>" 
-                         // + "<img id='cellmadimg_"+madt[i]+"' src='" +this.gsx$imageitem.$t+ "'/>" 
-                          + "<p class='thumbtitle' id='"+madt[i]+"' onclick='titlesearchFunction(this.id)'>" +madt[i]+ "</p>"
+            cellmad.append("<a class='artefactcellcap'>" 
+                          + "<p class='thumbtitle' id='name_"+madt[i]+"' onclick='titlesearchFunction(this.id)'>" +madt[i]+ "</p>"
                           + "</a>");
             $('#TableMade').append(cellmad);
         };
@@ -457,9 +456,8 @@ function modalFunction(clicked_id) {
     for (i = 0; i < workwit.length; i++) {
         
             cellwok = $('#TableWork');
-            cellwok.append("<a class='artefactcellcap' id= '"+workwit[i]+"'>" 
-                         // + "<img id='cellmadimg_"+madt[i]+"' src='" +this.gsx$imageitem.$t+ "'/>" 
-                          + "<p class='thumbtitle' id='"+workwit[i]+"' onclick='titlesearchFunction(this.id)'>" +workwit[i]+ "</p>"
+            cellwok.append("<a class='artefactcellcap'>" 
+                          + "<p class='thumbtitle' id='name_"+workwit[i]+"' onclick='titlesearchFunction(this.id)'>" +workwit[i]+ "</p>"
                           + "</a>");
             $('#TableWork').append(cellwok);
         };
@@ -467,9 +465,8 @@ function modalFunction(clicked_id) {
     for (i = 0; i < partot.length; i++) {
         
             cellpat = $('#TablePart');
-            cellpat.append("<a class='artefactcellcap' id= '"+partot[i]+"'>" 
-                         // + "<img id='cellmadimg_"+madt[i]+"' src='" +this.gsx$imageitem.$t+ "'/>" 
-                          + "<p class='thumbtitle' id='"+partot[i]+"' onclick='titlesearchFunction(this.id)'>" +partot[i]+ "</p>"
+            cellpat.append("<a class='artefactcellcap'>" 
+                          + "<p class='thumbtitle' id='name_"+partot[i]+"' onclick='titlesearchFunction(this.id)'>" +partot[i]+ "</p>"
                           + "</a>");
             $('#TablePart').append(cellpat);
         };
