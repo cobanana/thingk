@@ -374,8 +374,11 @@ $.getJSON(urlEng, function(data) {
             cell = $('#Table');
             cell.append("<a class='artefactcell' onClick='modalFunction(this.id)' id= '"+this.id+"'>" 
                           + "<tagall>" + " " +this.gsx$name.$t+ " " +this.gsx$loca.$t+ " " +this.gsx$type.$t+ " " +this.gsx$typebroad.$t+ " " +this.gsx$date.$t+ " " +this.gsx$tag.$t+ "</tagall>"
-                         + "<img id='cellimg_"+this.id+"' src='" +this.gsx$imageitem.$t+ "'/>" 
+                          + "<img id='cellimg_"+this.id+"' src='" +this.gsx$imageitem.$t+ "'/>" 
                           + "<name>" +this.gsx$name.$t+ "</name>"
+                          + "<loca>" +this.gsx$loca.$t+ "</loca>"
+                          + "<type>" +this.gsx$type.$t+ "</type>"
+                          + "<date>" +this.gsx$date.$t+ "</date>"
                           + "<p class='thumbtitle' id='name_"+this.id+"'>" +this.gsx$name.$t+ "</p>"
                           + "<p class='info' id='loca_"+this.id+"'>" +this.gsx$loca.$t+ "</p>"
                           + "<p class='info' id='date_"+this.id+"'>" +this.gsx$date.$t+ "</p>"
@@ -451,7 +454,7 @@ function modalFunction(clicked_id) {
         
             cellloca = $('#location');
             cellloca.append("<a class='artefactcellcap'>" 
-                          + "<p class='thumbtitle' id ="+locastring[i]+" onclick='puttextinsearchFunction(this.id)'>"+locastring[i]+"</p>"
+                          + "<p class='thumbtitle' id ="+locastring[i]+" onclick='locasearchFunction(this.id)'>"+locastring[i]+"</p>"
                           + "</a>");
             $('#location').append(cellloca);
         };
@@ -460,7 +463,7 @@ function modalFunction(clicked_id) {
         
             celltype = $('#type');
             celltype.append("<a class='artefactcellcap'>" 
-                          + "<p class='thumbtitle' id ="+typestring[i]+" onclick='puttextinsearchFunction(this.id)'>"+typestring[i]+"</p>"
+                          + "<p class='thumbtitle' id ="+typestring[i]+" onclick='typesearchFunction(this.id)'>"+typestring[i]+"</p>"
                           + "</a>");
             $('#type').append(celltype);
         };
@@ -469,7 +472,7 @@ function modalFunction(clicked_id) {
      for (i = 0; i < datestring.length; i++) {
             celldate = $('#designdate');
             celldate.append("<a class='artefactcellcap'>" 
-                          + "<p class='thumbtitle' id ="+datestring[i]+" onclick='puttextinsearchFunction(this.id)'>"+datestring[i]+"</p>"
+                          + "<p class='thumbtitle' id ="+datestring[i]+" onclick='datesearchFunction(this.id)'>"+datestring[i]+"</p>"
                           + "</a>");
             $('#designdate').append(celldate);
         };
@@ -573,6 +576,81 @@ function titlesearchFunction(clicked_id) {
  
     for (i = 0; i < cell.length; i++) {
         tag = cell[i].getElementsByTagName("name")[0];
+            if (tag) {
+                if (tag.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                cell[i].style.display = "";
+            } else {
+                cell[i].style.display = "none";
+                }
+            }       
+        }
+    modal = document.getElementById('myModal');
+    modal.style.display = "none";
+    
+    }
+    
+function locationsearchFunction(clicked_id) {
+    
+    inputtext = ($("#"+clicked_id+"").html());
+    
+    console.log(inputtext)
+    
+    filter = inputtext.toUpperCase();
+    table = document.getElementById("Table");
+    cell = table.getElementsByClassName("artefactcell");
+ 
+    for (i = 0; i < cell.length; i++) {
+        tag = cell[i].getElementsByTagName("loca")[0];
+            if (tag) {
+                if (tag.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                cell[i].style.display = "";
+            } else {
+                cell[i].style.display = "none";
+                }
+            }       
+        }
+    modal = document.getElementById('myModal');
+    modal.style.display = "none";
+    
+    }
+    
+function typesearchFunction(clicked_id) {
+    
+    inputtext = ($("#"+clicked_id+"").html());
+    
+    console.log(inputtext)
+    
+    filter = inputtext.toUpperCase();
+    table = document.getElementById("Table");
+    cell = table.getElementsByClassName("artefactcell");
+ 
+    for (i = 0; i < cell.length; i++) {
+        tag = cell[i].getElementsByTagName("type")[0];
+            if (tag) {
+                if (tag.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                cell[i].style.display = "";
+            } else {
+                cell[i].style.display = "none";
+                }
+            }       
+        }
+    modal = document.getElementById('myModal');
+    modal.style.display = "none";
+    
+    }
+    
+function datesearchFunction(clicked_id) {
+    
+    inputtext = ($("#"+clicked_id+"").html());
+    
+    console.log(inputtext)
+    
+    filter = inputtext.toUpperCase();
+    table = document.getElementById("Table");
+    cell = table.getElementsByClassName("artefactcell");
+ 
+    for (i = 0; i < cell.length; i++) {
+        tag = cell[i].getElementsByTagName("date")[0];
             if (tag) {
                 if (tag.innerHTML.toUpperCase().indexOf(filter) > -1) {
                 cell[i].style.display = "";
