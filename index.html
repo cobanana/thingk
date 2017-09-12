@@ -211,6 +211,11 @@ img {
     display: none;
 }
     
+    .container {
+        width:100%;
+        margin:auto;
+    }
+    
 .artefactcellcap {
   margin: left;
   display: inline-block;
@@ -330,10 +335,11 @@ img {
     <div>   
         
     <p class="captionTitle" id="bigname" onclick="puttextinsearchFunction(this.id)"></p>
-    <p id="type" class="caption" style="width:100%"></p>
-       
+    <div id="type" class="caption" style="width:100%"></div>
+    <div class="container"> 
     <div id="location" class="caption" style="width:100%"></div>
-    <div id="designdate" class="caption" style="width:100%"></div>
+    <div id="designdate" class="caption" style="width:100%"></div>    
+    </div>
         
     <img class="modal-content" id="img01">
     
