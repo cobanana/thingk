@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oswald:200" rel="stylesheet">
 <style>
 * {
   box-sizing: border-box;
@@ -15,7 +16,7 @@
   width: 100%;
   height: 50px;
   font-size: 20px;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Oswald', sans-serif;
   padding: 20px 20px 20px 20px;
   border: 1px solid #ddd;
   margin-bottom: 50px;
@@ -27,7 +28,7 @@
 body {
   width: 80%;
   margin: 30px auto;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-style: thin;
 }
     
@@ -60,6 +61,7 @@ div {
   margin-bottom: 8px;
   width: calc(20% - 4px);
   text-decoration: none;
+  font-weight: 100;
   color: darkgray;
 }
 
@@ -98,21 +100,30 @@ name {
   display: none;
 }
     
-loca {
-  display: none;
-}
-    
 type {
   display: none;
 }
-   
     
-date {
+what {
   display: none;
 }
     
+why {
+  display: none;
+}
+    
+.bigtitle {
+    font-family: 'Amatic SC', cursive;
+    font-size: 50px
+}
+
+.subbigtitle {
+    font-size: 20px;
+    padding-bottom: 30px;
+}
+    
 .thumbtitle {
-  font-size: 13px;
+  font-size: 20px;
   padding-bottom: 12px;
     
 }
@@ -184,45 +195,64 @@ img {
     background-color: rgba(255,255,255,255.1); /* Black w/ opacity */
 }
 
-.modal-content {
+.item {
     margin: auto;
     display: block;
-    width: 80%;
-    max-height: 700px;
     max-width: 700px;
 }
-    
-    
-.modaltitle {
-  font-weight: bold;
-}
-
-/* Caption of Modal Image (Image Text) - Same Width as the Image */
-.caption {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    text-align: left;
+       
+.captionTitle {
     color: #000;
+    padding-bottom: 2px;
+    font-size: 50px;
+    max-height: 20px;
+    font-family: 'Amatic SC', cursive;
+    }
+
+.captionit {
+    padding-bottom: 5px;
+    color: #cccccc;
+    width: 100%;
+    font-style: italic; 
+}
+    
+.captionit:empty {
+    display: none;
+}
+    
+.caption {
+    color: #666666;
+    width: 100%;
+    font-size: 18px;
 }
     
 .caption:empty {
     display: none;
 }
+   
+.modal-img {
+    height: 700px;
+    width: 700px;
+    padding-top: 5px;
+    background: white;
+}
+    
+.captionheader {
+    color: #666666;
+    font-size: 35px;
+    font-family: 'Amatic SC', cursive;
+    max-height: 20px;
+}
     
 .artefactcellcap {
   margin: left;
-  display: inline-block;
+  display: block;
   width: calc(20% - 4px);
   text-align: left;
   text-decoration: none;
   color: darkgray;
 }
-    
-.artefactcellcap {cursor: pointer; 
-}
-    
+ 
 .artefactcellcap:empty {
     display: none;
 }
@@ -230,34 +260,9 @@ img {
 .thumbtitle:empty {
     display: none;
 }
-    
-.captionheader {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    text-align: left;
-    color: #4682B4;
-    opacity: 0.5;
-    padding-bottom: 5px;
-}
-      
-.captionTitle {
-    margin: auto;
-    display: inline-block;
-    width: 80%;
-    max-width: 700px;
-    text-align: left;
-    color: #000;
-    padding-bottom: 6px;
-    font-size: 50px;
-    }
 
 .captionTitle:empty {
     display: none;
-}
-
-.captionTitle {cursor: pointer; 
 }
     
 /* Add Animation - Zoom in the Modal */
@@ -306,15 +311,10 @@ img {
 
 </style>
 
-<body onload="engFunction()">
-    
-<div id=buttondiv align="right">
-    <button class=button onclick="engFunction()">eng</button>
-    <button class=button onclick="indFunction()">ind</button>
-</div>    
+<body onload="engFunction()">   
 
-<h1 style="color:#4682B4">asia design archive</h1>
-<h3 id="subtitle" style="color:#778899" font-weight="light"></h3>
+<div class="bigtitle" style="color:#4682B4">social design archive</div>
+<div class="subbigtitle" id="subtitle" style="color:#778899">what is social design and how is it done?</div>
 
 <input type="search" id="myInput" placeholder="Search..." title="Type in a category">
 
@@ -327,29 +327,24 @@ img {
 <span class="close" onclick="document.getElementById('myModal')">&times;</span>
 
   <!-- Modal Content -->
-    <div>   
+    <div class="item">   
         
-    <p class="captionTitle" id="bigname" onclick="puttextinsearchFunction(this.id)"></p>
-    <div id="type" class="caption" style="width:100%"></div>
+    <p class="captionTitle" id="bigname"></p>
     
-    <div id="location" class="caption" style="width:100%"></div>
-    <div id="designdate" class="caption" style="width:100%"></div>
+    <div id="who" class="captionit"></div>
+    <div id="where" class="captionit"></div>
+    <div id="date" class="captionit"></div>
         
-    <img class="modal-content" id="img01">
+    <img class="modal-img" id="img01">
     
-    <h1 class="captionheader">origin</h1>
-    <div id="background" class="caption" style="width:100%"></div>    
-    <div id="TableMade" class="caption" style="width:100%"></div>
+    <h1 class="captionheader">what</h1>
+    <div id="what" class="caption" style="width:100%"></div>    
     
-    <h1 class="captionheader">life</h1>  
-    <div id="funct" class="caption" style="width:100%"></div>   
-    <div id="TableWork" class="caption" style="width:100%"></div>
-    
-    <h1 class="captionheader">legacy</h1>   
-    <div id="create" class="caption" style="width:100%"></div>  
-    <div id="TablePart" class="caption" style="width:100%"></div>  
-    
-    <div id="references" class="caption" style="width:100%"></div>
+    <h1 class="captionheader">why</h1>  
+    <div id="why" class="caption" style="width:100%"></div>   
+
+    <h1 class="captionheader">how</h1>   
+    <div id="how" class="caption" style="width:100%"></div> 
 
     </div>
     
@@ -362,7 +357,7 @@ img {
     
 <script>
     
-var spreadsheetIDEng = "1oPe03KrJAcRrYZ0Prg6_RJlUZFPb1ONz9LDk8rj4M00";
+var spreadsheetIDEng = "1J3FLBPvVb-cqDtkkEx0hdWlrdlLLv0__b_Mvt_-638Q"; 
 
 var urlEng = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDEng + "/od6/public/values?alt=json";
     
@@ -374,8 +369,6 @@ function engFunction() {
     
 $('#Table').empty()
 
-document.getElementById('subtitle').innerHTML = 'tracing the evolution of design in asia';
-
 $.getJSON(urlEng, function(data) {
 
         var entry = data.feed.entry;
@@ -386,31 +379,26 @@ $.getJSON(urlEng, function(data) {
         
         entry.sort(function(a, b){return 0.5 - Math.random()});
     
-    console.log(entry)
-    
     var test = 
 
         $(entry).each(function() {
         
             cell = $('#Table');
             cell.append("<a class='artefactcell' onClick='modalFunction(this.id)' id= '"+this.id+"'>" 
-                          + "<tagall>" + " " +this.gsx$name.$t+ " " +this.gsx$loca.$t+ " " +this.gsx$type.$t+ " " +this.gsx$typebroad.$t+ " " +this.gsx$date.$t+ " " +this.gsx$tag.$t+ "</tagall>"
+                          + "<tagall>" + " " +this.gsx$name.$t+ " " +this.gsx$type.$t+ " " +this.gsx$what.$t+ " " +this.gsx$why.$t+ " " +this.gsx$how.$t+ " " +this.gsx$who.$t+ " " +this.gsx$date.$t+ "  " +this.gsx$where.$t+ "</tagall>"
                           + "<img id='cellimg_"+this.id+"' src='" +this.gsx$imageitem.$t+ "'/>" 
                           + "<name>" +this.gsx$name.$t+ "</name>"
-                          + "<loca>" +this.gsx$loca.$t+ "</loca>"
                           + "<type>" +this.gsx$type.$t+ "</type>"
-                          + "<date>" +this.gsx$date.$t+ "</date>"
+                          + "<what>" +this.gsx$what.$t+ "</what>"
+                          + "<why>" +this.gsx$why.$t+ "</why>"
                           + "<p class='thumbtitle' id='name_"+this.id+"'>" +this.gsx$name.$t+ "</p>"
-                          + "<p class='info' id='loca_"+this.id+"'>" +this.gsx$loca.$t+ "</p>"
-                          + "<p class='info' id='date_"+this.id+"'>" +this.gsx$date.$t+ "</p>"
                           + "<p class='info' id='type_"+this.id+"'>" +this.gsx$type.$t+ "</p>"
-                          + "<p class='info' id='background_"+this.id+"'>" +this.gsx$background.$t+ "</p>"
-                          + "<p class='info' id='funct_"+this.id+"'>" +this.gsx$funct.$t+ "</p>"
-                          + "<p class='info' id='create_"+this.id+"'>" +this.gsx$create.$t+ "</p>"
-                          + "<p class='info' id='madewithby_"+this.id+"'>" +this.gsx$madewithby.$t+ "</p>"
-                          + "<p class='info' id='usedwithby_"+this.id+"'>" +this.gsx$usedwithby.$t+ "</p>"
-                          + "<p class='info' id='makes_"+this.id+"'>" +this.gsx$makes.$t+ "</p>"
-                          + "<p class='info' id='references_"+this.id+"'>" +this.gsx$references.$t+ "</p>"
+                          + "<p class='info' id='what_"+this.id+"'>" +this.gsx$what.$t+ "</p>"
+                          + "<p class='info' id='why_"+this.id+"'>" +this.gsx$why.$t+ "</p>"
+                          + "<p class='info' id='how_"+this.id+"'>" +this.gsx$how.$t+ "</p>"
+                          + "<p class='info' id='who_"+this.id+"'>" +this.gsx$who.$t+ "</p>"
+                          + "<p class='info' id='date_"+this.id+"'>" +this.gsx$date.$t+ "</p>"
+                          + "<p class='info' id='where_"+this.id+"'>" +this.gsx$where.$t+ "</p>"
                           + "</a>");
             $('#Table').append(cell);
         });
@@ -419,113 +407,32 @@ $.getJSON(urlEng, function(data) {
     
 function modalFunction(clicked_id) {
     
-    $('#TableMade').empty();
-    $('#TableWork').empty();
-    $('#TablePart').empty();
-    $('#location').empty();
-    $('#type').empty();
-    $('#designdate').empty();
+    $('#name').empty();
+    $('#what').empty();
+    $('#why').empty();
+    $('#how').empty();
+    $('#who').empty();
+    $('#date').empty();
+    $('#where').empty();
     
     image = ($("#cellimg_"+clicked_id+"").attr('src'));
     name = ($("#name_"+clicked_id+"").html());
-    loca = ($("#loca_"+clicked_id+"").html());
-    type = ($("#type_"+clicked_id+"").html());
+    what = ($("#what_"+clicked_id+"").html());
+    why = ($("#why_"+clicked_id+"").html());
+    how = ($("#how_"+clicked_id+"").html());
+    who = ($("#who_"+clicked_id+"").html());
     date = ($("#date_"+clicked_id+"").html());
-    background = ($("#background_"+clicked_id+"").html());
-    funct = ($("#funct_"+clicked_id+"").html());
-    create = ($("#create_"+clicked_id+"").html());
-    madewithby = ($("#madewithby_"+clicked_id+"").html());
-    usedwithby = ($("#usedwithby_"+clicked_id+"").html());
-    makes = ($("#makes_"+clicked_id+"").html());
-    references = ($("#references_"+clicked_id+"").html());
-    
-    var madewithbystring = madewithby.split(",");
-    var usedwithbystring = usedwithby.split(",");
-    var makesstring = makes.split(",");
-    var locastring = loca.split(",");
-    var typestring = type.split(",");
-    var datestring = date.split(",");
-    
-    var thumbt = document.getElementsByClassName('thumbtitle'); 
-    var m = [];
-    for ( var i = 0; i < thumbt.length; i++ ) {
-    m.push( thumbt[i].innerHTML );
-    }
-    
-    console.log(datestring)
-    console.log(thumbt)
-    console.log(m)
-    
-    var madt = madewithbystring.filter(m => m.includes(m));
-    console.log(madt)
-    var workwit = usedwithbystring.filter(m => m.includes(m));
-    console.log(workwit)
-    var partot = makesstring.filter(m => m.includes(m));
-    console.log(partot)
+    where = ($("#where_"+clicked_id+"").html());
     
     var modalImg = $("#img01")
     modalImg.attr('src', image);
     namebox = document.getElementById('bigname').innerHTML = name
-    backgroundbox = document.getElementById('background').innerHTML = background
-    functbox = document.getElementById('funct').innerHTML = funct
-    createbox = document.getElementById('create').innerHTML = create
-    referencesbox = document.getElementById('references').innerHTML = references
-    
-    for (i = 0; i < madt.length; i++) {
-        
-            cellloca = $('#location');
-            cellloca.append("<a class='artefactcellcap'>" 
-                          + "<p class='thumbtitle' id ="+locastring[i]+" onclick='locasearchFunction(this.id)'>"+locastring[i]+"</p>"
-                          + "</a>");
-            $('#location').append(cellloca);
-        };
-    
-    for (i = 0; i < typestring.length; i++) {
-        
-            celltype = $('#type');
-            celltype.append("<a class='artefactcellcap'>" 
-                          + "<p class='thumbtitle' id ="+typestring[i]+" onclick='typesearchFunction(this.id)'>"+typestring[i]+"</p>"
-                          + "</a>");
-            $('#type').append(celltype);
-        };
-    
-   
-     for (i = 0; i < datestring.length; i++) {
-            celldate = $('#designdate');
-            celldate.append("<a class='artefactcellcap'>" 
-                          + "<p class='thumbtitle' id ="+datestring[i]+" onclick='datesearchFunction(this.id)'>"+datestring[i]+"</p>"
-                          + "</a>");
-            $('#designdate').append(celldate);
-        };
-
-    for (i = 0; i < madt.length; i++) {
-        
-            cellmad = $('#TableMade');
-            cellmad.append("<a class='artefactcellcap'>" 
-                          + "<p class='thumbtitle' id ="+madt[i]+" onclick='titlesearchFunction(this.id)'>"+madt[i]+"</p>"
-                          + "</a>");
-            $('#TableMade').append(cellmad);
-        };
-    
-    for (i = 0; i < workwit.length; i++) {
-        
-            cellwok = $('#TableWork');
-            cellwok.append("<a class='artefactcellcap'>" 
-                          + "<p class='thumbtitle' id ="+workwit[i]+" onclick='titlesearchFunction(this.id)'>"+workwit[i]+"</p>"
-                          + "</a>");
-            $('#TableWork').append(cellwok);
-        };
-    
-    for (i = 0; i < partot.length; i++) {
-        
-            cellpat = $('#TablePart');
-            cellpat.append("<a class='artefactcellcap'>" 
-                          + "<p class='thumbtitle' id ="+partot[i]+" onclick='titlesearchFunction(this.id)'>"+partot[i]+"</p>"
-                          + "</a>");
-            $('#TablePart').append(cellpat);
-        };
-    
-    
+    whatbox = document.getElementById('what').innerHTML = what
+    whybox = document.getElementById('why').innerHTML = why
+    howbox = document.getElementById('how').innerHTML = how
+    whobox = document.getElementById('who').innerHTML = who
+    datebox = document.getElementById('date').innerHTML = date
+    wherebox = document.getElementById('where').innerHTML = where
     
     // Display modal
     modal = document.getElementById('myModal');
@@ -559,131 +466,6 @@ $(myInput).on("input", function() {
             }       
         }
  })
-    
-function puttextinsearchFunction(clicked_id) {
-    
-    inputtext = ($("#"+clicked_id+"").html());
-    
-    console.log(inputtext);
-    
-    filter = inputtext.toUpperCase();
-    table = document.getElementById("Table");
-    cell = table.getElementsByClassName("artefactcell");
- 
-    for (i = 0; i < cell.length; i++) {
-        tag = cell[i].getElementsByTagName("tagall")[0];
-            if (tag) {
-                if (tag.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                cell[i].style.display = "";
-            } else {
-                cell[i].style.display = "none";
-                }
-            }       
-        }
-    modal = document.getElementById('myModal');
-    modal.style.display = "none";
-    
-    }
-    
-function titlesearchFunction(clicked_id) {
-    
-    inputtext = ($("#"+clicked_id+"").html());
-    
-    console.log(inputtext)
-    
-    filter = inputtext.toUpperCase();
-    table = document.getElementById("Table");
-    cell = table.getElementsByClassName("artefactcell");
- 
-    for (i = 0; i < cell.length; i++) {
-        tag = cell[i].getElementsByTagName("name")[0];
-            if (tag) {
-                if (tag.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                cell[i].style.display = "";
-            } else {
-                cell[i].style.display = "none";
-                }
-            }       
-        }
-    modal = document.getElementById('myModal');
-    modal.style.display = "none";
-    
-    }
-    
-function locasearchFunction(clicked_id) {
-    
-    inputtext = ($("#"+clicked_id+"").html());
-    
-    console.log(inputtext)
-    
-    filter = inputtext.toUpperCase();
-    table = document.getElementById("Table");
-    cell = table.getElementsByClassName("artefactcell");
- 
-    for (i = 0; i < cell.length; i++) {
-        tag = cell[i].getElementsByTagName("loca")[0];
-            if (tag) {
-                if (tag.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                cell[i].style.display = "";
-            } else {
-                cell[i].style.display = "none";
-                }
-            }       
-        }
-    modal = document.getElementById('myModal');
-    modal.style.display = "none";
-    
-    }
-    
-function typesearchFunction(clicked_id) {
-    
-    inputtext = ($("#"+clicked_id+"").html());
-    
-    console.log(inputtext)
-    
-    filter = inputtext.toUpperCase();
-    table = document.getElementById("Table");
-    cell = table.getElementsByClassName("artefactcell");
- 
-    for (i = 0; i < cell.length; i++) {
-        tag = cell[i].getElementsByTagName("type")[0];
-            if (tag) {
-                if (tag.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                cell[i].style.display = "";
-            } else {
-                cell[i].style.display = "none";
-                }
-            }       
-        }
-    modal = document.getElementById('myModal');
-    modal.style.display = "none";
-    
-    }
-    
-function datesearchFunction(clicked_id) {
-    
-    inputtext = ($("#"+clicked_id+"").html());
-    
-    console.log(inputtext)
-    
-    filter = inputtext.toUpperCase();
-    table = document.getElementById("Table");
-    cell = table.getElementsByClassName("artefactcell");
- 
-    for (i = 0; i < cell.length; i++) {
-        tag = cell[i].getElementsByTagName("date")[0];
-            if (tag) {
-                if (tag.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                cell[i].style.display = "";
-            } else {
-                cell[i].style.display = "none";
-                }
-            }       
-        }
-    modal = document.getElementById('myModal');
-    modal.style.display = "none";
-    
-    }
     
     
 </script>
