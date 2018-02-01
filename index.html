@@ -454,7 +454,7 @@ $.getJSON(urlEng, function(data) {
 
         $(entry).each(function() {
         
-            cell = $('#Table');
+            cell = $('#Table2');
             cell.append("<a class='artefactcell' onClick='modalFunction(this.id)' id= '"+this.id+"'>" 
                           + "<tagall>" + " " +this.gsx$name.$t+ " " +this.gsx$type.$t+ " " +this.gsx$what.$t+ " " +this.gsx$why.$t+ " " +this.gsx$how.$t+ " " +this.gsx$who.$t+ " " +this.gsx$date.$t+ "  " +this.gsx$where.$t+ "</tagall>"
                           + "<img id='cellimg_"+this.id+"' src='" +this.gsx$imageitem.$t+ "'/>" 
