@@ -438,43 +438,6 @@ function modalFunction(clicked_id) {
     datebox = document.getElementById('date').innerHTML = date
     wherebox = document.getElementById('where').innerHTML = where
     
-    $('#Table2').empty()
-
-$.getJSON(urlEng, function(data) {
-
-        var entry = data.feed.entry;
-        
-        entry.forEach(function(item) {
-            item.id = id++;
-            });
-        
-        entry.sort(function(a, b){return 0.5 - Math.random()});
-    
-    var test = 
-
-        $(entry).each(function() {
-        
-            cell = $('#Table2');
-            cell.append("<a class='artefactcell' onClick='modalFunction(this.id)' id= '"+this.id+"'>" 
-                          + "<tagall>" + " " +this.gsx$name.$t+ " " +this.gsx$type.$t+ " " +this.gsx$what.$t+ " " +this.gsx$why.$t+ " " +this.gsx$how.$t+ " " +this.gsx$who.$t+ " " +this.gsx$date.$t+ "  " +this.gsx$where.$t+ "</tagall>"
-                          + "<img id='cellimg_"+this.id+"' src='" +this.gsx$imageitem.$t+ "'/>" 
-                          + "<name>" +this.gsx$name.$t+ "</name>"
-                          + "<type>" +this.gsx$type.$t+ "</type>"
-                          + "<what>" +this.gsx$what.$t+ "</what>"
-                          + "<why>" +this.gsx$why.$t+ "</why>"
-                          + "<p class='thumbtitle' id='name_"+this.id+"'>" +this.gsx$name.$t+ "</p>"
-                          + "<p class='info' id='type_"+this.id+"'>" +this.gsx$type.$t+ "</p>"
-                          + "<p class='info' id='what_"+this.id+"'>" +this.gsx$what.$t+ "</p>"
-                          + "<p class='info' id='why_"+this.id+"'>" +this.gsx$why.$t+ "</p>"
-                          + "<p class='info' id='how_"+this.id+"'>" +this.gsx$how.$t+ "</p>"
-                          + "<p class='info' id='who_"+this.id+"'>" +this.gsx$who.$t+ "</p>"
-                          + "<p class='info' id='date_"+this.id+"'>" +this.gsx$date.$t+ "</p>"
-                          + "<p class='info' id='where_"+this.id+"'>" +this.gsx$where.$t+ "</p>"
-                          + "</a>");
-            $('#Table').append(cell);
-        });
-    }); 
-    
     // Display modal
     modal = document.getElementById('myModal');
     modal.style.display = "block";
