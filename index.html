@@ -445,7 +445,7 @@ $.getJSON(urlEng, function(data) {
         var entry = data.feed.entry;
         
         entry.forEach(function(item) {
-            item.id = id++;
+            item.clicked_id = id++;
             });
         
         entry.sort(function(a, b){return 0.5 - Math.random()});
